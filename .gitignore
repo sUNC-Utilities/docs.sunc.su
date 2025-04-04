@@ -1,0 +1,2 @@
+# Python venv exclusion for the internal documentation platform
+.venv

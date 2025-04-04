@@ -1,0 +1,47 @@
+# `debug.getconstants`
+
+!!! warning "C closures not supported"
+
+    This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures have no accessible constants.
+
+`#!luau debug.getconstants` returns a list of all constants used within a Luau function's bytecode. This includes literal values like numbers, strings, booleans, and `#!luau nil`.
+
+```luau
+function debug.getconstants(func: (...any) -> (...any) | number): { number | string | boolean | nil }
+```
+
+## Parameters
+
+| Parameter       | Description                                                        |
+|------------------|--------------------------------------------------------------------|
+| `#!luau func`    | The Lua function (or stack level) whose constants will be returned.|
+
+---
+
+## Examples
+
+### Example 1
+
+```luau title="Retrieving constants from a Luau function" linenums="1"
+local function DummyFunction()
+    local DummyString = "foo bar"
+    string.split(DummyString, " ")
+end
+
+local Constants = debug.getconstants(DummyFunction)
+for ConstantIndex, Constant in Constants do
+    print(`[{ConstantIndex}]: {Constant}`)
+end
+
+-- Output:
+-- [1]: "string"
+-- [2]: "split"
+-- [4]: "foo bar"
+-- [5]: " "
+```
+
+### Example 2
+
+```luau title="Calling on a C closure should error" linenums="1"
+print(debug.getconstants(print)) -- Should error due to being a C closure
+```
