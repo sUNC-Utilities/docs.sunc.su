@@ -26,7 +26,7 @@ function getfunctionhash(functionToHash: (...any) -> (...any)): string
 
 ## Example
 
-```luau title="Checking the Blake2b hash of functions with getfunctionhash" linenums="1"
+```luau title="Checking the SHA384 hash of functions with getfunctionhash" linenums="1"
 local function is_sha384_hex(hash)
     return #hash == 96 and hash:match("^[0-9a-fA-F]+$") ~= nil
 end
