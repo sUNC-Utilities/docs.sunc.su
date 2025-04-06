@@ -7,18 +7,17 @@
     The wrapped function **must** be yieldable, meaning that the function should be able to call [`#!luau task.wait`](https://create.roblox.com/docs/reference/engine/libraries/task#wait), for example.
 
 `#!luau newcclosure` takes any Luau function and wraps it into a C closure.
-
-When the returned function is called, the original Luau closure is called, and arguments are passed to the original closure, and then the returned arguments of the original closure are passed to the caller of the C closure.
+When the returned function is called, it invokes the original Luau closure with the provided arguments, then passes the closure's returned values back to the caller.
 
 ```luau
-function newcclosure<A..., R...>(function_to_wrap: (A...) -> R...): (A...) -> R...
+function newcclosure<A..., R...>(functionToWrap: (A...) -> R...): (A...) -> R...
 ```
 
 ## Parameters
 
 | Parameter | Description |
 |-----------|-------------|
-| `#!luau function_to_wrap` | A function to be wrapped. |
+| `#!luau functionToWrap` | A function to be wrapped. |
 
 ---
 
@@ -27,32 +26,32 @@ function newcclosure<A..., R...>(function_to_wrap: (A...) -> R...): (A...) -> R.
 ### Example 1
 
 ```luau title="Basic C closure wrapping example with newcclosure" linenums="1"
-local DummyFunction = function(...)
+local dummy_function = function(...)
     return ...
 end
 
-print(iscclosure(DummyFunction)) -- Output: false
+print(iscclosure(dummy_function)) -- Output: false
 
-local WrappedFunction = newcclosure(DummyFunction)
+local wrapped_function = newcclosure(dummy_function)
 
-print(iscclosure(WrappedFunction)) -- Output: true
+print(iscclosure(wrapped_function)) -- Output: true
 
-local FunctionResults = WrappedFunction("Hello")
-print(FunctionResults) -- Output: Hello
+local function_results = wrapped_function("Hello")
+print(function_results) -- Output: Hello
 ```
 
 ### Example 2
 
-This example illustrates how Lua functions wrapped as a C closure should also be yieldable, therefore also showcasing how coroutine implementations of `#!luau newcclosure` would fail.
+This example illustrates how Luau functions wrapped as a C closure should also be yieldable, therefore also showcasing how coroutine implementations of `#!luau newcclosure` would not work.
 
 ```luau title="Yieldable C functions made with newcclosure" linenums="1"
-local DummyYieldingFunction = newcclosure(function()
+local dummy_yielding_function = newcclosure(function()
     print("Before")
     task.wait(1.5)
     print("After")
 end)
 
-DummyYieldingFunction()
+dummy_yielding_function()
 -- Output:
 -- Before
 -- yield for 1.5 seconds

@@ -1,8 +1,12 @@
 # `debug.getstack`
 
-`#!luau debug.getstack` retrieves one or more values from the stack at the specified call level.
+!!! warning "C closures are not supported"
+    
+    This function will throw an error if the stack level points to a C closure, such as `#!luau getstack(0)`.
 
-This function is useful for inspecting local variables or arguments at different layers of the call stack. If no index is given, all values at that stack level are returned as a list.
+`#!luau debug.getstack` retrieves values from the stack at the specified call level.
+
+This function is useful for inspecting local variables or arguments at different layers of the stack frame. If no index is given, all values at that stack level are returned as a list.
 
 ```luau
 function debug.getstack(level: number, index: number?): any | { any }
@@ -22,11 +26,11 @@ function debug.getstack(level: number, index: number?): any | { any }
 ### Example 1
 
 ```luau title="Retrieving multiple values from the stack" linenums="1"
-local Count = 0
+local count = 0
 
-local function RecursiveFunction()
-    Count += 1
-    if Count > 6 then return end
+local function recursive_function()
+    count += 1
+    if count > 6 then return end
 
     local a = 29
     local b = true
@@ -35,11 +39,11 @@ local function RecursiveFunction()
     b = false
     c ..= "s"
 
-    print(debug.getstack(1, Count))
-    RecursiveFunction()
+    print(debug.getstack(1, count))
+    recursive_function()
 end
 
-RecursiveFunction()
+recursive_function()
 -- Output (varies depending on Count):
 -- 30
 -- false
@@ -52,12 +56,12 @@ RecursiveFunction()
 ### Example 2
 
 ```luau title="Retrieving values from the caller's stack" linenums="1"
-local function DummyFunction()
+local function dummy_function()
     return "Hello"
 end
 
-local Var = 5
-Var += 1
+local var = 5
+var += 1
 
 (function()
     print(debug.getstack(2)[1]()) -- Output: Hello

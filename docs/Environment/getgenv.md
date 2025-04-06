@@ -1,8 +1,9 @@
 # `getgenv`
 
-!!! info "Do not confuse with [`#!luau getrenv`](./getrenv.md) or [`#!luau getsenv`](../Scripts/getsenv.md)."
+!!! warning "getgenv polluting"
+    Modifications to a thread's global environment should not affect `getgenv`.
 
-`#!luau getgenv` returns the **executor's global environment table**, which is shared across all scripts running within the same executor context.
+`#!luau getgenv` returns the **executor's global environment table**, which is shared across all executor-made threads.
 
 This environment is writable and persistent during the session, making it useful for sharing state or functions across different scripts.
 
@@ -21,9 +22,9 @@ function getgenv(): { any }
 ## Example
 
 ```luau title="Storing values across scripts using getgenv" linenums="1"
-getgenv().sharedVar = "hello world"
+getgenv().shared_var = "hello world"
 
 task.spawn(function()
-    print(sharedVar) -- Output: hello world
+    print(shared_var) -- Output: hello world
 end)
 ```

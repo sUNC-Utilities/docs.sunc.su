@@ -1,8 +1,7 @@
 # `cleardrawcache`
 
-`#!luau cleardrawcache` removes **all active drawing objects** created with [`#!luau Drawing.new`](./new.md), regardless of whether you still hold a reference to them. This function is useful for bulk cleanup or resetting the drawing canvas.
+`#!luau cleardrawcache` removes **all active drawing objects** created with [`#!luau Drawing.new`](./Drawing.md#constructor).
 
-Once cleared, the `#!luau __OBJECT_EXISTS` field of each destroyed object will be `#!luau false`.
 
 ```luau
 function cleardrawcache(): ()

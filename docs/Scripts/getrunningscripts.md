@@ -1,9 +1,9 @@
 # `getrunningscripts`
 
-`#!luau getrunningscripts` returns a list of **all actively running scripts** in the caller's global state. This includes [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), and [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) instances - excluding [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
+`#!luau getrunningscripts` returns a list of **all running scripts** in the caller's global state. This includes [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), and [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) instances - excluding [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
 
 ```luau
-function getrunningscripts(): { Script | LocalScript | ModuleScript }
+function getrunningscripts(): { BaseScript | ModuleScript }
 ```
 
 ## Parameters

@@ -2,9 +2,9 @@
 
 !!! warning "Avoid implementing in Luau"
 
-    This function should **not be implemented** in Luau. Doing so exposes you to detection vectors and inconsistent behavior.
+    This function should **not be implemented** in Luau. Doing so exposes you to easy detection vectors.
 
-`#!luau fireclickdetector` triggers a [`#!luau ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector) event manually. By default, it fires the [`#!luau MouseClick`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector#MouseClick) event, but other variants are also supported.
+`#!luau fireclickdetector` triggers a [`#!luau ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector) event. By default, it fires the [`#!luau MouseClick`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector#MouseClick) event.
 
 ```luau
 function fireclickdetector(detector: ClickDetector, distance: number?, event: string?): ()
@@ -16,7 +16,7 @@ function fireclickdetector(detector: ClickDetector, distance: number?, event: st
 |------------------|-----------------------------------------------------------------------------|
 | `#!luau detector`  | The [`#!luau ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector) to trigger.       |
 | `#!luau distance?` | (Optional) Distance from which the click is simulated. Defaults to infinite. |
-| `#!luau event?`    | (Optional) The event to trigger. Options: `#!luau "MouseClick"`, `#!luau "RightMouseClick"`, `#!luau "MouseHoverEnter"`, `#!luau "MouseHoverLeave"`. Defaults to `#!luau "MouseClick"`. |
+| `#!luau event?`    | (Optional) The event to trigger. Options: `#!luau "MouseClick"`, `#!luau "RightMouseClick"`, `#!luau "MouseHoverEnter"`, `#!luau "MouseHoverLeave"`. |
 
 ---
 

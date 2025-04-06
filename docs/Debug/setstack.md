@@ -1,6 +1,10 @@
 # `debug.setstack`
 
-`#!luau debug.setstack` replaces a value in a specified call stack frame.
+!!! warning "C closures are not supported"
+    
+    This function will throw an error if the stack level points to a C closure, such as `#!luau setstack(0, 1, 0)`.
+
+`#!luau debug.setstack` replaces a value in a specified stack frame.
 
 This allows for powerful manipulation of runtime variables or arguments, particularly useful in advanced debugging or dynamic patching scenarios.
 
@@ -33,13 +37,13 @@ end))() -- Output: Replaced
 ### Example 2
 
 ```luau title="Replacing a numeric local in a parent scope" linenums="1"
-local OuterValue = 10
+local outer_value = 10
 
-local function InnerFunction()
-    OuterValue += 9
+local function inner_function()
+    outer_value += 9
     debug.setstack(2, 1, 100)
 end
 
-InnerFunction()
+inner_function()
 print(OuterValue) -- Output: 100
 ```

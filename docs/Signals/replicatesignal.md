@@ -1,10 +1,15 @@
 # `replicatesignal`
 
-!!! tip "Signal arguments must match"
+!!! warning "Signal arguments must match"
 
-    Some signals require specific argument structures. If incorrect arguments are passed, the replication will silently fail. For reference, you can find signal definitions at [robloxapi.github.io/ref](https://robloxapi.github.io/ref/) or [sUNC's verified list](https://rubis.numelon.com/view/?scrap=AIOzG1Di7NSLADKE).
+    Some signals require specific argument structures. If incorrect arguments are passed, an error must be thrown.
 
-`#!luau replicatesignal` attempts to replicate a client-sided [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal) to the server, emulating a real trigger event. This can be used to invoke server-bound behavior such as interactions with [`ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector), [`ProximityPrompt`](https://create.roblox.com/docs/reference/engine/classes/ProximityPrompt), and others.
+!!! info "Notes on `#!replicatesignal`"
+    
+    For an accurate result from the examples, test the function in [our game](https://www.roblox.com/games/133609342474444/ROBLOCKS-STOP-PMOING-ME).
+
+
+If possible, replicates the signal to the server with the provided arguments. The arguments must also match accordingly to the signal itself. To know a signal's arguments, visit [this](https://robloxapi.github.io/ref/).
 
 ```luau
 function replicatesignal(signal: RBXScriptSignal, ...: any?)
@@ -15,15 +20,12 @@ function replicatesignal(signal: RBXScriptSignal, ...: any?)
 | Parameter         | Description                                            |
 |------------------|--------------------------------------------------------|
 | `#!luau signal`    | The signal to replicate to the server.                |
-| `#!luau ...`       | Arguments to pass to the signal, matching its signature. |
+| `#!luau ...`       | Arguments to pass to the signal. |
 
 ---
 
 ## Examples
 
-??? info "These examples use our [testing game](../About/test-results.md#using-the-dedicated-game)"
-
-    The examples provided below use our [testing game](../About/test-results.md#using-the-dedicated-game).
 
 ### Example 1
 
@@ -38,14 +40,14 @@ print(game.Players.LocalPlayer:GetAttribute("MouseClickReplicated")) -- Output: 
 ### Example 2
 
 ```luau title="Incorrect argument usage" linenums="1"
-local uiFrame = game.Players.LocalPlayer.PlayerGui.ScreenGui.Frame
+local ui_frame = game.Players.LocalPlayer.PlayerGui.ScreenGui.Frame
 
--- These will fail silently
-replicatesignal(uiFrame.MouseWheelForward)
-replicatesignal(uiFrame.MouseWheelForward, 121)
+-- These will throw an error.
+replicatesignal(ui_frame.MouseWheelForward)
+replicatesignal(ui_frame.MouseWheelForward, 121)
 
--- This succeeds:
-replicatesignal(uiFrame.MouseWheelForward, 121, 214)
+-- This succeeds
+replicatesignal(ui_frame.MouseWheelForward, 121, 214)
 task.wait(0.1)
 
 print(game.Players.LocalPlayer:GetAttribute("MouseWheelForwardReplicated")) -- Output: true

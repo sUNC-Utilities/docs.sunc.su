@@ -1,6 +1,7 @@
 # `debug.getupvalue`
 
-!!! warning "C closures not supported"
+!!! warning "C closures are not supported"
+    
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures do not expose upvalues.
 
 `#!luau debug.getupvalue` returns the upvalue at the specified index from a Luau function's closure. If the index is invalid or out of bounds, an error will occur.

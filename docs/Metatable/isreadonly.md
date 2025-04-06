@@ -1,8 +1,7 @@
 # `isreadonly`
 
-`#!luau isreadonly` checks whether a table is currently set as **readonly** (immutable).
+`#!luau isreadonly` checks whether a table is currently set as **readonly**.
 
-This is helpful when you want to confirm whether a table can be modified, especially after calling [`#!luau setreadonly`](./setreadonly.md).
 
 ```luau
 function isreadonly(table: { any }): boolean

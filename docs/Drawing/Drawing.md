@@ -1,12 +1,32 @@
-# Drawing Object Types
+# Drawing class
 
-The base `#!luau Drawing` class represents a renderable 2D object that appears on the user's screen. Every specific drawing type (e.g. `Circle`, `Text`, `Line`) inherits from this base and extends it with shape-specific properties.
+The `#!luau Drawing` class represents a renderable 2D object that appears on the user's screen. Every specific drawing type (e.g. `Circle`, `Text`, `Line`) inherits from this base and extends it with shape-specific properties.
 
-Drawing objects are not Instances - they are client-only graphical primitives that do not interact with the 3D world and must be managed manually.
+Drawing objects are not instances - they are client-only graphical primitives that do not interact with the 3D world and must be managed manually.
 
 ---
 
-## Shared Properties
+## Constructor
+
+Creates a new render object of the specified type. These objects render directly onto the game window and do not exist in the [`DataModel`](https://create.roblox.com/docs/reference/engine/classes/DataModel).
+
+!!! info "Inheritance"
+
+    The returned object inherits from the base `#!luau Drawing` class, and will have specific properties based on its type.
+
+```luau
+function Drawing.new(type: string): Drawing
+```
+
+## Parameters
+
+| Parameter     | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `#!luau type` | The type of drawing to create. Must be one of: [`Line`, `Text`, `Image`, `Circle`, `Square`, `Quad`, or `Triangle`](#shape-specific-types). |
+
+---
+
+## Shared properties
 
 All drawing object types inherit the following fields:
 
@@ -16,7 +36,7 @@ All drawing object types inherit the following fields:
 | `#!luau ZIndex`      | `#!luau number`  | Render order; higher values appear on top.                                  |
 | `#!luau Transparency`| `#!luau number`  | Opacity (1 = fully opaque, 0 = invisible).                                  |
 | `#!luau Color`       | `#!luau Color3`  | The color of the drawing.                                                   |
-| `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object still exists after creation.                |
+| `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object exists.                |
 
 ---
 
@@ -24,15 +44,15 @@ All drawing object types inherit the following fields:
 
 | Method Signature                        | Description                           |
 |----------------------------------------|---------------------------------------|
-| [`#!luau Drawing:Destroy()`](./DrawingDestroy.md) | Permanently removes the drawing from view and invalidates its reference. |
+| `#!luau Drawing:Destroy()` | Permanently removes the drawing from view. |
 
 ---
 
-## Shape-Specific Types
+## Shape-specific types
 
 Each subtype of `Drawing` exposes unique fields that define their visual representation. Below are the supported types:
 
-### 🧵 Line
+### Line
 
 | Property       | Type     | Description                      |
 |----------------|----------|----------------------------------|
@@ -40,20 +60,20 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau To`      | `#!luau Vector2`| End position of the line.         |
 | `#!luau Thickness`| `#!luau number` | Width of the line.                |
 
-### 📝 Text
+### Text
 
 | Property         | Type           | Description                                   |
 |------------------|----------------|-----------------------------------------------|
 | `#!luau Text`      | `#!luau string`       | The text content to render.                   |
 | `#!luau TextBounds`| `#!luau Vector2` 🔒   | Computed text size (read-only).               |
-| `#!luau Font`      | `#!luau Drawing.Font` | Font to use (`UI`, `System`, `Plex`, etc.).   |
+| `#!luau Font`      | `#!luau Drawing.Font` | Font to use.   |
 | `#!luau Size`      | `#!luau number`       | Size of the text.                             |
 | `#!luau Position`  | `#!luau Vector2`      | Top-left corner of the text.                  |
 | `#!luau Center`    | `#!luau boolean`      | Horizontally center the text.                |
 | `#!luau Outline`   | `#!luau boolean`      | Whether to draw an outline.                  |
 | `#!luau OutlineColor`| `#!luau Color3`     | Outline color.                               |
 
-### 🖼️ Image
+### Image
 
 | Property     | Type     | Description                                         |
 |--------------|----------|-----------------------------------------------------|
@@ -62,7 +82,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Position`| `#!luau Vector2`| Top-left corner of the image.                       |
 | `#!luau Rounding`| `#!luau number` | Amount of corner rounding (optional aesthetic).     |
 
-### 🟢 Circle
+### Circle
 
 | Property       | Type      | Description                                           |
 |----------------|-----------|-------------------------------------------------------|
@@ -72,7 +92,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).                   |
 | `#!luau Filled`   | `#!luau boolean` | Whether the circle is filled.                        |
 
-### 🔲 Square
+### Square
 
 | Property       | Type      | Description                                           |
 |----------------|-----------|-------------------------------------------------------|
@@ -81,7 +101,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).                   |
 | `#!luau Filled`   | `#!luau boolean` | Whether the square is filled.                        |
 
-### 🟥 Quad
+### Quad
 
 | Property       | Type      | Description                        |
 |----------------|-----------|------------------------------------|
@@ -92,7 +112,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).  |
 | `#!luau Filled`   | `#!luau boolean` | Whether the quad is filled.         |
 
-### 🔺 Triangle
+### Triangle
 
 | Property       | Type      | Description                        |
 |----------------|-----------|------------------------------------|
@@ -102,7 +122,30 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).  |
 | `#!luau Filled`   | `#!luau boolean` | Whether the triangle is filled.     |
 
-## Examples
+# Examples
+
+### Using the `Destroy` method.
+
+```luau title="Creating a circle and destroying the drawing object" linenums="1"
+local Camera = game.Workspace.CurrentCamera
+local Viewport = Camera.ViewportSize
+local Position = Vector2.new(Viewport.X / 2, Viewport.Y / 2)
+
+local circle = Drawing.new("Circle")
+circle.Radius = 50
+circle.Color = Color3.fromRGB(255, 0, 0)
+circle.Filled = true
+circle.NumSides = 150
+circle.Position = Position
+circle.Transparency = 1
+circle.Visible = true
+
+print(circle.__OBJECT_EXISTS) -- Output: true
+circle:Destroy()
+print(circle.__OBJECT_EXISTS) -- Output: false
+```
+
+---
 
 ### Drawing an [Image](#image)
 
@@ -120,9 +163,11 @@ task.wait(2)
 image:Destroy()
 ```
 
-### Using the [`#!luau __OBJECT_EXISTS` property](./DrawingDestroy.md)
+---
 
-```luau title="Checking if a Drawing still exists" linenums="1"
+### Using the `#!luau __OBJECT_EXISTS` property.
+
+```luau title="Rendering a centered image" linenums="1"
 local Camera = game.Workspace.CurrentCamera
 local Viewport = Camera.ViewportSize
 local Position = Vector2.new(Viewport.X / 2, Viewport.Y / 2)

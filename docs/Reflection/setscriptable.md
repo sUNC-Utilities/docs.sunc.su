@@ -2,13 +2,13 @@
 
 !!! warning "Detection risks"
 
-    `#!luau setscriptable` can expose detection vectors. Some games may check whether certain properties are unexpectedly accessible, which may lead to detection.
+    `#!luau setscriptable` can expose detection vectors. Games may check whether certain properties are unexpectedly accessible, which can lead to detection.
 
 !!! info "Limited property support"
 
-    Not all properties can be toggled this way - for better coverage and safety, consider using [`#!luau gethiddenproperty`](./gethiddenproperty.md) and [`#!luau sethiddenproperty`](./sethiddenproperty.md) instead.
+    Not all hidden properties can be obtained using this function.
 
-`#!luau setscriptable` toggles the scriptability of a hidden or non-scriptable property on an [`Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance). When a property is made scriptable, it can be accessed or assigned through standard means like `.` indexing.
+`#!luau setscriptable` toggles the scriptability of a hidden or non-scriptable property on an [`Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance). When a property is made scriptable, it can be accessed or assigned through standard indexing.
 
 ```luau
 function setscriptable(instance: Instance, property_name: string, state: boolean): boolean | nil

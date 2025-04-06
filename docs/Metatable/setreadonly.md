@@ -1,8 +1,6 @@
 # `setreadonly`
 
-`#!luau setreadonly` sets whether a table is **readonly** (immutable) or **writable** (mutable).
-
-By default, many internal metatables such as [`#!luau getrawmetatable(game)`](./getrawmetatable.md) are locked using the `#!luau __metatable` field, making them immutable. This function bypasses that restriction and toggles their readonly status.
+`#!luau setreadonly` sets whether a table is **readonly** or **writable**.
 
 ```luau
 function setreadonly(table: { any }, state: boolean): ()
@@ -24,9 +22,9 @@ local mt = getrawmetatable(game)
 mt.Example = "Hello" -- Throws an error
 
 setreadonly(mt, false)
-mt.Example = "Hello" -- Works
+mt.Example = "Hello"
 print(mt.Example) -- Output: Hello
 
-setreadonly(mt, true) -- Lock it again
+setreadonly(mt, true) -- Lock back
 
 ```

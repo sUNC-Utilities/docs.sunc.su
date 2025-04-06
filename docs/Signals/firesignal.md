@@ -1,8 +1,7 @@
 # `firesignal`
 
-`#!luau firesignal` manually invokes all Lua-based [`RBXScriptConnection`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) objects connected to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal), passing the provided arguments.
+`#!luau firesignal` Invokes all Lua [`connections`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) connected to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
 
-This behaves similarly to what Roblox itself would do when the signal is triggered by the engine - except you control when and how it is fired.
 
 ```luau
 function firesignal(signal: RBXScriptSignal, ...: any?)

@@ -2,18 +2,18 @@
 
 !!! info "Closure is generated, not directly reused"
 
-    The function returned by `#!luau getscriptclosure` is a **new closure** compiled from the script's bytecode. It is not the same function used by the game, but it behaves identically in most cases.
+    The function returned by `#!luau getscriptclosure` is a **new closure** compiled from the script's bytecode. It is not the same function used by the game, but behaves identically. This function is mostly used to retrieve constants from a script.
 
 !!! info "Not all scripts have bytecode"
 
-    If the script has no compiled bytecode (e.g., it is empty or not yet loaded), this function will return `#!luau nil`.
+    If the script has no compiled bytecode, this function will return `#!luau nil`.
 
 `#!luau getscriptclosure` creates and returns a Lua **function closure** from the compiled bytecode of a [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript).
 
 This function is often used to **extract constants or behaviour** from scripts without needing to run them inside the game.
 
 ```luau
-function getscriptclosure(script: Script | LocalScript | ModuleScript): (...any) -> (...any) | nil
+function getscriptclosure(script: BaseScript | ModuleScript): (...any) -> (...any) | nil
 ```
 
 ## Parameters
@@ -27,9 +27,9 @@ function getscriptclosure(script: Script | LocalScript | ModuleScript): (...any)
 ## Example
 
 ```luau title="Retrieving a script's closure" linenums="1"
-local Animate = game.Players.LocalPlayer.Character:FindFirstChild("Animate")
+local animate = game.Players.LocalPlayer.Character:FindFirstChild("Animate")
 
-local closure = getscriptclosure(Animate)
+local closure = getscriptclosure(animate)
 
 print(typeof(closure)) -- Output: function 0x....
 

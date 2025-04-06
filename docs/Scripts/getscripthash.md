@@ -1,7 +1,5 @@
 # `getscripthash`
 
-!!! info "Do not confuse with [`#!luau getfunctionhash`](../Closures/getfunctionhash.md)"
-
 !!! info "Do not decrypt or decompress the bytecode"
 
     The hash must be computed **on the encrypted, compressed bytecode** - not after any modification.  
@@ -12,7 +10,7 @@
 This is useful for **identifying scripts** by their content, especially when checking for known modules or verifying integrity.
 
 ```luau
-function getscripthash(script: Script | LocalScript | ModuleScript): string | nil
+function getscripthash(script: BaseScript | ModuleScript): string | nil
 ```
 
 ## Parameters

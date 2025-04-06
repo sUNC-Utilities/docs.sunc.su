@@ -1,6 +1,6 @@
 # `isexecutorclosure`
 
-`#!luau isexecutorclosure` checks whether a given function is a closure of the executor.
+`#!luau isexecutorclosure` checks whether a given function is a closure of the executor. This also includes closures retrieved using [`#!luau getscriptclosure`](../Scripts/getloadedmodules.md) or [`#!luau loadstring`](../Scripts/loadstring.md)
 
 ```luau
 function isexecutorclosure(func: (...any) -> (...any)): boolean
@@ -17,19 +17,19 @@ function isexecutorclosure(func: (...any) -> (...any)): boolean
 ## Example
 
 ```luau title="Identifying executor closures with isexecutorclosure" linenums="1"
-local function DummyLuaFunction()
+local function dummy_lua_function()
     print("This is an executor Lua closure")
 end
 
-local DummyCFunction = newcclosure(function()
+local dummy_cfunction = newcclosure(function()
     print("This is an executor C closure")
 end)
 
-local DummyStandardCFunction = print
-local DummyGlobalCFunction = getgc
+local dummy_standard_cfunction = print
+local dummy_global_cfunction = getgc
 
-print(isexecutorclosure(DummyLuaFunction)) -- Output: true
-print(isexecutorclosure(DummyCFunction)) -- Output: true
-print(isexecutorclosure(DummyGlobalCFunction)) -- Output: true
-print(isexecutorclosure(DummyStandardCFunction)) -- Output: false
+print(isexecutorclosure(dummy_lua_function)) -- Output: true
+print(isexecutorclosure(dummy_cfunction)) -- Output: true
+print(isexecutorclosure(dummy_global_cfunction)) -- Output: true
+print(isexecutorclosure(dummy_standard_cfunction)) -- Output: false
 ```

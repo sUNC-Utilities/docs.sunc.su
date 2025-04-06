@@ -1,12 +1,11 @@
 # `getconnections`
 
-!!! info "C-state and foreign signals"
+!!! info "C and foreign signals"
 
-    Passing a signal that originates from [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html), [Actors](https://create.roblox.com/docs/reference/engine/classes/Actor), or is otherwise foreign will return a valid [`Connection`](./Connection.md) object - but its `#!luau Function` and `#!luau Thread` properties will be `#!luau nil`. This is expected by design.
+    Passing a signal that originates from [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html), [Actors](https://create.roblox.com/docs/reference/engine/classes/Actor), or is otherwise made in C, will return a valid [`Connection`](./Connection.md) object - but its `#!luau Function` and `#!luau Thread` properties will be `#!luau nil`.
 
-`#!luau getconnections` retrieves a list of [`Connection`](./Connection.md) objects currently attached to the given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
+`#!luau getconnections` retrieves a list of [`Connection`](./Connection.md) objects currently attached to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
 
-This is useful for observing active listeners on events, or even modifying their behavior directly via the returned [`Connection`](./Connection.md) objects.
 
 ```luau
 function getconnections(signal: RBXScriptSignal): {Connection}
@@ -38,7 +37,7 @@ print(typeof(connection.Thread)) -- Output: thread
 
 ## Example 2
 
-```luau title="Accessing a foreign/C-state signal" linenums="1"
+```luau title="Accessing a foreign/C connection" linenums="1"
 local cconnection = getconnections(game.Players.LocalPlayer.Idled)[1]
 print(cconnection.Function)  -- Output: nil
 print(cconnection.Thread)    -- Output: nil

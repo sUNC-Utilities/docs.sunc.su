@@ -1,9 +1,10 @@
 # `debug.getconstant`
 
-!!! warning "C closures not supported"
+!!! warning "C closures are not supported"
+    
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures have no accessible constants.
 
-`#!luau debug.getconstant` returns the constant at the specified index from a Luau function's bytecode. If no constant exists at that index, it returns `#!luau nil`.
+`#!luau debug.getconstant` returns the constant at the specified index from a Luau function. If no constant exists at that index, it returns `#!luau nil` instead.
 
 This is useful when you want to inspect specific constant values (such as strings, numbers, or booleans) without dumping the entire list.
 
@@ -25,25 +26,25 @@ function debug.getconstant(func: (...any) -> (...any) | number, index: number): 
 ### Example 1
 
 ```luau title="Getting a valid constant" linenums="1"
-local function DummyFunction()
-    local DummyString = "foo bar"
-    string.split(DummyString, " ")
+local function dummy_function()
+    local dummy_string = "foo bar"
+    string.split(dummy_string, " ")
 end
 
-local Result = debug.getconstant(DummyFunction, 2)
-print(Result) -- Output: string
+local result = debug.getconstant(dummy_function, 2)
+print(result) -- Output: string
 ```
 
 ### Example 2
 
 ```luau title="Getting an out-of-range constant" linenums="1"
-local function DummyFunction()
-    local DummyString = "foo bar"
-    string.split(DummyString, " ")
+local function dummy_function()
+    local dummy_string = "foo bar"
+    string.split(dummy_string, " ")
 end
 
-local Result = debug.getconstant(DummyFunction, 3)
-print(Result) -- Output: nil
+local result = debug.getconstant(dummy_function, 3)
+print(result) -- Output: nil
 ```
 
 ### Example 3

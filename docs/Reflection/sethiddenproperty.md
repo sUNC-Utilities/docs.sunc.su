@@ -1,8 +1,8 @@
 # `sethiddenproperty`
 
-!!! warning "Avoid relying on [`#!luau setscriptable`](./setscriptable.md) backends"
+!!! warning "Avoid relying on [`#!luau setscriptable`](./setscriptable.md) to implement this function"
 
-    Some executors implement [`#!luau sethiddenproperty`](./sethiddenproperty.md) using [`#!luau setscriptable`](./setscriptable.md), which can be limited or detectable. This function should instead access the property directly for reliability and stealth.
+    Some executors implement this function using [`#!luau setscriptable`](./setscriptable.md), which is limited and/or detectable.
 
 `#!luau sethiddenproperty` assigns a value to a hidden or non-scriptable property of an [`Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance), even if that property is normally read-only or inaccessible.
 

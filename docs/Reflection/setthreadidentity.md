@@ -1,6 +1,6 @@
 # `setthreadidentity`
 
-`#!luau setthreadidentity` sets the current [Luau thread](https://create.roblox.com/docs/reference/engine/libraries/coroutine#running) identity to a specific [security context level](./ThreadIdentity.md). Higher identities grant access to more privileged operations like reading CoreGui or modifying protected instances.
+`#!luau setthreadidentity` sets the current [Luau thread](https://create.roblox.com/docs/reference/engine/libraries/coroutine#running) identity and capabilities matching that identity.
 
 This is commonly used alongside functions like [`#!luau gethiddenproperty`](./gethiddenproperty.md) or [`#!luau getconnections`](../Signals/getconnections.md) which may require elevated access.
 
@@ -12,7 +12,7 @@ function setthreadidentity(id: number): ()
 
 | Parameter         | Description                                                      |
 |-------------------|------------------------------------------------------------------|
-| `#!luau id`         | The identity level to set the current thread to (e.g. `2`, `8`). |
+| `#!luau id`         | The identity level to set the current thread to. |
 
 ---
 

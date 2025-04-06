@@ -1,9 +1,12 @@
 # `debug.getproto`
 
-!!! warning "C closures not supported"
+!!! warning "C closures are not supported"
+    
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures do not contain Luau function prototypes.
 
-`#!luau debug.getproto` returns a specific function prototype from a Luau function by index. Optionally, it can search for **active instances** of the prototype (functions currently in memory) if the `#!luau activated` parameter is set to `true`.
+`#!luau debug.getproto` returns a specific function prototype from a Luau function by index. Optionally, it can search for **active functions** of the proto, if the `#!luau activated` parameter is set to `true`.
+
+These are internal function definitions (e.g. nested functions) that exist as part of the compiled bytecode, even if they aren't assigned or called.
 
 ```luau
 function debug.getproto(func: (...any) -> (...any) | number, index: number, activated: boolean?): (...any) -> (...any) | { (...any) -> (...any) }
@@ -24,32 +27,32 @@ function debug.getproto(func: (...any) -> (...any) | number, index: number, acti
 ### Example 1
 
 ```luau title="Retrieving nested prototypes" linenums="1"
-local function DummyFunction()
-    local function DummyProto1()
+local function dummy_function()
+    local function dummy_proto_1()
         print("Hello")
     end
-    local function DummyProto2()
+    local function dummy_proto_2()
         print("Hello2")
     end
 end
 
-debug.getproto(DummyFunction, 1)() -- Output: Hello
-debug.getproto(DummyFunction, 2)() -- Output: Hello2
+debug.getproto(dummy_function, 1)() -- Output: Hello
+debug.getproto(dummy_function, 2)() -- Output: Hello2
 ```
 
 ### Example 2
 
 ```luau title="Retrieving an active function from a proto" linenums="1"
-local function DummyFunction()
-    local function DummyProto()
+local function dummy_function()
+    local function dummy_proto()
         return "hi"
     end
-    return DummyProto
+    return dummy_proto
 end
 
-local RealProto = DummyFunction()
-local RetrievedProto = debug.getproto(DummyFunction, 1, true)[1]
+local real_proto = dummy_function()
+local retrieved_proto = debug.getproto(dummy_function, 1, true)[1]
 
-print(RealProto == RetrievedProto) -- Output: true
-print(RetrievedProto()) -- Output: hi
+print(real_proto == retrieved_proto) -- Output: true
+print(retrieved_proto()) -- Output: hi
 ```

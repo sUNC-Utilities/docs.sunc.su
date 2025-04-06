@@ -2,8 +2,6 @@
 
 `#!luau request` sends a [HTTP request](https://en.wikipedia.org/wiki/HTTP) to the given URL using the provided configuration table. It yields until the request is complete and returns a structured response.
 
-This function is often used for interacting with external APIs or fetching remote content.
-
 ```luau
 type RequestOptions = {
     Url: string,
@@ -52,7 +50,7 @@ function request(options: RequestOptions): Response
 
 ### Automatically added Headers
 
-Most executors attach unique fingerprinting headers automatically:
+Executors will attach this unique header automatically:
 
 | Header                     | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
@@ -67,36 +65,36 @@ Most executors attach unique fingerprinting headers automatically:
 ### Example 1
 
 ```luau title="Basic GET request with fingerprint lookup" linenums="1"
-local Response = request({
+local response = request({
     Url = "http://httpbin.org/get",
     Method = "GET",
 })
 
-local Decoded = game:GetService("HttpService"):JSONDecode(Response.Body)
-local RetrievedFingerprint
+local decoded = game:GetService("HttpService"):JSONDecode(response.Body)
+local retrieved_fingerprint
 
-for key in pairs(Decoded.headers) do
+for key in pairs(decoded.headers) do
     if key:match("Fingerprint") then
-        RetrievedFingerprint = key
+        retrieved_fingerprint = key
         break
     end
 end
 
-print(Response.StatusCode)         -- Output: 200
-print(Response.Success)            -- Output: true
-print(RetrievedFingerprint)        -- Output: PREFIX-Fingerprint
+print(response.StatusCode)         -- Output: 200
+print(response.Success)            -- Output: true
+print(retrieved_fingerprint)        -- Output: PREFIX-Fingerprint
 ```
 
 ### Example 2
 
 ```luau title="Basic POST request with payload" linenums="1"
-local Response = request({
+local response = request({
     Url = "http://httpbin.org/post",
     Method = "POST",
     Body = "Example"
 })
 
-print(Response.StatusMessage)                               -- Output: OK
-print(Response.StatusCode)                                  -- Output: 200
-print(game:GetService("HttpService"):JSONDecode(Response.Body).data) -- Output: Example
+print(response.StatusMessage)                               -- Output: OK
+print(response.StatusCode)                                  -- Output: 200
+print(game:GetService("HttpService"):JSONDecode(response.Body).data) -- Output: Example
 ```

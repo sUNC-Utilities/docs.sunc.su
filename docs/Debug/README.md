@@ -6,7 +6,7 @@ It allows you to access constants, upvalues, stack frames, and internal structur
 
 ---
 
-## 🚦 What can you do?
+## What can you do?
 
 With the Debug library, you can:
 
@@ -14,13 +14,11 @@ With the Debug library, you can:
 - **Modify** constants using [`#!luau debug.setconstant`](./setconstant.md)
 - **Access** upvalues using [`#!luau debug.getupvalues`](./getupvalues.md) and [`#!luau debug.getupvalue`](./getupvalue.md)
 - **Replace** upvalues with [`#!luau debug.setupvalue`](./setupvalue.md)
-- **Read** or **write** values from the call stack using [`#!luau debug.getstack`](./getstack.md) and [`#!luau debug.setstack`](./setstack.md)
-- **List** or **retrieve** function prototypes using [`#!luau debug.getprotos`](./getprotos.md) and [`#!luau debug.getproto`](./getproto.md)
+- **Read** or **write** values from a stack frame, using [`#!luau debug.getstack`](./getstack.md) and [`#!luau debug.setstack`](./setstack.md)
+- **List** or **retrieve** function prototypes, using [`#!luau debug.getprotos`](./getprotos.md) and [`#!luau debug.getproto`](./getproto.md)
 
 ---
 
-## 🚫 What can't you do?
+## What can't you do?
 
-- You cannot access constants or upvalues of C closures like [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print)
-
-Be careful when using the Debug library, because it can cause unpredictable behaviour when misused.
+- You cannot access C closures with this library, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print)

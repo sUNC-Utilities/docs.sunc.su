@@ -4,7 +4,7 @@ The **Reflection** library allows access to and manipulation of hidden or non-sc
 
 ---
 
-## 🚦 What can you do?
+## What can you do?
 
 With the Reflection library, you can:
 
@@ -15,15 +15,13 @@ With the Reflection library, you can:
 - **Elevate** thread permissions with [`#!luau setthreadidentity`](./setthreadidentity.md)
 - **Query** the current thread's permission level with [`#!luau getthreadidentity`](./getthreadidentity.md)
 
-These identities are internally refered to as [security context levels](./ThreadIdentity.md), and determine the permissions granted to a thread.
+These identities are internally refered to as [security context levels](https://github.com/Pseudoreality/Roblox-Identities/), and determine the permissions granted to a thread.
 
 ---
 
-## 🚫 What can't you do?
+## What can't you do?
 
-While powerful, the Reflection library carries **detectopm risks** in sensitive environments:
+While powerful, the Reflection library carries **detection risks** in sensitive environments:
 
 - [`#!luau setscriptable`](./setscriptable.md) is detectable by games that check for unusual access.
 - Using these methods irresponsibly may break core game logic or introduce unintended side effects.
-
-Be careful with this library - it might expose detection vectors!

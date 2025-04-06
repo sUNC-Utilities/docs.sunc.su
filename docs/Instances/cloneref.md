@@ -6,7 +6,7 @@
 
 `#!luau cloneref` returns a **reference clone** of an [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance). The returned object behaves identically to the original but is not strictly equal (`==`) to it.
 
-This is commonly used to safely interact with protected services such as [`#!luau Players.LocalPlayer`](https://create.roblox.com/docs/reference/engine/classes/Players#LocalPlayer), bypassing read-only or cloaked restrictions enforced by anti-cheat systems.
+This is commonly used to safely interact with services such as [`#!luau game.CoreGui`](https://create.roblox.com/docs/reference/engine/classes/Players#LocalPlayer), making weak-table style attacks fail.
 
 ```luau
 function cloneref<T>(object: T & Instance): T
@@ -23,9 +23,9 @@ function cloneref<T>(object: T & Instance): T
 ## Example
 
 ```luau title="Cloning a safe reference to LocalPlayer" linenums="1"
-local Players = game:GetService("Players")
+local players = game:GetService("Players")
 
-local original = Players.LocalPlayer
+local original = players.LocalPlayer
 local clone = cloneref(original)
 
 print(original == clone) -- Output: false

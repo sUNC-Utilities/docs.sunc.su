@@ -17,7 +17,7 @@ function getrenderproperty(drawing: Drawing, property: string): any
 
 ## Example
 
-```luau title="Reading drawing properties dynamically" linenums="1"
+```luau title="Reading drawing properties" linenums="1"
 local circle = Drawing.new("Circle")
 circle.Radius = 50
 circle.Visible = true

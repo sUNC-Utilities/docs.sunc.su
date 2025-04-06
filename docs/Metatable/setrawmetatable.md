@@ -2,8 +2,6 @@
 
 `#!luau setrawmetatable` forcibly sets the metatable of a value, bypassing the `#!luau __metatable` protection field.
 
-This is typically used when overriding or injecting behavior into Roblox objects or tables that would otherwise restrict modification.
-
 ```luau
 function setrawmetatable<T>(object: T, metatable: { any }): T
 ```
@@ -20,11 +18,11 @@ function setrawmetatable<T>(object: T, metatable: { any }): T
 ## Example
 
 ```luau title="Overriding the metatable of a string" linenums="1"
-local DummyString = "Example"
-local StringMetatable = setrawmetatable(DummyString, {
+local dummy_string = "Example"
+local string_metatable = setrawmetatable(dummy_string, {
     __index = getgenv()
 })
 
-print(StringMetatable)          -- Output: Example
-print(Metatable.getgenv)        -- Output: function: 0x...
+print(string_metatable)          -- Output: Example
+print(string_metatable.getgenv)        -- Output: function: 0x...
 ```

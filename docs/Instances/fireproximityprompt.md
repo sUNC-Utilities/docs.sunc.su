@@ -2,7 +2,7 @@
 
 !!! warning "Avoid implementing in Luau"
 
-    This function should **not be implemented** in Luau. It is prone to detection and will likely behave incorrectly without proper internal support.
+    This function should **not be implemented** in Luau. Doing so exposes you to easy detection vectors.
 
 `#!luau fireproximityprompt` instantly triggers a [`#!luau ProximityPrompt`](https://create.roblox.com/docs/reference/engine/classes/ProximityPrompt), bypassing its [`#!luau HoldDuration`](https://create.roblox.com/docs/reference/engine/classes/ProximityPrompt#HoldDuration) and activation distance.
 

@@ -24,6 +24,6 @@ function identifyexecutor(): (string, string)
 ## Example
 
 ```luau title="Getting the current executor and version" linenums="1"
-local ExecName, ExecVersion = identifyexecutor()
-print(ExecName, ExecVersion) -- Output: "YourExploitName 0.0.1"
+local exec_name, exec_version = identifyexecutor()
+print(exec_name, exec_version) -- Output: "YourExploitName 0.0.1"
 ```

@@ -18,7 +18,7 @@ function setrenderproperty(drawing: Drawing, property: string, value: any): ()
 
 ## Example
 
-```luau title="Setting drawing properties dynamically" linenums="1"
+```luau title="Setting drawing properties" linenums="1"
 local circle = Drawing.new("Circle")
 
 setrenderproperty(circle, "Radius", 50)

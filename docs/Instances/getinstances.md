@@ -4,9 +4,7 @@
 
     `#!luau getinstances` should be able to return [instances](https://create.roblox.com/docs/reference/engine/classes/Instance) outside of [`game`](https://create.roblox.com/docs/reference/engine/classes/DataModel).
 
-`#!luau getinstances` retrieves **every [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance)** currently referenced by the client, including those outside the [`#!luau game`](https://create.roblox.com/docs/reference/engine/classes/DataModel) hierarchy or parented to `nil`.
-
-This is useful for locating objects that are hidden, cloaked, or otherwise inaccessible via regular traversal methods like [`#!luau game:GetDescendants()`](https://create.roblox.com/docs/reference/engine/classes/Instance#GetDescendants).
+`#!luau getinstances` retrieves **every [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance)** from the registry. Which means that instances that are/were parented to `#!luau nil` will also be returned.
 
 ```luau
 function getinstances(): { Instance }
@@ -23,11 +21,11 @@ function getinstances(): { Instance }
 ## Example
 
 ```luau title="Finding a nil-parented instance" linenums="1"
-local DummyPart = Instance.new("Part")
-DummyPart.Parent = nil
+local dummy_part = Instance.new("Part")
+dummy_part.Parent = nil
 
 for _, instance in pairs(getinstances()) do
-    if instance == DummyPart then
+    if instance == dummy_part then
         print("Found the dummy part!")
     end
 end

@@ -6,7 +6,7 @@ These functions are especially useful for inspecting hidden instances, working w
 
 ---
 
-## 🚦 What can you do?
+## What can you do?
 
 With the Instances library, you can:
 
@@ -16,12 +16,3 @@ With the Instances library, you can:
 - **Access hidden UI containers** using [`#!luau gethui`](./gethui.md)
 - **Inspect function-based properties** with [`#!luau getcallbackvalue`](./getcallbackvalue.md)
 - **Simulate interactions** using [`#!luau fireclickdetector`](./fireclickdetector.md), [`#!luau fireproximityprompt`](./fireproximityprompt.md), and [`#!luau firetouchinterest`](./firetouchinterest.md)
-
----
-
-## 🚫 What can't you do?
-
-Some of these functions are **unsafe to reimplement in pure Luau**:
-
-- Do **not** attempt to reimplement [`#!luau fireclickdetector`](./fireclickdetector.md), [`#!luau fireproximityprompt`](./fireproximityprompt.md), or [`#!luau firetouchinterest`](./firetouchinterest.md) manually in Luau - doing so risks detection and unexpected behavior.
-- Some values like the hidden UI container returned by [`#!luau gethui`](./gethui.md) are intentionally cloaked and should not be searched using normal property iteration.

@@ -1,10 +1,10 @@
 # Miscellaneous
 
-The **Miscellaneous** library contains functions that do not belong to a specific category, but are still incredibly useful - including HTTP requests and executor identification.
+The **Miscellaneous** library contains functions that do not belong to a specific category.
 
 ---
 
-## 🚦 What can you do?
+## What can you do?
 
 With the Miscellaneous library, you can:
 
@@ -13,7 +13,7 @@ With the Miscellaneous library, you can:
 
 ---
 
-## 🧪 What does [`#!luau request`](./request.md) support?
+## What does [`#!luau request`](./request.md) support?
 
 The [`#!luau request`](./request.md) function supports a variety of features:
 
@@ -24,7 +24,7 @@ The [`#!luau request`](./request.md) function supports a variety of features:
 
 ---
 
-## 🚫 What can't you do?
+## What can't you do?
 
 - [`#!luau request`](./request.md) is **synchronous** and yields until the server responds - it's not suitable for parallel messaging.
 - Some executors may restrict access to external domains (such as the Roblox API for account safety purposes) or block specific methods for security reasons.

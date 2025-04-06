@@ -17,19 +17,19 @@ function iscclosure(func: (...any) -> (...any)): boolean
 ## Example
 
 ```luau title="Checking whether functions are C closures with iscclosure" linenums="1"
-local function DummyLuaFunction()
+local function dummy_lua_function()
     print("This is an executor Lua closure")
 end
 
-local DummyCFunction = newcclosure(function()
+local dummy_cfunction = newcclosure(function()
     print("This is an Executor C Closure")
 end)
 
-local DummyStandardCFunction = print
-local DummyGlobalCFunction = getgc
+local dummy_standard_function = print
+local dummy_global_cfunction = getgc
 
-print(iscclosure(DummyCFunction)) -- Output: true
-print(iscclosure(DummyGlobalCFunction)) -- Output: true
-print(iscclosure(DummyStandardCFunction)) -- Output: true
-print(iscclosure(DummyLuaFunction)) -- Output: false
+print(iscclosure(dummy_cfunction)) -- Output: true
+print(iscclosure(dummy_global_cfunction)) -- Output: true
+print(iscclosure(dummy_standard_function)) -- Output: true
+print(iscclosure(dummy_lua_function)) -- Output: false
 ```

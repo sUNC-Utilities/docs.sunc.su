@@ -1,4 +1,4 @@
-# How to Contribute
+# How to contribute
 
 Welcome to the sUNC documentation project! We worked tirelessly to standardise and make the documentation beautiful and readable for everyone.
 
@@ -12,17 +12,16 @@ Consistency makes our documentation readable, searchable, and enjoyable to explo
 
 Each library **must** be placed in a folder named after the library itself. Inside this folder, you must include a `README.md` file, which serves as the **index page** for that library, in both this documentation website and also when browsing the documentation repository on GitHub.
 
-### Index Page Requirements
+### Index page requirements
 
 - Introduce the purpose of the library
 - Summarise what you **can** and **cannot** do with it
-- Use headers that begin with an emoji (for colour and readability :3)
 
 Index pages *do not* need to follow this strict format, but they should ***aim*** for clarity and helpfulness.
 
 ---
 
-## General Documentation Style
+## General documentation style
 
 All documentation pages (including function pages and index pages) **must**:
 
@@ -33,7 +32,7 @@ All documentation pages (including function pages and index pages) **must**:
     [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer)
     ```
 
-    As you can see, the example above uses a code snippet with `luau` syntax highlighting enabled, whilst also being a hyperlink to the Roblox API documentation for [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer). <-- see? I even did it here.
+    As you can see, the example above uses a code snippet with `luau` syntax highlighting enabled, whilst also being a hyperlink to the Roblox API documentation for [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer).
 
 ---
 
@@ -41,7 +40,7 @@ All documentation pages (including function pages and index pages) **must**:
 
 Each function must have **its own file**, named after the function (e.g. `newcclosure.md`).
 
-### ✏️ Title Format
+### Title Format
 
 The title of the page must be written as:
 
@@ -53,11 +52,13 @@ The title of the page must be written as:
 
     Do not include emojis in function **titles**.
 
-### ⚠️ Notices
+### Notices
 
 Place all important `!!!` callouts (warnings, errors, info) **immediately under the title**. These should include anything the user must know before using the function.
 
-### 📙 Description
+---
+
+### Description
 
 Provide a description of the function directly after any notices.
 
@@ -67,11 +68,13 @@ When referencing the function name, **always** use the code snippet format:
 `#!luau function_name` allows you to do this and that.
 ```
 
-### 📐 Type Definition
+---
+
+### Type Definition
 
 !!! info "Type definitions are incredibly important!"
 
-    You must **ALWAYS** include a Luau-style type definition when documenting a function.
+    You **must** always include a Luau-style type definition when documenting a function.
 
 Always include the Luau type definition **at the bottom of the first section**, with Luau syntax highlighting but **no *individual line highlighting* or line numbers**:
 
@@ -79,11 +82,13 @@ Always include the Luau type definition **at the bottom of the first section**, 
 function newcclosure<A..., R...>(function_to_wrap: (A...) -> R...): (A...) -> R...
 ```
 
-This must immediately precede the parameters table.
+Make sure it precedes the parameters table.
 
-###  📋 Parameters
+---
 
-The parameters must always be neatly described in a function, like this:
+### Parameters
+
+The parameters must always be neatly described in a function, like so:
 
 ```md
 ## Parameters
@@ -93,11 +98,13 @@ The parameters must always be neatly described in a function, like this:
 | `#!luau parameter_name` | Short description of the parameter. |
 ```
 
-Use [**snake_case**](https://en.wikipedia.org/wiki/Snake_case) for *every parameter and variable name* to distinguish them visually from Roblox instances or Luau objects.
+Use [**snake_case**](https://en.wikipedia.org/wiki/Snake_case) for **every variable**, and [**camelCase**](https://en.wikipedia.org/wiki/Camel_case) for **parameters** to distinguish them visually from Roblox instances or Luau objects.
 
 There should be **no horizontal rule** (`---`) between the *type definition* and the *parameters* section.
 
-### 📌 Providing users with examples
+---
+
+### Providing users with examples
 
 Every function page **must** include at least one example.
 
@@ -123,6 +130,4 @@ print("This is some example code")
 
 - Examples must use `luau` syntax highlighting
 - Line numbers **must** be enabled using `linenums="1"`
-- Each example **must** have a `title` describing in short what the code does
-
-Real-world examples are encouraged - avoid leaving users guessing how a function works or is used.
+- Each example **must** have a `title` describing in short what the code does.
