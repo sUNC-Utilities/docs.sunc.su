@@ -16,7 +16,7 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 !!! info "Foreign and C-state behavior"
 
-    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `nil`, due to these fields being impossible to obtain in this scenario.
+    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `#!luau nil`, due to these fields being impossible to obtain in this scenario.
 
 ---
 
@@ -24,8 +24,8 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 | Method Signature                           | Description                                                     |
 |--------------------------------------------|-----------------------------------------------------------------|
-| `#!luau Connection:Fire(self, ...: any): ()`       | Fires the connected function with given arguments. |
-| `#!luau Connection:Defer(self, ...: any): ()`      | Defers execution using [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer).     |
-| `#!luau Connection:Disconnect(self): ()`         | Disconnects the connection from the signal.                    |
-| `#!luau Connection:Disable(self): ()`            | Prevents the connection from receiving events.                 |
-| `#!luau Connection:Enable(self): ()`             | Re-enables a previously disabled connection.                   |
+| `#!luau Connection:Fire(...: any): ()`       | Fires the connected function with given arguments. |
+| `#!luau Connection:Defer(...: any): ()`      | Defers execution using [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer).     |
+| `#!luau Connection:Disconnect(): ()`         | Disconnects the connection from the signal.                    |
+| `#!luau Connection:Disable(): ()`            | Prevents the connection from receiving events.                 |
+| `#!luau Connection:Enable(): ()`             | Re-enables a previously disabled connection.                   |

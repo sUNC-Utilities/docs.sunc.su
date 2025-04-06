@@ -1,7 +1,7 @@
 # `getgenv`
 
 !!! warning "getgenv polluting"
-    Modifications to a thread's global environment should not affect `getgenv`.
+    Modifications to a thread's global environment should not affect `#!luau getgenv`.
 
 `#!luau getgenv` returns the **executor's global environment table**, which is shared across all executor-made threads.
 

@@ -15,7 +15,6 @@
     --md-accent-bg-color: hsla(0, 0%, 12%, 1);
     --md-accent-bg-color--light: hsla(0, 0%, 18%, 1);
 
-    /* sUNC and rubis themed code blocks */
     --md-code-fg-color: #2a2a2e;
     --md-code-bg-color: #f8f8fc;
     --md-code-hl-color: #dcd6f0;
@@ -48,7 +47,6 @@
     /* --md-accent-bg-color: #121212; */
     --md-accent-bg-color--light: rgba(18, 18, 18, 0.7);
 
-    /* sUNC and rubis themed code blocks */
     --md-code-fg-color: #e8e6f2;
     --md-code-bg-color: #1a1a1d;
     --md-code-hl-color: #3a2e4f;

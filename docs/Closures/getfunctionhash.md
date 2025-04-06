@@ -3,14 +3,16 @@
 `#!luau getfunctionhash` returns the ***hex-represented*** [SHA384 hash](https://en.wikipedia.org/wiki/SHA-2) of a provided function's instructions (code) and constants.
 
 !!! warning "C closures are not supported"
-    
+
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures have no reliable information to hash. The error should be something along the lines of `lua function expected`
 
 !!! info "Notes on `#!luau getfunctionhash`"
-    
+
     In order to have reliable knowledge over what the function changes, `constants` should **also** be added to the hash alongside the `l.p->code`. Add the constants at the beginning of the instructions, and hash that.
 
-    We suggest following [this implementation](https://rubis.numelon.com/view?scrap=dWdUN943kcrjovbY&type=cpp) in order to keep the same functionality across multiple executors, since it will be more convenient for the users not having to change their hashes if they do migrate to a different executor. `Full credits go to Dottik and Ragnar regarding the source provided above.`
+    We suggest following [this implementation](https://rubis.numelon.com/view?scrap=dWdUN943kcrjovbY&type=cpp) in order to keep the same functionality across multiple executors, since it will be more convenient for the users not having to change their hashes if they do migrate to a different executor.
+
+    Full credits go to Dottik and Ragnar regarding the source provided above.
 
 ```luau
 function getfunctionhash(functionToHash: (...any) -> (...any)): string

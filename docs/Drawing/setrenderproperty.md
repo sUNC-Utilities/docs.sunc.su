@@ -1,6 +1,6 @@
 # `setrenderproperty`
 
-`#!luau setrenderproperty` assigns a value to a property of a [`#!luau Drawing`](./Drawing.md) object. This behaves identically to `#!luau object[property] = value`, but is useful for dynamic or abstracted property access.
+`#!luau setrenderproperty` assigns a value to a property of a [`#!luau Drawing`](./README.md) object. This behaves identically to `#!luau object[property] = value`, but is useful for dynamic or abstracted property access.
 
 ```luau
 function setrenderproperty(drawing: Drawing, property: string, value: any): ()
@@ -10,7 +10,7 @@ function setrenderproperty(drawing: Drawing, property: string, value: any): ()
 
 | Parameter        | Description                                                  |
 |------------------|--------------------------------------------------------------|
-| `#!luau drawing`   | A valid [`#!luau Drawing`](./Drawing.md) object.              |
+| `#!luau drawing`   | A valid [`#!luau Drawing`](./README.md) object.              |
 | `#!luau property`  | The name of the property to assign.                          |
 | `#!luau value`     | The value to assign to the specified property.               |
 

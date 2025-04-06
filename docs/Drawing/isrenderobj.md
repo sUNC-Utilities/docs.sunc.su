@@ -1,6 +1,6 @@
 # `isrenderobj`
 
-`#!luau isrenderobj` checks whether a given value is a valid [`#!luau Drawing`](./Drawing.md) object.
+`#!luau isrenderobj` checks whether a given value is a valid [`#!luau Drawing`](./README.md) object.
 
 This is useful for validation in functions or modules that work with custom render systems.
 

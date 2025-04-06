@@ -2,7 +2,7 @@
 
 !!! info "Notes on `#!luau hookfunction`"
 
-    The hook should not have more upvalues than the function you want to hook. There are ways to bypass the upvalue restriction, such as using `newlclosure` or [`#!luau newcclosure`](./newcclosure.md) to wrap the `hook`
+    The hook should not have more upvalues than the function you want to hook. There are ways to bypass the upvalue restriction, such as using `#!luau newlclosure` or [`#!luau newcclosure`](./newcclosure.md) to wrap the `#!luau hook`
 
     All possible hooking closure pairs should be supported throughout L, NC, C (where NC = [`#!luau newcclosure`](./newcclosure.md))
 

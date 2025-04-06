@@ -1,6 +1,6 @@
 # `getrenderproperty`
 
-`#!luau getrenderproperty` retrieves the value of a property from a [`#!luau Drawing`](./Drawing.md) object. This behaves identically to using `#!luau object[property]`, but is useful when working with dynamic property names or for reflection-like access.
+`#!luau getrenderproperty` retrieves the value of a property from a [`#!luau Drawing`](./README.md) object. This behaves identically to using `#!luau object[property]`, but is useful when working with dynamic property names or for reflection-like access.
 
 ```luau
 function getrenderproperty(drawing: Drawing, property: string): any
@@ -10,7 +10,7 @@ function getrenderproperty(drawing: Drawing, property: string): any
 
 | Parameter       | Description                                                  |
 |------------------|--------------------------------------------------------------|
-| `#!luau drawing`   | A valid [`#!luau Drawing`](./Drawing.md) object.              |
+| `#!luau drawing`   | A valid [`#!luau Drawing`](./README.md) object.              |
 | `#!luau property`  | The name of the property to retrieve.                        |
 
 ---

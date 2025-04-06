@@ -1,7 +1,6 @@
 # `cleardrawcache`
 
-`#!luau cleardrawcache` removes **all active drawing objects** created with [`#!luau Drawing.new`](./Drawing.md#constructor).
-
+`#!luau cleardrawcache` removes **all active drawing objects** created with [`#!luau Drawing.new`](./README.md#constructor).
 
 ```luau
 function cleardrawcache(): ()

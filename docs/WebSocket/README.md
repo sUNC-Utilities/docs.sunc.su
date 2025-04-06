@@ -35,16 +35,14 @@ Signals that allow you handle events that occur during the WebSocket's lifetime,
 
 | Method        | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
-| `#!luau Send(self, message: string): ()` | Send a message over the WebSocket connection.    |
+| `#!luau Send(message: string): ()` | Send a message over the WebSocket connection.    |
 | `#!luau Close(): ()`                     | Closes the WebSocket connection.                 |
-
 
 ---
 
 # Examples
 
-
-### Using the `#!luau OnMessage` event, and `#!luau Send` method.
+### Using the `#!luau OnMessage` event, and `#!luau Send` method
 
 ```luau title="Responding to incoming messages" linenums="1"
 local ws = WebSocket.connect("ws://echo.websocket.events")
@@ -56,7 +54,7 @@ ws:Send("Hello") -- Output: Hello
 
 ---
 
-### Using the `OnClose` event, and `Close` method.
+### Using the `#!luau OnClose` event, and `#!luau Close` method
 
 ```luau title="Receive a closing message and catch it via OnClose" linenums="1"
 local ws = WebSocket.connect("ws://echo.websocket.events")
