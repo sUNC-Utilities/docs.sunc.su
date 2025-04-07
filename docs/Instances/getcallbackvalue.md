@@ -5,7 +5,7 @@
 Normally, these properties are **write-only**, meaning you can assign a function to them but cannot read them back. This function bypasses that limitation and exposes the function directly.
 
 ```luau
-function getcallbackvalue(object: Instance, property: string): (...any) -> (...any)
+function getcallbackvalue(object: Instance, property: string): (...any) -> (...any) | nil
 ```
 
 ## Parameters
@@ -17,16 +17,11 @@ function getcallbackvalue(object: Instance, property: string): (...any) -> (...a
 
 ---
 
-## Notes
-
-- This function **throws an error** if the callback does not exist or is unset.
-
----
-
 ## Example
 
-```luau title="Retrieving a callback function" linenums="1"
+```luau title="Retrieving a valid callback function, an unset property, and a missing property" linenums="1"
 local dummy_bindable = Instance.new("BindableFunction")
+local dummy_remote_function = Instance.new("RemoteFunction")
 
 dummy_bindable.OnInvoke = function()
     print("Hello from callback!")
@@ -34,4 +29,7 @@ end
 
 local retrieved = getcallbackvalue(dummy_bindable, "OnInvoke")
 retrieved() -- Output: Hello from callback!
+
+print(getcallbackvalue(dummy_remote_function, "OnClientInvoke")) -- Output: nil
+getcallbackvalue(dummy_remote_function, "") -- Throws an error
 ```
