@@ -2,7 +2,7 @@
 
 !!! info "Creates a safe reference to protected instances"
 
-    `#!luau cloneref` returns a reference to an [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) that bypasses certain metatable protections. This can help avoid detection or interception when interacting with sensitive objects.
+    `#!luau cloneref` returns a reference to an [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance). This can help avoid weak table styled detections. 
 
 `#!luau cloneref` returns a **reference clone** of an [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance). The returned object behaves identically to the original but is not strictly equal (`==`) to it.
 

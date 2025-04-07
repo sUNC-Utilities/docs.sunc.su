@@ -2,8 +2,7 @@
 
 !!! info "Should return a UI container with minimised detection"
 
-    `#!luau gethui` returns a **hidden [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance)** container used for safely storing UI elements. This container is designed to **avoid detection** by most property-based scans and iteration methods.
-
+    `#!luau gethui` returns a **hidden [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance)** container used for safely storing UI elements. This container is mainly designed to **avoid detections**.
 
 
 ```luau
@@ -30,5 +29,5 @@ label.Size = UDim2.fromOffset(200, 50)
 label.Text = "Hello from gethui!"
 label.Parent = gui
 
-print(gethui():FindFirstChild(gui))
+print(gethui():FindFirstChild(gui)) -- Output: GUI
 ```

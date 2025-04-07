@@ -4,7 +4,7 @@
 
 
 ```luau
-function getrawmetatable(object: any): { [any]: any }
+function getrawmetatable(object: table | Instance | userdata): { [any]: any } | nil
 ```
 
 ## Parameters
@@ -15,9 +15,19 @@ function getrawmetatable(object: any): { [any]: any }
 
 ---
 
-## Example
+## Examples
 
-```luau title="Getting the metatable of the DataModel" linenums="1"
+### Example 1
+
+```luau title="Retrieving the metatable of the DataModel" linenums="1"
 local mt = getrawmetatable(game)
+print(type(mt)) -- Output: table
 print(mt.__index(game, "Workspace")) -- Output: Workspace
 ```
+
+### Example 2
+
+```luau title="Obtaining nil when object has no metatable set" linenums="1"
+print(getrawmetatable(newproxy(false)))
+```
+
