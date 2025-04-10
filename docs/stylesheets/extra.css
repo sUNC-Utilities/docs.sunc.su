@@ -74,7 +74,6 @@
 
 .md-nav__link {
     position: relative;
-    display: inline-block;
     color: inherit
 }
 
@@ -89,17 +88,31 @@
     color: var(--md-primary-fg-color);
 }
 
-.md-nav__link.md-nav__link--active::before {
+.md-nav__link.md-nav__link--active:not(:has(.md-nav__icon.md-icon))::before {
     content: "";
     position: absolute;
     left: 0%;
     top: 50%;
     transform: translateY(-50%);
     height: 60%;
-    width: 2px;
+    width: 4px;
     background: var(--md-primary-fg-color);
+    border-radius: 2px;
     opacity: 0;
-    animation: navHighlight 0.3s ease forwards;
+    animation:
+        navHighlight 0.3s ease forwards,
+        navIdlePulseBar 3s ease-in-out infinite;
+}
+
+
+
+@keyframes navIdlePulseBar {
+    0%, 100% {
+        transform: translateY(-50%) scaleY(1);
+    }
+    50% {
+        transform: translateY(-50%) scaleY(1.2);
+    }
 }
 
 @keyframes navHighlight {

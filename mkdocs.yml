@@ -95,6 +95,9 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - stylesheets/extra.js
+
 extra:
   generator: false
 

@@ -1,8 +1,10 @@
 # Cryptography
 
-The **Cryptography** library provides a simple inferface for [Base64](https://en.wikipedia.org/wiki/Base64) encoding and decoding.
+!!! info
+    
+    sUNC does not check for every function contained within the original UNC. 
 
-sUNC does not check for every function contained within the original UNC. We have reduced the cryptography functions to only essential/popular ones, namely Base64:
+The **Cryptography** library provides a simple inferface for [Base64](https://en.wikipedia.org/wiki/Base64) encoding and decoding.
 
 - [`#!luau crypt.base64decode(data: string): string`](./base64decode.md)
 - [`#!luau crypt.base64encode(data: string): string`](./base64encode.md)
@@ -17,6 +19,4 @@ Everyone should *hopefully* be aware that Base64 is **not encryption**. It is a 
 
 Do **not** use Base64 to store or transmit sensitive or secure data - it offers zero protection.
 
----
-
-This library should be simple dimple pop it squish: encode and decode. It is petite and reliable.
+The same caution applies to the other functions in this library. Though they may function correctly, they are prone to hooking, as they are global functions. If you're looking for security, it is recommended to use a custom/third-party library.

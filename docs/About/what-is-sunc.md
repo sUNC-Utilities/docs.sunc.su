@@ -10,7 +10,7 @@ However, we are not in any way calling UNC "bad". We are simply stating that peo
 ## How would I know what fails?
 
 We are not gatekeeping function tests, despite the script being obfuscated.  
-You are welcome to ask the owner (@sens6222 on Discord) if you are struggling with passing certain tests. We keep it this way for now, due to executors already faking their environments to suit the [original UNC](https://github.com/unified-naming-convention/NamingStandard/tree/main).
+You are welcome to ask the owner (@sens6222 on Discord) if you are struggling with passing certain tests. We keep it this way for now, due to executors already faking their environments to suit the original UNC.
 
 Note that it's also possible to see the detailed reason of a function's failure at the top of the `Developer Console` in game.
 

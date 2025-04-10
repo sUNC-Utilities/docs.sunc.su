@@ -36,7 +36,7 @@ All documentation pages (including function pages and index pages) **must**:
 
 ---
 
-## Function Documentation
+## Function documentation
 
 Each function must have **its own file**, named after the function (e.g. `newcclosure.md`).
 
@@ -70,16 +70,16 @@ When referencing the function name, **always** use the code snippet format:
 
 ---
 
-### Type Definition
+### Type definition
 
-!!! info "Type definitions are incredibly important!"
+!!! info "Type definitions are important!"
 
     You **must** always include a Luau-style type definition when documenting a function.
 
-Always include the Luau type definition **at the bottom of the first section**, with Luau syntax highlighting but **no *individual line highlighting* or line numbers**:
+Include the Luau type definition **at the bottom of the first section**, with Luau syntax highlighting but **no *individual line highlighting* or line numbers**:
 
 ```luau
-function newcclosure<A..., R...>(function_to_wrap: (A...) -> R...): (A...) -> R...
+function newcclosure<A..., R...>(functionToWrap: (A...) -> R...): (A...) -> R...
 ```
 
 Make sure it precedes the parameters table.
@@ -98,7 +98,7 @@ The parameters must always be neatly described in a function, like so:
 | `#!luau parameter_name` | Short description of the parameter. |
 ```
 
-Use [**snake_case**](https://en.wikipedia.org/wiki/Snake_case) for **every variable**, and [**camelCase**](https://en.wikipedia.org/wiki/Camel_case) for **parameters** to distinguish them visually from Roblox instances or Luau objects.
+Use [**snake_case**](https://en.wikipedia.org/wiki/Snake_case) for **every variable**, and [**camelCase**](https://en.wikipedia.org/wiki/Camel_case) for **parameters** to easily distinguish between the two.
 
 There should be **no horizontal rule** (`---`) between the *type definition* and the *parameters* section.
 
@@ -113,7 +113,7 @@ Every function page **must** include at least one example.
     To make the documentation experience more logical and also grammatically correct, please do the following:
     - Make the heading `#!md ## Example` if there is only one example.
     - Make the heading `#!md ## Examples` if there is more than one example.
-        Each example should have its own subheading, e.g. `#!md ### Example 1`, `#!md ### Example 2`
+        Each example should have its own subheading, e.g. `#!md ### Example 1`, `#!md ### Example 2`.
 
 Each example should use the following format:
 
@@ -128,6 +128,6 @@ print("This is some example code")
 
 ```
 
-- Examples must use `luau` syntax highlighting
-- Line numbers **must** be enabled using `linenums="1"`
+- Examples must use `luau` syntax highlighting.
+- Line numbers **must** be enabled using `linenums="1"`.
 - Each example **must** have a `title` describing in short what the code does.

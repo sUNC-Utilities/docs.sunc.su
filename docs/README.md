@@ -14,4 +14,4 @@ Whether you're an executor developer, a curious tester, or a contributor helping
 - [How sUNC Test Results Work](./About/test-results.md)
 - [How to Contribute](./About/contributing.md)
 
-Thank you for being here. We hope this documentation helps you make sense of the world of sUNC!
+Thank you for being here.
