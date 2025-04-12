@@ -22,4 +22,4 @@ With the Signals library, you can:
 - **Fire** a signal's Lua connections using [`#!luau firesignal`](./firesignal.md).
 - **Replicate signals to the server** with [`#!luau replicatesignal`](./replicatesignal.md), if supported by the signal.
 
-For a list of known replicable signals, click [this](https://rubis.numelon.com/view/?scrap=AIOzG1Di7NSLADKE).
+For a list of known replicable signals, click [this](https://rubis.app/view/?scrap=AIOzG1Di7NSLADKE).
