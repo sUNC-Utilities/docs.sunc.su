@@ -3,7 +3,7 @@
 `#!luau setrawmetatable` forcibly sets the metatable of a value, bypassing the `#!luau __metatable` protection field.
 
 ```luau
-function setrawmetatable<T>(object: T, metatable: { any }): T
+function setrawmetatable<T>(object: T & ({ any } | userdata), metatable: { any }): T
 ```
 
 ## Parameters

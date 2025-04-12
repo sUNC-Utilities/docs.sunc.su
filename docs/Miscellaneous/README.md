@@ -29,5 +29,3 @@ The [`#!luau request`](./request.md) function supports a variety of features:
 - [`#!luau request`](./request.md) is **synchronous** and yields until the server responds - it's not suitable for parallel messaging.
 - Some executors may restrict access to external domains (such as the Roblox API for account safety purposes) or block specific methods for security reasons.
 - [`#!luau identifyexecutor`](./identifyexecutor.md) should never be relied on as a secure identifier - it's for informational purposes only.
-
-    > Yes, we have seen people faking their executor name with [`#!luau identifyexecutor`](./identifyexecutor.md) before lol

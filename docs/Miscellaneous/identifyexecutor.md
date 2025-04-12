@@ -6,8 +6,8 @@ This function is quite self-explanatory, you use it for logging/debugging purpos
 
 The function returns a tuple of:
 
-1. `#!luau string` - The name/identifier of the executor
-2. `#!luau string` - The version string of the executor
+1. `#!luau string` - The name/identifier of the executor.
+2. `#!luau string` - The version string of the executor.
 
 ```luau
 function identifyexecutor(): (string, string)

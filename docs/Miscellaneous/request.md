@@ -35,18 +35,18 @@ function request(options: RequestOptions): Response
 | `#!luau Url`     | `string`     | The target URL.                                             |
 | `#!luau Method`  | `string`     | The HTTP [method](https://en.wikipedia.org/wiki/HTTP#Request_methods) (`GET`, `POST`, `PATCH`, or `PUT`).         |
 | `#!luau Body`    | `string?`    | (Optional) The request payload.                             |
-| `#!luau Headers` | `table?`     | (Optional) Dictionary of HTTP [headers](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields).                      |
-| `#!luau Cookies` | `table?`     | (Optional) Dictionary of [cookies](https://en.wikipedia.org/wiki/HTTP_cookie).                           |
+| `#!luau Headers` | `{ [string]: string }?`     | (Optional) Dictionary of HTTP [headers](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields).                      |
+| `#!luau Cookies` | `{ [string]: string }?`     | (Optional) Dictionary of [cookies](https://en.wikipedia.org/wiki/HTTP_cookie).                           |
 
 ### `#!luau Response` Fields
 
 | Field              | Type       | Description                              |
 |--------------------|------------|------------------------------------------|
-| `#!luau Body`        | `string`   | The returned response body.               |
-| `#!luau StatusCode`  | `number`   | The numeric HTTP [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).             |
-| `#!luau StatusMessage` | `string` | The human-readable status description.    |
-| `#!luau Success`     | `boolean`  | Whether the request was successful.       |
-| `#!luau Headers`     | `table`    | Dictionary of response [headers](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields).           |
+| `#!luau Body`          | `string`           | The returned response body.                                                                |
+| `#!luau StatusCode`    | `number`           | The numeric HTTP [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).   |
+| `#!luau StatusMessage` | `string`           | The human-readable status description.                                                     |
+| `#!luau Success`       | `boolean`          | Whether the request was successful.                                                        |
+| `#!luau Headers`       | `{ [string]: string }`    | Dictionary of response [headers](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields).|
 
 ### Automatically added Headers
 
@@ -55,7 +55,7 @@ Executors will attach this unique header automatically:
 | Header                     | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
 | `PREFIX-User-Identifier`   | Unique user ID that stays consistent across devices for the same user.     |
-| `PREFIX-Fingerprint`       | Hardware-bound identifier (HWID) of the client machine.                           |
+| `PREFIX-Fingerprint`       | Hardware-bound identifier (HWID) of the client's machine.                           |
 | [`User-Agent`](https://en.wikipedia.org/wiki/User-Agent_header)           | Executor name and version string.                                          |
 
 ---

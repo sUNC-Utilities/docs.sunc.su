@@ -20,7 +20,7 @@ function replicatesignal(signal: RBXScriptSignal, ...: any?)
 | Parameter         | Description                                            |
 |------------------|--------------------------------------------------------|
 | `#!luau signal`    | The signal to replicate to the server.                |
-| `#!luau ...`       | Arguments to pass to the signal. |
+| `#!luau ...?`       | Arguments to pass to the signal. |
 
 ---
 

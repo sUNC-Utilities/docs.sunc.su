@@ -4,7 +4,7 @@
 
 
 ```luau
-function getrawmetatable(object: table | Instance | userdata): { [any]: any } | nil
+function getrawmetatable(object: { any } | userdata): { [any]: any } | nil
 ```
 
 ## Parameters

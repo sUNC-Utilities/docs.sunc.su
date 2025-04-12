@@ -32,9 +32,9 @@ dummy_part.Touched:Connect(function(part)
     print(part.Name .. " touched the dummy part!")
 end)
 
-local playerHead = game.Players.LocalPlayer.Character.Head
+local player_head = game.Players.LocalPlayer.Character.Head
 
-firetouchinterest(playerHead, dummy_part, false) -- Simulate touch
+firetouchinterest(player_head, dummy_part, false) -- Simulate touch
 task.wait(0.5)
-firetouchinterest(playerHead, dummy_part, true) -- Simulate un-touch
+firetouchinterest(player_head, dummy_part, true) -- Simulate un-touch
 ```

@@ -1,6 +1,6 @@
 # `islclosure`
 
-`#!luau islclosure` checks whether a given function is a Luau (L) closure or not.
+`#!luau islclosure` checks whether a given function is a Lua closure or not.
 
 ```luau
 function islclosure(func: (...any) -> (...any)): boolean

@@ -1,4 +1,4 @@
-# WebSocket class
+get# WebSocket class
 
 The `#!luau WebSocket` class provides a lightweight interface for establishing and working with WebSocket connections. It allows scripts to **send** and **receive** messages over a persistent connection to a [WebSocket](https://en.wikipedia.org/wiki/WebSocket) server.
 
