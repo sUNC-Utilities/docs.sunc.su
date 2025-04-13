@@ -44,7 +44,7 @@ All drawing object types inherit the following fields:
 
 | Method Signature                        | Description                           |
 |----------------------------------------|---------------------------------------|
-| `#!luau Drawing:Destroy()` | Permanently removes the drawing from view. |
+| `#!luau Destroy()` | Permanently removes the drawing from view. |
 
 ---
 

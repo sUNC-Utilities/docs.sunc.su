@@ -29,7 +29,6 @@ local function dummy_function()
     print(game.Name)
 end
 
--- Overwrite the constant at index 4 with "Players"
 debug.setconstant(dummy_function, 4, "Players")
 
 dummy_function() -- Output: Players

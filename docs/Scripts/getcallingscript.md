@@ -2,7 +2,7 @@
 
 !!! info "Notes on `#!luau getcallingscript`"
 
-    If a game script is executing and `#!luau getcallingscript` is called, it must return the proper [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) - even if the [`#!luau script`](https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals#script) global for said script is set to `#!luau nil`.
+    If a game script is executing, and `#!luau getcallingscript` is called, it must return the proper [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) - even if the [`#!luau script`](https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals#script) global for said script is set to `#!luau nil`.
 
 `#!luau getcallingscript` returns the [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) that **triggered the current code execution**.
 
@@ -26,13 +26,13 @@ local old; old = hookmetamethod(game, "__index", function(self, key)
         local caller = getcallingscript()
         warn("__index access from script:", caller and caller:GetFullName() or "Unknown")
 
-        hookmetamethod(game, "__index", old) -- restore ze original
+        hookmetamethod(game, "__index", old) -- Restore the original
         return old(self, key)
     end
 
-    return old(self, key) -- ensure executor access still works after ts
+    return old(self, key)
 end)
 
-print(getcallingscript()) -- Output: nil bc called from executor thread
+print(getcallingscript()) -- Output: nil, since we called from an executor thread
 
 ```
