@@ -4,7 +4,7 @@ Welcome to the repository for sUNC's online documentation.
 Documentation is hosted at <https://docs.sunc.su> and it aims to replace the legacy way of simply documenting via markdown in the [old documentation repository](https://github.com/sUNC-Utilities/Global-Functions-Documentation).
 
 ## What is sUNC?
-Please view the README about sUNC at [docs/About/what-is-sunc.md)](./docs/About/what-is-sunc.md) or look at the entire ["About" directory](./docs/About/).
+Please view the README about sUNC at [docs/About/what-is-sunc.md](./docs/About/what-is-sunc.md) or look at the entire ["About" directory](./docs/About/).
 
 ## Contributing
 
