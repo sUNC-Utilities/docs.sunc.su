@@ -6,7 +6,7 @@ This library is especially useful when storing persistent data, managing resourc
 
 ---
 
-## 🚦 What can you do?
+## What can you do?
 
 With the Filesystem library, you can:
 
@@ -22,7 +22,7 @@ With the Filesystem library, you can:
 
 ---
 
-## 🚫 What can't you do?
+## What can't you do?
 
 - You cannot access files outside the executor's workspace/sandboxed storage
 - You cannot use file IO to interact with the real disk (e.g. `C:/` (Windows), `/Library` (macOS), etc.)
