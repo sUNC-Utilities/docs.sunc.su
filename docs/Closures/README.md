@@ -21,6 +21,7 @@ In Luau (and Lua), **every function is implemented as a closure** implicitly, ev
 With the `Closures` library, you can:
 
 - **Hook** existing functions or metamethods with [`#!luau hookfunction`](./hookfunction.md) and [`#!luau hookmetamethod`](./hookmetamethod.md)
+- **Check** whether the current execution is from your script using [`#!luau checkcaller`](./checkcaller.md) for **hooking**
 - **Clone** a function while keeping the same behavior to avoid tampering, with [`#!luau clonefunction`](./clonefunction.md)
 - **Wrap** a Luau closure into a C closure using [`#!luau newcclosure`](./newcclosure.md)
 - **Check** a function's closure type with [`#!luau iscclosure`](./iscclosure.md), [`#!luau islclosure`](./islclosure.md) or [`#!luau isexecutorclosure`](./isexecutorclosure.md).
