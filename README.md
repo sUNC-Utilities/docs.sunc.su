@@ -1,5 +1,7 @@
 # [sUNC Documentation](https://docs.sunc.su)
 
+[![Publish to docs.sunc.su](https://github.com/sUNC-Utilities/docs.sunc.su/actions/workflows/publish.yml/badge.svg)](https://github.com/sUNC-Utilities/docs.sunc.su/actions/workflows/publish.yml)
+
 Welcome to the repository for sUNC's online documentation.
 Documentation is hosted at <https://docs.sunc.su> and it aims to replace the legacy way of simply documenting via markdown in the [old documentation repository](https://github.com/sUNC-Utilities/Global-Functions-Documentation).
 
