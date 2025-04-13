@@ -20,7 +20,7 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 !!! info "Foreign and C-state behavior"
 
-    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `#!luau nil` and their `#!luau ForeignState` property will be `#!luau true`. This is due to there existing no real `#!luau Function` or `#!luau Thread` on the current Luau VM.
+    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `#!luau nil` and their `#!luau ForeignState` property will be `#!luau true`. This is due to neither `#!luau Function` nor `#!luau Thread` existing on the current Luau VM.
 
 ---
 
