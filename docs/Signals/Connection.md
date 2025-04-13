@@ -1,7 +1,7 @@
 # The `Connection` object
 
-!!! info Notes on the `object`.
-    
+!!! info "Notes on the `object`"
+
     The retrieved connection object will only have the listed methods and fields, since it's a custom object
 
 A `#!luau Connection` object represents an active link to a signal's callback. These are returned by [`#!luau getconnections`](./getconnections.md) and allow inspection and manipulation over connections/signals.
