@@ -2,7 +2,7 @@
 
 !!! warning "C closures are not supported"
     
-    This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures do not expose upvalues.
+    This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), for security reasons.
 
 `#!luau debug.getupvalues` returns a list of upvalues captured by a Luau function. These are the external variables that a function closes over from its surrounding scope.
 
