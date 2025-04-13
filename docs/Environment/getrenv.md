@@ -1,9 +1,9 @@
 # `getrenv`
 
 !!! warning "Adding `#!luau _G` and `#!luau shared`"
-    Make sure to properly implement _G and shared into the Roblox environemnt, as poor implementations will lead to detection vectors!
+    Make sure to properly implement `#!luau _G` and `#!luau shared` into the Roblox environemnt, as poor implementations will result in detection vectors!
 
-`#!luau getrenv` returns the **Roblox global environment**, which is used by game scripts. This environment is separate from the executor's environment returned by [`#!luau getgenv`](./getgenv.md).
+`#!luau getrenv` returns the **Roblox global environment**, which is used by the entire game. Changes to this environment will affect your executor environment as well.
 
 ```luau
 function getrenv(): { any }
@@ -24,5 +24,5 @@ getrenv().warn = "Hello!"
 print(type(warn)) -- Output: string
 
 getrenv().game = nil
-print(game) -- Output: nil (for scripts using the Roblox environment)
+print(game) -- Output: nil
 ```
