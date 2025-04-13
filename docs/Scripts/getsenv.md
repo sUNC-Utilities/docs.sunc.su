@@ -9,7 +9,7 @@
 This environment contains **all global variables, functions** available to the target script, such as custom-defined functions or state values.
 
 ```luau
-function getsenv(script: Script | LocalScript | ModuleScript): { [any]: any }
+function getsenv(script: BaseScript | ModuleScript): { [any]: any }
 ```
 
 ## Parameters

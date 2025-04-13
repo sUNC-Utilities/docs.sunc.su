@@ -1,6 +1,6 @@
 # `getgc`
 
-`#!luau getgc` returns a list of **non-dead garbage-collectable values**. These include functions, userdata, and optionally tables.
+`#!luau getgc` returns a list of **non-dead garbage-collectable values**. These include functions, userdatas, and optionally tables.
 
 ```luau
 function getgc(includeTables: boolean?): { { any } | (...any) -> (...any) | userdata }

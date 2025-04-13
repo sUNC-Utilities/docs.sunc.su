@@ -31,5 +31,4 @@ local retrieved = getcallbackvalue(dummy_bindable, "OnInvoke")
 retrieved() -- Output: Hello from callback!
 
 print(getcallbackvalue(dummy_remote_function, "OnClientInvoke")) -- Output: nil
-getcallbackvalue(dummy_remote_function, "") -- Throws an error
 ```

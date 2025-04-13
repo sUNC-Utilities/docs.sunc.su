@@ -2,7 +2,7 @@
 
 !!! warning "Detection risks"
 
-    `#!luau setscriptable` can expose detection vectors. Games may check whether certain properties are unexpectedly accessible, which can lead to detection.
+    `#!luau setscriptable` can expose detection vectors. Games may check whether certain properties are unexpectedly accessible, which can lead to detections.
 
 !!! info "Limited property support"
 

@@ -26,7 +26,7 @@ function debug.setstack(level: number, index: number, value: any): ()
 
 ### Example 1
 
-```luau title="Replacing a function on the stack" linenums="1"
+```luau title="Replacing the 'error' function on the stack with our own" linenums="1"
 error(debug.setstack(1, 1, function()
     return function()
         print("Replaced")
