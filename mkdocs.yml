@@ -1,8 +1,8 @@
 site_name: sUNC Documentation
 site_url: https://docs.sunc.su
 
+repo_name: sUNC-Utilities/docs.sunc.su
 repo_url: https://github.com/sUNC-Utilities/docs.sunc.su
-# repo_name: Documentation Source
 edit_uri: edit/main/docs
 
 plugins:
