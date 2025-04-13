@@ -4,7 +4,7 @@
 
     This function should return `#!luau nil` if the script has no bytecode. This makes it easier to check for absence consistently across executors.
 
-`#!luau getscriptbytecode` retrieves the bytecode of a [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript), and [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script).
+`#!luau getscriptbytecode` retrieves the bytecode of a [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript) or a [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript)
 
 
 ```luau
