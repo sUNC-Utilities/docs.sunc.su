@@ -1,8 +1,8 @@
 # `getcallingscript`
 
-!!! info "Notes on `#!luau clonefunction`"
+!!! info "Notes on `#!luau getcallingscript`"
 
-    If a script is executing in a game thread, `#!luau getcallingscript()` must return the proper [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) - even if it has set its global [`#!luau script`](https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals#script) variable to `#!luau nil`.
+    If a game script is executing and `#!luau getcallingscript` is called it must return the proper [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) - even if it has set its global [`#!luau script`](https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals#script) variable to `#!luau nil`.
 
 `#!luau getcallingscript` returns the [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) that **triggered the current code execution**.
 

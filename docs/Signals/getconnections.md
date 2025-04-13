@@ -1,11 +1,6 @@
 # `getconnections`
 
-!!! info "C and foreign signals"
-
-    Passing a signal that originates from [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html), [Actors](https://create.roblox.com/docs/reference/engine/classes/Actor), or is otherwise made in C, will return a valid [`Connection`](./Connection.md) object - but its `#!luau Function` and `#!luau Thread` properties will be `#!luau nil`.
-
 `#!luau getconnections` retrieves a list of [`Connection`](./Connection.md) objects currently attached to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
-
 
 ```luau
 function getconnections(signal: RBXScriptSignal): {Connection}

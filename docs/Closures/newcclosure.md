@@ -6,6 +6,14 @@
 
     The wrapped function **must** be yieldable, meaning that the function should be able to call [`#!luau task.wait`](https://create.roblox.com/docs/reference/engine/libraries/task#wait), for example.
 
+!!! failure "Error spoofing"
+
+    Luau and C errors are different. You must make sure that the error that closures wrapped with `#!luau newcclosure` appear as C closure errors!
+
+!!! info "Upvalues"
+
+    The function returned by `#!luau newcclosure` must have no upvalues.
+
 `#!luau newcclosure` takes any Lua function and wraps it into a C closure.
 When the returned function is called, it invokes the original Luau closure with the provided arguments, then passes the closure's returned values back to the caller.
 

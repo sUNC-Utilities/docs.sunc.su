@@ -1,8 +1,8 @@
 # `getscriptclosure`
 
-!!! info "Closure is generated, not directly reused"
+!!! info "Closure is compiled from bytecode, not an active one"
 
-    The function returned by `#!luau getscriptclosure` is a **new closure** compiled from the script's bytecode. It is not the same function used by the game, but behaves identically. This function is mostly used to retrieve constants from a script.
+    The function returned by `#!luau getscriptclosure` is a **new closure** compiled from the script's bytecode. It is not the function used by the game script, but has identical metadata. This function is used to retrieve constants from a script.
 
 !!! info "Not all scripts have bytecode"
 

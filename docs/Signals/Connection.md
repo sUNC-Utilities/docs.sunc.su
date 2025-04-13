@@ -1,7 +1,7 @@
 # The `Connection` object
 
-!!! info "Notes on the `object`."
-    
+!!! info "Notes on the `object`"
+
     The retrieved connection object will only have the listed methods and fields, since it's a custom object
 
 A `#!luau Connection` object represents an active link to a signal's callback. These are returned by [`#!luau getconnections`](./getconnections.md) and allow inspection and manipulation over connections/signals.
@@ -20,7 +20,7 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 !!! info "Foreign and C-state behavior"
 
-    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `#!luau nil`, due to these fields being impossible to obtain in this scenario.
+    If the connection originates from a foreign Lua state or is a C-level connection, `#!luau Function` and `#!luau Thread` will be `#!luau nil` and their `#!luau ForeignState` property will be `#!luau true`. This is due to neither `#!luau Function` nor `#!luau Thread` existing on the current Luau VM.
 
 ---
 

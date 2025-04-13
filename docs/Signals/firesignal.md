@@ -1,7 +1,10 @@
 # `firesignal`
 
-`#!luau firesignal` Invokes all Lua [`connections`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) connected to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
+!!! info "Firing mode"
 
+    This function will invoke all the connections of the signal **immediately**, ignoring the [`#!luau Workspace.SignalBehaviour`](https://create.roblox.com/docs/reference/engine/classes/Workspace#SignalBehavior) property.
+
+`#!luau firesignal` Invokes all Lua [connections](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptConnection) connected to a given [`#!luau RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
 
 ```luau
 function firesignal(signal: RBXScriptSignal, ...: any?)

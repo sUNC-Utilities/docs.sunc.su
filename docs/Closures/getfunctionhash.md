@@ -39,7 +39,7 @@ local dummy_function_2 = function() end
 local dummy_function_3 = function() return "Constant" end
 local dummy_function_4 = function() return "Constant2" end
 
-print(is_sha384_hex(getfunctionhash(dummy_function0))) -- Output: true
+print(is_sha384_hex(getfunctionhash(dummy_function_0))) -- Output: true
 print(getfunctionhash(dummy_function_0) == getfunctionhash(dummy_function_1)) -- Output: false
 print(getfunctionhash(dummy_function_0) == getfunctionhash(dummy_function_2)) -- Output: true
 print(getfunctionhash(dummy_function_3) == getfunctionhash(dummy_function_4)) -- Output: false

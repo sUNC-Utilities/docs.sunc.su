@@ -4,9 +4,8 @@
 
     Compiles the given string, and returns it runnable in a function. The environment must become unsafe after this function is called due to it allowing the modification of globals uncontrollably (see [setfenv](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#setfenv)/[getfenv](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#getfenv) documentation).
 
-
 ```luau
-function loadstring<A...>(source: string, chunkname: string?): ((A...) -> any | nil, string?)
+function loadstring<A..., T...>(source: string, chunkname: string?): (((A...) -> T...) | nil, string?)
 ```
 
 ## Parameters
