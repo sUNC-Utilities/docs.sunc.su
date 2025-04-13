@@ -1,6 +1,6 @@
 # `compareinstances`
 
-`#!luau compareinstances` Returns whether the provided objects A and B both reference the same Instance.
+`#!luau compareinstances` returns whether the provided objects A and B both reference the same Instance.
 
 ```luau
 function compareinstances(A: Instance, B: Instance): boolean
@@ -10,8 +10,8 @@ function compareinstances(A: Instance, B: Instance): boolean
 
 | Parameter | Description |
 |-----------|-------------|
-| `#!luau A` | The first Instance to compare |
-| `#!luau B` | The second Instance to compare |
+| `#!luau A` | The first [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) to compare |
+| `#!luau B` | The second [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) to compare |
 
 ---
 
