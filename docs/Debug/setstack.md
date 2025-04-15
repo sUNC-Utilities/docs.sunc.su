@@ -45,5 +45,5 @@ local function inner_function()
 end
 
 inner_function()
-print(OuterValue) -- Output: 100
+print(outer_value) -- Output: 100
 ```
