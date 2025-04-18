@@ -18,7 +18,7 @@ In general, commits and pushes (or any interaction with the main branch) is disa
 <details>
 <summary>Internally working on the documentation system</summary>
 
-If internally working on the actual documentation **platform** itself (although your changes will be thoroughly reviewed and unfortunately declined), please use a Python Virtual Environment (venv).
+If you are internally working on the actual documentation **platform** itself, please use a Python Virtual Environment (venv).
 
 ```sh
 python3 -m venv .venv
