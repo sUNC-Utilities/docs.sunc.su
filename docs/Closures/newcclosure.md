@@ -8,7 +8,7 @@
 
 !!! failure "Error spoofing"
 
-    Luau and C errors are different. You must make sure that the error that closures wrapped with `#!luau newcclosure` appear as C closure errors!
+    Luau and C errors are different. You must ensure that functions wrapped with `#!luau newcclosure` appear as C closure errors!
 
 !!! info "Upvalues"
 
@@ -23,8 +23,8 @@ function newcclosure<A..., R...>(functionToWrap: (A...) -> R...): (A...) -> R...
 
 ## Parameters
 
-| Parameter | Description |
-|-----------|-------------|
+| Parameter               | Description               |
+|-------------------------|---------------------------|
 | `#!luau functionToWrap` | A function to be wrapped. |
 
 ---
