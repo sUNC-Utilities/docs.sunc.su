@@ -8,7 +8,7 @@
 
 !!! failure "Error spoofing"
 
-    Luau and C errors are different. You must ensure that functions wrapped with `#!luau newcclosure` appear as C closure errors!
+    Luau and C errors are different. You must ensure that errors from functions wrapped with `#!luau newcclosure` appear as C closure errors!
 
 !!! info "Upvalues"
 
