@@ -4,7 +4,7 @@
 
     Some signals require specific argument structures. If incorrect arguments are passed, an error must be thrown.
 
-!!! info "Notes on `#!replicatesignal`"
+!!! info "Notes on `#!luau replicatesignal`"
     
     For an accurate result from the examples, test the function in [our game](https://www.roblox.com/games/133609342474444/ROBLOCKS-STOP-PMOING-ME).
 
