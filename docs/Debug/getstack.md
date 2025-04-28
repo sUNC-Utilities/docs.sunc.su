@@ -17,7 +17,7 @@ function debug.getstack(level: number, index: number?): any | { any }
 | Parameter         | Description                                                       |
 |-------------------|-------------------------------------------------------------------|
 | `#!luau level`     | The stack level to inspect. `1` is the current function.          |
-| `#!luau index?`    | (Optional) The specific slot/index at that stack level to read.   |
+| `#!luau index?`    | The specific slot/index at that stack level to read.   |
 
 ---
 
