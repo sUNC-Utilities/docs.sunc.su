@@ -5,7 +5,7 @@
 If the file contains syntax errors, an error is thrown - just like [`#!luau loadstring`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#loadstring). The error will appear in the  console.
 
 ```luau
-function loadfile(path: string): (...any) -> ...any
+function loadfile<A...>(path: string): ((A...) -> any | nil, string?)
 ```
 
 ## Parameters
