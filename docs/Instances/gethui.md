@@ -6,7 +6,7 @@
 
 
 ```luau
-function gethui(): ScreenGui
+function gethui(): BasePlayerGui | Folder
 ```
 
 ## Parameters
