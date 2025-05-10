@@ -1,8 +1,8 @@
 # `getscripts`
 
-`#!luau getscripts` returns a list of **all [`Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), and [`ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) instances** present.
+`#!luau getscripts` returns a list of **all [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), and [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) instances** present.
 
-This function excludes [CoreScripts](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
+This function excludes [`#!luau CoreScripts`](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
 
 ```luau
 function getscripts(): { BaseScript | ModuleScript }
