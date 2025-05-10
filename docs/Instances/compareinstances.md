@@ -13,7 +13,7 @@ function compareinstances(object1: Instance, object2: Instance): boolean
 | Parameter | Description                      |
 |-----------|----------------------------------|
 | `#!luau object1`  | This first [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) to compare. |
-| `#!luau object2` | The second [`#!luau Instances`](https://create.roblox.com/docs/reference/engine/classes/Instance) to compare against. |
+| `#!luau object2` | The second [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) to compare against. |
 
 ---
 
