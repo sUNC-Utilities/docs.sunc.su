@@ -108,6 +108,9 @@ extra:
     - icon: fontawesome/solid/globe
       link: https://sunc.su/
 
+    - icon: fontawesome/solid/bookmark
+      link: https://numelon.fandom.com/sUNC
+
     - icon: fontawesome/brands/github
       link: https://github.com/sUNC-Utilities/docs.sunc.su
 
