@@ -12,6 +12,7 @@ With the Instances library, you can:
 
 - **List all objects** tracked by the client using [`#!luau getinstances`](./getinstances.md)
 - **List nil-parented objects** using [`#!luau getnilinstances`](./getnilinstances.md)
+- **Compare two objects** using [`#!luau compareinstances`](./compareinstances.md)
 - **Safely clone instance references** using [`#!luau cloneref`](./cloneref.md)
 - **Access hidden UI containers** using [`#!luau gethui`](./gethui.md)
 - **Inspect function-based properties** with [`#!luau getcallbackvalue`](./getcallbackvalue.md)

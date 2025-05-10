@@ -6,7 +6,7 @@
 
 `#!luau getsenv` returns the **global environment table** of a given [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript).
 
-This environment contains **all global variables, functions** available to the target script, such as custom-defined functions or state values.
+This environment contains **all global variables and functions** available to the target script, such as custom-defined functions or state values.
 
 ```luau
 function getsenv(script: BaseScript | ModuleScript): { [any]: any } | nil
