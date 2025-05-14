@@ -79,7 +79,7 @@ local retrieved = filtergc("function", {
     IgnoreExecutor = false
 }, true)
 
-print(getfunctionhash(retrieved) == dummy_functionHash) -- Output: true
+print(getfunctionhash(retrieved) == dummy_function_hash) -- Output: true
 print(retrieved == dummy_function) -- Output: true
 ```
 
