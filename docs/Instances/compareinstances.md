@@ -2,7 +2,7 @@
 
 `#!luau compareinstances` checks if two [`#!luau Instances`](https://create.roblox.com/docs/reference/engine/classes/Instance) are equal.
 
-This is primarily used for instanced which have been [`#!luau cloneref`](./cloneref.md)'d, where the normal equality check with `#!luau ==` fails.
+This is primarily used for instances which have been [`#!luau cloneref`](./cloneref.md)'d, where the normal equality check with `#!luau ==` fails.
 
 ```luau
 function compareinstances(object1: Instance, object2: Instance): boolean
