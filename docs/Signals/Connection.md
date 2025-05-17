@@ -13,7 +13,7 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 | Field               | Type        | Description                                                                 |
 |---------------------|-------------|-----------------------------------------------------------------------------|
 | `#!luau Enabled`       | `boolean`               | Whether the connection is currently active and will respond to events.     |
-| `#!luau ForeignState`  | `boolean`               | `#!luau true` if the connection was made from a foreign Lua state (e.g. CoreScript). |
+| `#!luau ForeignState`  | `boolean`               | `#!luau true` if the connection was made from a foreign Luau state (e.g. CoreScript). |
 | `#!luau LuaConnection` | `boolean`               | `#!luau true` if the connection was created from Luau, not C or foreign code.        |
 | `#!luau Function`      | `(...any) -> (...any)?` | The bound function, or `#!luau nil` if foreign or non-Luau contexts.                        |
 | `#!luau Thread`        | `thread?`               | The thread that created the connection, or `#!luau nil` in foreign or non-Luau contexts.       |

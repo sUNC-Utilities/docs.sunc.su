@@ -8,7 +8,7 @@
 
     This function should return `#!luau nil` and an error message if the provided code fails to compile.
 
-Compiles a string of Luau code and returns it as a runnable function. If the code has errors, `#!luau nil` is returned and an error message is output.
+`#!luau loadstring` compiles a string of Luau code and returns it as a runnable function. If the code has errors, `#!luau nil` is returned and an error message is output.
 
 ```luau
 function loadstring<A...>(source: string, chunkname: string?): (((A...) -> any) | nil, string?)

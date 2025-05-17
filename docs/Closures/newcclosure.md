@@ -14,7 +14,7 @@
 
     The function returned by `#!luau newcclosure` must have no upvalues.
 
-`#!luau newcclosure` takes any Lua function and wraps it into a C closure.
+`#!luau newcclosure` takes any Luau function and wraps it into a C closure.
 When the returned function is called, it invokes the original Luau closure with the provided arguments, then passes the closure's returned values back to the caller.
 
 ```luau

@@ -1,6 +1,6 @@
 # `islclosure`
 
-`#!luau islclosure` checks whether a given function is a Lua closure or not.
+`#!luau islclosure` checks whether a given function is a Luau closure or not.
 
 ```luau
 function islclosure(func: (...any) -> (...any)): boolean
@@ -16,9 +16,9 @@ function islclosure(func: (...any) -> (...any)): boolean
 
 ## Example
 
-```luau title="Verifying Lua closures with islclosure" linenums="1"
+```luau title="Verifying Luau closures with islclosure" linenums="1"
 local function dummy_lua_function()
-    print("This is an executor Lua closure")
+    print("This is an executor Luau closure")
 end
 
 local dummy_cfunction = newcclosure(function()

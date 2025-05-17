@@ -16,7 +16,7 @@ function debug.getconstant(func: (...any) -> (...any) | number, index: number): 
 
 | Parameter        | Description                                                  |
 |------------------|--------------------------------------------------------------|
-| `#!luau func`     | The Lua function (or stack level) whose constant to retrieve.|
+| `#!luau func`     | The Luau function (or stack level) whose constant to retrieve.|
 | `#!luau index`    | The position of the desired constant.                        |
 
 ---

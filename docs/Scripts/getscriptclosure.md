@@ -8,7 +8,7 @@
 
     If the script has no compiled bytecode, this function will return `#!luau nil`.
 
-`#!luau getscriptclosure` creates and returns a Lua **function closure** from the compiled bytecode of a [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript).
+`#!luau getscriptclosure` creates and returns a Luau **function closure** from the compiled bytecode of a [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), or [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript).
 
 This function is often used to **extract constants or behaviour** from scripts without needing to run them inside the game.
 

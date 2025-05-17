@@ -1,6 +1,6 @@
 # Scripts
 
-The **Scripts** library provides advanced functions for inspecting and interacting with Lua script objects. It allows you to analyse bytecode, retrieve closures and environments, and simulate the loading or running of scripts.
+The **Scripts** library provides advanced functions for inspecting and interacting with script objects. It allows you to analyse bytecode, retrieve closures and environments, and simulate the loading or running of scripts.
 
 ---
 

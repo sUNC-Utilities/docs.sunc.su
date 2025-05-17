@@ -18,7 +18,7 @@ function iscclosure(func: (...any) -> (...any)): boolean
 
 ```luau title="Checking whether functions are C closures with iscclosure" linenums="1"
 local function dummy_lua_function()
-    print("This is an executor Lua closure")
+    print("This is an executor Luau closure")
 end
 
 local dummy_cfunction = newcclosure(function()
