@@ -1,7 +1,7 @@
 # `debug.setstack`
 
 !!! warning "C closures are not supported"
-    
+
     This function will throw an error if the stack level points to a C closure, such as `#!luau setstack(0, 1, 0)`.
 
 `#!luau debug.setstack` replaces a value in a specified stack frame.

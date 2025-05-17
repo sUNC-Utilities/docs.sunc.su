@@ -124,7 +124,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 
 # Examples
 
-### Using the `Destroy` method.
+### Using the `Destroy` method
 
 ```luau title="Creating a circle and destroying the drawing object" linenums="1"
 local Camera = game.Workspace.CurrentCamera
@@ -165,7 +165,7 @@ image:Destroy()
 
 ---
 
-### Using the `#!luau __OBJECT_EXISTS` property.
+### Using the `#!luau __OBJECT_EXISTS` property
 
 ```luau title="Rendering a centered image" linenums="1"
 local Camera = game.Workspace.CurrentCamera

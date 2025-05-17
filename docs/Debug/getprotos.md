@@ -1,7 +1,7 @@
 # `debug.getprotos`
 
 !!! warning "C closures are not supported"
-    
+
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures do not contain function prototypes.
 
 !!! info "Inactive protos"

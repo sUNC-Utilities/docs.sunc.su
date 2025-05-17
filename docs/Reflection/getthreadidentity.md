@@ -2,7 +2,6 @@
 
 `#!luau getthreadidentity` retrieves the thread's identity of the running [Luau thread](https://create.roblox.com/docs/reference/engine/libraries/coroutine#running).
 
-
 ```luau
 function getthreadidentity(): number
 ```

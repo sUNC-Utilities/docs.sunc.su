@@ -1,8 +1,6 @@
 # `getnilinstances`
 
-
 `#!luau getnilinstances` returns a list of [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance) objects that are **currently unparented**. These instances exist in memory but are no longer part of the [`#!luau DataModel`](https://create.roblox.com/docs/reference/engine/classes/DataModel) hierarchy.
-
 
 ```luau
 function getnilinstances(): { Instance }
