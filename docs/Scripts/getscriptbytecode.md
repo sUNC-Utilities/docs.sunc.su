@@ -6,7 +6,6 @@
 
 `#!luau getscriptbytecode` retrieves the bytecode of a [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript), and [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script).
 
-
 ```luau
 function getscriptbytecode(script: BaseScript | ModuleScript): string | nil
 ```

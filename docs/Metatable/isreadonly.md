@@ -2,7 +2,6 @@
 
 `#!luau isreadonly` checks whether a table is currently set as **readonly**.
 
-
 ```luau
 function isreadonly(table: { any }): boolean
 ```

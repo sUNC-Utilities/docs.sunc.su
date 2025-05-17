@@ -2,7 +2,6 @@
 
 `#!luau getrawmetatable` returns the raw metatable of an object, even if that object has a `#!luau __metatable` field set.
 
-
 ```luau
 function getrawmetatable(object: { any } | userdata): { [any]: any } | nil
 ```
@@ -30,4 +29,3 @@ print(mt.__index(game, "Workspace")) -- Output: Workspace
 ```luau title="Obtaining nil when object has no metatable set" linenums="1"
 print(getrawmetatable(newproxy(false)))
 ```
-

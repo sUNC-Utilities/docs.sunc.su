@@ -5,9 +5,8 @@
     Some signals require specific argument structures. If incorrect arguments are passed, an error must be thrown.
 
 !!! info "Notes on `#!luau replicatesignal`"
-    
-    For an accurate result from the examples, test the function in [our game](https://www.roblox.com/games/133609342474444/ROBLOCKS-STOP-PMOING-ME).
 
+    For an accurate result from the examples, test the function in [our game](https://www.roblox.com/games/133609342474444/ROBLOCKS-STOP-PMOING-ME).
 
 If possible, replicates the signal to the server with the provided arguments. The arguments must also match accordingly to the signal itself. To know a signal's arguments, visit [this](https://robloxapi.github.io/ref/).
 
@@ -25,7 +24,6 @@ function replicatesignal(signal: RBXScriptSignal, ...: any?)
 ---
 
 ## Examples
-
 
 ### Example 1
 
