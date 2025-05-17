@@ -36,6 +36,16 @@ local function normaliseSnippets(md)
     return md:gsub("`#!luau%s+(.-)`", "`%1`")
 end
 
+local function normaliseUrls(md, libname)
+    -- "../x/y.md" -> "https://docs.sunc.su/x/y"
+    md = md:gsub("%.%.%/(.-)%.md", "https://docs.sunc.su/%1")
+    -- "./x.md" with "https://docs.sunc.su/<libname>/x"
+    md = md:gsub("%./(.-)%README.md", "https://docs.sunc.su/" .. libname .. "/%1")
+    md = md:gsub("%./(.-)%.md", "https://docs.sunc.su/" .. libname .. "/%1")
+
+    return md
+end
+
 --[[
 functions to be cautious of (due to unique doc format) when parsing:
 WebSocket library
@@ -53,7 +63,7 @@ for libname, library in pairs(tree) do
     for func, doc in pairs(library) do
         if func == "README" then
             local description = extractIndex(doc)
-            bot[libname]._description = description
+            bot[libname]._description = normaliseUrls(normaliseSnippets(description), libname)
             bot[libname]._link = "https://docs.sunc.su/" .. libname
         elseif func == "WebSocket" then
             -- do nothing, we will parse this separately later
@@ -62,16 +72,12 @@ for libname, library in pairs(tree) do
         else
             local a = extractDoc(doc)
 
-            a.description = normaliseSnippets(a.description)
-
-            -- normalise (local) paths into actual external doc links
-            a.description = a.description:gsub("%.%.%/", "https://docs.sunc.su/")
-            a.description = a.description:gsub("%.%/", "https://docs.sunc.su/" .. libname .. "/")
+            a.description = normaliseUrls(normaliseSnippets(a.description), libname)
 
             --a.description = normaliseSnippets(extractIndex(doc))
 
             for param, desc in pairs(a.parameters) do
-                a.parameters[param] = normaliseSnippets(desc)
+                a.parameters[param] = normaliseUrls(normaliseSnippets(desc), libname)
             end
 
             a.link = string.format("https://docs.sunc.su/%s/%s", libname, func)
