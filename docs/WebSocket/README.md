@@ -40,7 +40,7 @@ Signals that allow you handle events that occur during the WebSocket's lifetime,
 
 ---
 
-# Examples
+## Examples
 
 ### Using the `#!luau OnMessage` event, and `#!luau Send` method
 

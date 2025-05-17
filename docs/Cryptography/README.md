@@ -1,7 +1,7 @@
 # Cryptography
 
 !!! info
-    
+
     sUNC does not check for every function contained within the original UNC. 
 
 The **Cryptography** library provides a simple inferface for [Base64](https://en.wikipedia.org/wiki/Base64) encoding and decoding.

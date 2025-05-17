@@ -19,6 +19,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+        name: Set Cache ID
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v4
         with:
@@ -26,6 +27,14 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - name: Build bot and viewer JSON metadata
+        run: |
+          cd r-experimental-parse
+          ./install.sh
+          luvit main.lua
+          cd ../
+
+          rm -rf r-experimental-parse
       - run: pip install mkdocs-material
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force

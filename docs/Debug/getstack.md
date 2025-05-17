@@ -1,7 +1,7 @@
 # `debug.getstack`
 
 !!! warning "C closures are not supported"
-    
+
     This function will throw an error if the stack level points to a C closure, such as `#!luau getstack(0)`.
 
 `#!luau debug.getstack` retrieves values from the stack at the specified call level.

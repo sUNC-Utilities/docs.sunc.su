@@ -1,7 +1,7 @@
 # `debug.getconstant`
 
 !!! warning "C closures are not supported"
-    
+
     This function will throw an error if called on a C closure, such as [`#!luau print`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#print), since C closures have no accessible constants.
 
 `#!luau debug.getconstant` returns the constant at the specified index from a Luau function. If no constant exists at that index, it returns `#!luau nil` instead.
