@@ -30,8 +30,12 @@ jobs:
       - name: Build bot and viewer JSON metadata
         run: |
           cd r-experimental-parse
+
+          sudo chmod +x ./install.sh
           ./install.sh
+
           luvit main.lua
+
           cd ../
 
           rm -rf r-experimental-parse
