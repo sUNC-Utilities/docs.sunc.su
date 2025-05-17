@@ -5,8 +5,7 @@
 
 # Luvit dependencies
 r-experimental-parse/deps
-docs/built-info/bot.json
-docs/built-info/viewer.json
+docs/built-info/*
 
 # macOS hidden files
 **._*
