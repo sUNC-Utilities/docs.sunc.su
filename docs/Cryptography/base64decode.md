@@ -18,5 +18,5 @@ function crypt.base64decode(data: string): string
 
 ```luau
 local bytecode = game:HttpGet("https://api.rubis.app/v2/scrap/zuxQZuM9Tnl5MRbo/raw")
-writefile("sound.mp3", crypt.base64decode(bytecode)) -- This file should be a valid and working mp3 file.
+writefile("sound.mp3", crypt.base64decode(bytecode)) -- This file should be a valid and working MP3 file.
 ```

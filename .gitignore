@@ -1,4 +1,13 @@
 # Python venv exclusion for the internal documentation platform
 .venv
 
-run.bat
+**.bat
+
+# Luvit dependencies
+r-experimental-parse/deps
+docs/built-info/bot.json
+docs/built-info/viewer.json
+
+# macOS hidden files
+**._*
+**.DS_*
