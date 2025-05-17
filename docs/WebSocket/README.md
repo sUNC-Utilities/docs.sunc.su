@@ -63,3 +63,14 @@ ws.OnClose:Connect(function()
 end)
 ws:Close() -- Output: Closed
 ```
+---
+
+### Using TLS support
+
+```luau title="Using a secure WebSocket server to send messages" linenums="1"
+local ws = WebSocket.connect("wss://echo.websocket.events")
+ws.OnMessage:Connect(function(message)
+    print(message)
+end)
+ws:Send("tls") -- Output: tls
+```
