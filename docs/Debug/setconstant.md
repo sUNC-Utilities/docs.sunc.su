@@ -20,7 +20,7 @@ function debug.setconstant(func: (...any) -> (...any) | number, index: number, v
 
 | Parameter        | Description                                                  |
 |------------------|--------------------------------------------------------------|
-| `#!luau func`     | The Lua function (or stack level) whose constant to modify. |
+| `#!luau func`     | The Luau function (or stack level) whose constant to modify. |
 | `#!luau index`    | The position of the constant to change.                     |
 | `#!luau value`    | The new constant value to set.                              |
 

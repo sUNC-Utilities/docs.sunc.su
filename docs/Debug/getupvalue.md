@@ -14,7 +14,7 @@ function debug.getupvalue(func: (...any) -> (...any) | number, index: number): a
 
 | Parameter        | Description                                                        |
 |------------------|--------------------------------------------------------------------|
-| `#!luau func`     | The Lua function (or stack level) to retrieve an upvalue from.     |
+| `#!luau func`     | The Luau function (or stack level) to retrieve an upvalue from.     |
 | `#!luau index`    | The position of the upvalue.                                       |
 
 ---

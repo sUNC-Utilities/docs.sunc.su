@@ -21,7 +21,7 @@ function debug.getprotos(func: (...any) -> (...any) | number): { (...any) -> (..
 
 | Parameter        | Description                                                   |
 |------------------|---------------------------------------------------------------|
-| `#!luau func`     | The Lua function (or stack level) to extract protos from.     |
+| `#!luau func`     | The Luau function (or stack level) to extract protos from.     |
 
 ---
 

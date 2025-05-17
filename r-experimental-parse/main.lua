@@ -7,7 +7,6 @@ local extractIndex = require("indexExtractor")
 local extractDoc = require("docExtractor")
 
 local tree = {}
-
 for item in fs.scandir("../docs") do
     if item.type == "directory" and not exclusions:contains(item.name) then
         local library = {}
@@ -37,6 +36,16 @@ local function normaliseSnippets(md)
     return md:gsub("`#!luau%s+(.-)`", "`%1`")
 end
 
+--[[
+functions to be cautious of (due to unique doc format) when parsing:
+WebSocket library
+Connection object under Signals lib
+request() function
+filtergc()
+
+uhh more i forgor
+]]
+
 local bot = {}
 for libname, library in pairs(tree) do
     bot[libname] = {}
@@ -44,7 +53,8 @@ for libname, library in pairs(tree) do
     for func, doc in pairs(library) do
         if func == "README" then
             local description = extractIndex(doc)
-            bot[libname].description = description
+            bot[libname]._description = description
+            bot[libname]._link = "https://docs.sunc.su/" .. libname
         elseif func == "WebSocket" then
             -- do nothing, we will parse this separately later
         elseif libname == "Signals" and func == "Connection" then
@@ -53,11 +63,18 @@ for libname, library in pairs(tree) do
             local a = extractDoc(doc)
 
             a.description = normaliseSnippets(a.description)
+
+            -- normalise (local) paths into actual external doc links
+            a.description = a.description:gsub("%.%.%/", "https://docs.sunc.su/")
+            a.description = a.description:gsub("%.%/", "https://docs.sunc.su/" .. libname)
+
             --a.description = normaliseSnippets(extractIndex(doc))
 
             for param, desc in pairs(a.parameters) do
                 a.parameters[param] = normaliseSnippets(desc)
             end
+
+            a.link = string.format("https://docs.sunc.su/%s/%s", libname, func)
 
             bot[libname][func] = a
         end
@@ -72,9 +89,10 @@ fs.writeFile("../docs/built-info/bot.json", bot_json)
 local viewer = {}
 
 for libname, lib in pairs(bot) do
-    for name, func in pairs(lib) do
-        if not func.title then p(libname, name) end
-        viewer[func.title or ""] = clean(func.description or "")
+    for k, func in pairs(lib) do
+        if k ~= "_description" and k ~= "_link" then
+            viewer[func.title or ""] = clean(func.description or "")
+        end
     end
 end
 

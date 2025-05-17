@@ -19,7 +19,7 @@ Exploits will return their own [custom connection object](./Connection.md) when 
 With the Signals library, you can:
 
 - **Get all connections** attached to a signal using [`#!luau getconnections`](./getconnections.md).
-- **Fire** a signal's Lua connections using [`#!luau firesignal`](./firesignal.md).
+- **Fire** a signal's Luau connections using [`#!luau firesignal`](./firesignal.md).
 - **Replicate signals to the server** with [`#!luau replicatesignal`](./replicatesignal.md), if supported by the signal.
 
 For a list of known replicable signals, click [this](https://rubis.app/view/?scrap=AIOzG1Di7NSLADKE).

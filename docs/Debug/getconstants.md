@@ -14,7 +14,7 @@ function debug.getconstants(func: (...any) -> (...any) | number): { number | str
 
 | Parameter       | Description                                                        |
 |------------------|--------------------------------------------------------------------|
-| `#!luau func`    | The Lua function (or stack level) whose constants will be returned.|
+| `#!luau func`    | The Luua function (or stack level) whose constants will be returned.|
 
 ---
 
