@@ -66,7 +66,7 @@ for libname, library in pairs(tree) do
 
             -- normalise (local) paths into actual external doc links
             a.description = a.description:gsub("%.%.%/", "https://docs.sunc.su/")
-            a.description = a.description:gsub("%.%/", "https://docs.sunc.su/" .. libname)
+            a.description = a.description:gsub("%.%/", "https://docs.sunc.su/" .. libname .. "/")
 
             --a.description = normaliseSnippets(extractIndex(doc))
 
