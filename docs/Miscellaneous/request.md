@@ -52,6 +52,9 @@ function request(options: RequestOptions): Response
 
 Executors will attach this unique header automatically:
 
+<!-- recommendation: standardise headers to be X-User-Identifier and X-Fingerprint -->
+<!-- the 'X' prefix is standard for custom HTTP headers, as defined in RFC822 (https://datatracker.ietf.org/doc/html/rfc822) -->
+
 | Header                     | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
 | `PREFIX-User-Identifier`   | Unique user ID that stays consistent across devices for the same user.     |
