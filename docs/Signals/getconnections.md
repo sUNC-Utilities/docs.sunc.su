@@ -1,5 +1,10 @@
 # `getconnections`
 
+
+!!! info "Notes on the sUNC getconnections test itself"
+
+    The Test requires to have support for C Connections or it will crash
+
 `#!luau getconnections` retrieves a list of [`Connection`](./Connection.md) objects currently attached to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
 
 ```luau
