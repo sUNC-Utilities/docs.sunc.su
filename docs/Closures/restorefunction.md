@@ -1,6 +1,6 @@
 # `restorefunction`
 
-`#!luau restorefunction` restores the given function to it's unhooked state.
+`#!luau restorefunction` restores the given function to its unhooked state.
 
 !!! warning "Restoring an unhooked function"
 
