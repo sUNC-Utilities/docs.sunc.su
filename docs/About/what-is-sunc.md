@@ -4,7 +4,7 @@
 
 **sUNC** stands for **senS' Unified Naming Convention**. It is a tool designed to check if an executor can properly run essential global functions, following the existing [Unified Naming Convention](https://github.com/unified-naming-convention/NamingStandard/tree/main).
 
-Unlike the original UNC (which is now outdated and prone to spoofing), sUNC ensures that functions actually work as intended, by testing them as if they were to be used in a real scenario.
+Unlike the original UNC (which is now outdated and prone to spoofing), sUNC ensures that functions work as intended, by testing them as if they were to be used in a real scenario.
 However, we are not in any way calling UNC "bad". We are simply stating that people should not be using UNC to deeply test their environment, as it was never intended to do so.
 
 ## How would I know what fails?
@@ -16,7 +16,7 @@ Note that it's also possible to see the detailed reason of a function's failure 
 
 ## Will sUNC be discontinued?
 
-Not in the near future, we hope. However, if sUNC were to be discontinued, we will open source the project after 1-2 months.
+Not in the near future, we hope. However, if sUNC were to be discontinued, we would open source the project after 1-2 months.
 
 -----
 
