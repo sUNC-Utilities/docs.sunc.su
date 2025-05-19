@@ -1,6 +1,6 @@
 # How to contribute
 
-Welcome to the sUNC documentation project! We worked tirelessly to standardise and make the documentation beautiful and readable for everyone.
+Welcome to the sUNC documentation project! We worked tirelessly to standardize and make the documentation beautiful and readable for everyone.
 
 This guide outlines the official standards for contributing to the sUNC documentation, including how libraries and functions should be structured and written.
 
@@ -60,7 +60,7 @@ Place all important `!!!` callouts (warnings, errors, info) **immediately under 
 
 ### Description
 
-Provide a description of the function directly after any notices.
+Describe the function directly after any notices.
 
 When referencing the function name, **always** use the code snippet format:
 
