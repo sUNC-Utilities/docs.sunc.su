@@ -1,11 +1,8 @@
 # `restorefunction`
 
-`#!luau restorefunction` restores the given function to its unhooked state.
+!!! warning "This will throw an error if the requested function is not already hooked"
 
-!!! warning "Restoring an unhooked function"
-
-    This function will throw an error if called on a function that has not been hooked.
-
+`#!luau restorefunction` restores a hooked function back to its unhooked state.
 
 ```luau
 function restorefunction(functionToRestore: (...any) -> (...any)): ()
