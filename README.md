@@ -21,7 +21,7 @@ In general, commits and pushes (or any interaction with the main branch) is disa
 If you are internally working on the actual documentation **platform** itself, please use a Python Virtual Environment (venv).
 
 ```sh
-python3 -m venv .venv
+python3 -m venv venv
 ```
 
 After which you must install the requirements of the project using `pip`.
