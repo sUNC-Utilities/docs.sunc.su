@@ -1,4 +1,4 @@
-# To-Do List
+# To-Do List.
 
 Manually going through every bit of the old documentation (and the latest commits whilst doing this simultaneously) has taught me (Richy) a lot about sUNC and its functions. However it has also exposed many small mistakes/flaws in the original documentation which I referenced to make this entire repository.
 
