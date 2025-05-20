@@ -11,3 +11,6 @@ docs/built-info/*
 # macOS hidden files
 **._*
 **.DS_*
+
+# temporarily stashed changes
+stashedChanges
