@@ -1,5 +1,6 @@
 # Python venv exclusion for the internal documentation platform
 .venv
+venv
 
 **.bat
 
@@ -10,3 +11,6 @@ docs/built-info/*
 # macOS hidden files
 **._*
 **.DS_*
+
+# temporarily stashed changes
+stashedChanges
