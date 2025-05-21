@@ -1,7 +1,7 @@
 # `getrenv`
 
 !!! warning "Adding `#!luau _G` and `#!luau shared`"
-    Make sure to properly implement `#!luau _G` and `#!luau shared` into the Roblox environemnt, as poor implementations will result in detection vectors!
+    Make sure to properly implement `#!luau _G` and `#!luau shared` into the Roblox environment, as poor implementations will result in detection vectors!
 
 `#!luau getrenv` returns the **Roblox global environment**, which is used by the entire game. Changes to this environment will affect your executor environment as well.
 
