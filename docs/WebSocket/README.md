@@ -1,8 +1,10 @@
 # WebSocket class
 
-The `#!luau WebSocket` class provides a lightweight interface for establishing and working with WebSocket connections. It allows scripts to **send** and **receive** messages over a persistent connection to a [WebSocket](https://en.wikipedia.org/wiki/WebSocket) server.
+!!! warning "This is a WebSocket client only, meaning you won't be able to create a server with this library."
 
-Keep in mind that this is client-only, meaning you won't be able to create a WebSocket server.
+!!! info "The sUNC test explicitly checks for `wss` (secure) support."
+
+The `#!luau WebSocket` class provides a lightweight interface for establishing and working with WebSocket connections. It allows scripts to **send** and **receive** messages over a persistent connection to a [WebSocket](https://en.wikipedia.org/wiki/WebSocket) server.
 
 ---
 
@@ -35,7 +37,7 @@ Signals that allow you handle events that occur during the WebSocket's lifetime,
 
 | Method        | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
-| `#!luau Send(message: string): ()` | Send a message over the WebSocket connection.    |
+| `#!luau Send(message: string): ()` | Sends a message over the WebSocket connection.    |
 | `#!luau Close(): ()`                     | Closes the WebSocket connection.                 |
 
 ---
@@ -45,7 +47,7 @@ Signals that allow you handle events that occur during the WebSocket's lifetime,
 ### Using the `#!luau OnMessage` event, and `#!luau Send` method
 
 ```luau title="Responding to incoming messages" linenums="1"
-local ws = WebSocket.connect("ws://echo.websocket.events")
+local ws = WebSocket.connect("wss://echo.websocket.events")
 ws.OnMessage:Connect(function(message)
     print(message)
 end)
@@ -57,7 +59,7 @@ ws:Send("Hello") -- Output: Hello
 ### Using the `#!luau OnClose` event, and `#!luau Close` method
 
 ```luau title="Receive a closing message and catch it via OnClose" linenums="1"
-local ws = WebSocket.connect("ws://echo.websocket.events")
+local ws = WebSocket.connect("wss://echo.websocket.events")
 ws.OnClose:Connect(function()
     print("Closed")
 end)
