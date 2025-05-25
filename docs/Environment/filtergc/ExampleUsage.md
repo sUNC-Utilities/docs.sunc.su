@@ -7,12 +7,12 @@ This example demonstrates how to use `#!luau filtergc` to locate a specific **fu
 ## Example function (decompiled and simplified for clarity)
 
 ```luau
-local function createHandler()
+local function create_handler()
     local speed = 10
     local name = "Enemy"
     local hits = {}
 
-    local function handleHit(damage)
+    local function handle_hit(damage)
         print(name .. " was hit!")
         hits[#hits + 1] = damage * speed
     end
