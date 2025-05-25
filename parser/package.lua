@@ -6,7 +6,7 @@ return {
     tags = { "docs.sunc.su", "documentation", "parser", "sUNC" },
     license = "MIT",
     author = { name = "Richard Ziupsnys", email = "hello@richy.lol" },
-    homepage = "https://github.com/sUNC-Utilities/docs.sunc.su/tree/main/r-experimental-parse",
+    homepage = "https://github.com/sUNC-Utilities/docs.sunc.su/tree/main/parser",
     dependencies = {
         "luvit/json",
         "creationix/coro-fs"
