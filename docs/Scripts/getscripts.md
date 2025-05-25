@@ -5,7 +5,7 @@
 This function excludes [`#!luau CoreScripts`](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
 
 ```luau
-function getscripts(): { BaseScript | ModuleScript }
+function getscripts(): { Script | LocalScript | ModuleScript }
 ```
 
 ## Parameters
