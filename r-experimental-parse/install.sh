@@ -8,5 +8,4 @@ sudo mv lit /usr/local/bin/
 sudo mv luvi /usr/local/bin/
 sudo mv luvit /usr/local/bin/
 
-lit install creationix/coro-fs
-lit install luvit/json
+lit install
