@@ -17,11 +17,11 @@ local function create_handler()
         hits[#hits + 1] = damage * speed
     end
 
-    return handleHit
+    return handle_hit
 end
 ```
 
-We want to retrieve this `handleHit` function from memory.
+We want to retrieve this `handle_hit` function from memory.
 
 ---
 
