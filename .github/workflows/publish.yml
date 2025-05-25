@@ -29,7 +29,7 @@ jobs:
             mkdocs-material-
       - name: Build bot and viewer JSON metadata
         run: |
-          cd r-experimental-parse
+          cd parser
 
           sudo chmod +x ./install.sh
           ./install.sh
@@ -38,7 +38,7 @@ jobs:
 
           cd ../
 
-          rm -rf r-experimental-parse
+          rm -rf parser
       - run: pip install mkdocs-material
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force

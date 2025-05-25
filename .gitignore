@@ -5,7 +5,7 @@ venv
 **.bat
 
 # Luvit dependencies
-r-experimental-parse/deps
+parser/deps
 docs/built-info/*
 
 # macOS hidden files
