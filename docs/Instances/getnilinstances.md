@@ -24,3 +24,4 @@ for _, instance in pairs(getnilinstances()) do
     end
 end
 ```
+!!! warning "Calling `getnilinstances()` repeatedly in tight loops may impact performance, especially in games with frequent object creation and destruction."
