@@ -4,6 +4,10 @@
 
 This is primarily used for instances which have been [`#!luau cloneref`](./cloneref.md)'d, where the normal equality check with `#!luau ==` fails.
 
+!!! info "Why Normal Equality Fails"
+
+    Using `==` on a `#!luau cloneref`'d instance and a regular instance will return `false`, even though they refer to the same object internally. `compareinstances` bypasses this by resolving the internal reference behind the scenes.
+
 ```luau
 function compareinstances(object1: Instance, object2: Instance): boolean
 ```
