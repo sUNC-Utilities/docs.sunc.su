@@ -1,9 +1,9 @@
 # `getreg`
 
-`#!luau getreg` returns the **Luau registry table**. The registry is special table used internally to store references like threads, functions, and data shared between C and Luau.
+`#!luau getreg` returns the **Luau registry table**. The registry is a special table which is used internally to store references like threads, functions, and data shared between C and Luau (userdata).
 
 ```luau
-function getreg(): { any }
+function getreg(): { [any]: any }
 ```
 
 ## Parameters
