@@ -23,7 +23,7 @@ local loop_thread = task.spawn(function()
     end
 end)
 
-task.wait(5) -- Let the loop run for a bit
+task.wait(0.2) -- Let the loop run for a bit
 
 for _, value in pairs(getreg()) do
     if value ~= loop_thread then continue end
