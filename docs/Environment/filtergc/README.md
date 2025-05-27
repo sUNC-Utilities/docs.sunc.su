@@ -8,8 +8,8 @@ This function is most often used to find game-defined functions or internal tabl
 type ReturnType = (...any) -> (...any) | { [any]: any }
 
 declare filtergc: 
-    ((filter_type: "function", filterOptions: FunctionFilterOptions, returnOne: boolean?) -> ReturnType | { ReturnType }) & 
-    ((filter_type: "table", filterOptions: TableFilterOptions, returnOne: boolean?) -> { [any]: any } | { { [any]: any } })
+    ((filterType: "function", filterOptions: FunctionFilterOptions, returnOne: boolean?) -> ReturnType | { ReturnType }) & 
+    ((filterType: "table", filterOptions: TableFilterOptions, returnOne: boolean?) -> { [any]: any } | { { [any]: any } })
 ```
 
 ---
