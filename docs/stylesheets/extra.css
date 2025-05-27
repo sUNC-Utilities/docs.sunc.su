@@ -34,13 +34,16 @@
   --md-code-hl-variable-color: #914747;
 }
 
+/* #12121c */
+
 /* dark theme */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #a35ee9;
-  --md-primary-fg-color--light: #d6c3f8;
+  --md-primary-fg-color: #1e1e2f;
+  --md-primary-fg-color--light: #ffffff;
   --md-primary-fg-color--dark: #9c77d2;
-  /* --md-primary-bg-color: #121212; */
-  --md-primary-bg-color--light: rgba(18, 18, 18, 0.7);
+  /* --md-primary-bg-color: #ffff; */
+
+  --md-default-bg-color: #12121c;
 
   --md-accent-fg-color: #bd9af4;
   --md-accent-fg-color--transparent: rgba(189, 154, 244, 0.1);
@@ -48,8 +51,8 @@
   --md-accent-bg-color--light: rgba(18, 18, 18, 0.7);
 
   --md-code-fg-color: #e8e6f2;
-  --md-code-bg-color: #1a1a1d;
-  --md-code-hl-color: #3a2e4f;
+  --md-code-bg-color: #19141f;
+  --md-code-hl-color: #453c55;
   --md-code-hl-color--light: rgba(189, 154, 244, 0.1);
 
   --md-code-hl-number-color: #f38ba8;
@@ -64,6 +67,25 @@
   --md-code-hl-comment-color: #6c7086;
   --md-code-hl-generic-color: #fab387;
   --md-code-hl-variable-color: #f2cdcd;
+}
+
+[data-md-color-scheme="slate"] .md-content__inner h1 {
+  color: #ccb2f5;
+  font-weight: bold;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar__scrollwrap {
+  scrollbar-color: #46466d #00000000;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar__scrollwrap:hover {
+  scrollbar-color: #705d8b #00000000;
+}
+
+[data-md-color-scheme="slate"] table.highlighttable {
+  border-radius: 0.5rem;
+  /* border: 1px solid #bd9af4; */
+  box-shadow: 0 0 8px rgba(187, 144, 255, 0.325);
 }
 
 .md-nav__title {
@@ -83,7 +105,7 @@
 
 .md-nav__link.md-nav__link--active {
   padding-left: 0.09rem;
-  color: var(--md-primary-fg-color);
+  color: #d1bbf8;
 }
 
 .md-nav__link.md-nav__link--active:not(:has(.md-nav__icon.md-icon))::before {
@@ -94,7 +116,7 @@
   transform: translateY(-50%);
   height: 60%;
   width: 4px;
-  background: var(--md-primary-fg-color);
+  background: var(--md-accent-fg-color);
   border-radius: 2px;
   opacity: 0;
   animation: navHighlight 0.3s ease forwards,
@@ -125,3 +147,7 @@
 .md-grid {
   max-width: 1500px;
 }
+
+/* .md-main {
+  min-height: 1vh !important;
+} */

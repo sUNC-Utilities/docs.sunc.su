@@ -18,7 +18,7 @@ In Luau, **every function is implemented as a closure** implicitly, even if it d
 
 ## What can you do?
 
-With the `Closures` library, you can:
+With the Closures library, you can:
 
 - **Hook** existing functions or metamethods with [`#!luau hookfunction`](./hookfunction.md) and [`#!luau hookmetamethod`](./hookmetamethod.md)
 - **Check** whether the current execution is from your script using [`#!luau checkcaller`](./checkcaller.md) for **hooking**
