@@ -2,7 +2,7 @@
 
 The `#!luau Drawing` class represents a renderable 2D object that appears on the user's screen. Every specific drawing type (e.g. `Circle`, `Text`, `Line`) inherits from this base and extends it with shape-specific properties.
 
-Drawing objects are not instances - they are client-only graphical primitives that do not interact with the 3D world and must be managed manually.
+Drawing objects are ***not*** instances - they are client-only graphical primitives that do not interact with the 3D world and must be managed manually.
 
 ---
 
@@ -34,7 +34,7 @@ All drawing object types inherit the following fields:
 |--------------------|-----------|-----------------------------------------------------------------------------|
 | `#!luau Visible`     | `#!luau boolean` | Whether the object is rendered. Defaults to `#!luau false`.                        |
 | `#!luau ZIndex`      | `#!luau number`  | Render order; higher values appear on top.                                  |
-| `#!luau Transparency`| `#!luau number`  | Opacity (1 = fully opaque, 0 = invisible).                                  |
+| `#!luau Transparency`| `#!luau number`  | Translucency, where `1` is fully transparent and `0` is fully visible. |
 | `#!luau Color`       | `#!luau Color3`  | The color of the drawing.                                                   |
 | `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object exists.                |
 
