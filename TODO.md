@@ -23,9 +23,9 @@ Some things also require modification from the developer side, namely the follow
   - add emoji checking, allowing them only on level 3 headings (`###`). nowhere else.
 - In the documentation standard, mention how contractions like "isn't" and "can't" shouldnt be use. e.g. use "it is" instead of "it's" (Also check for contractions in review 2)
 - ensure there is a luau type definition for the following things:
-  - Drawing object
+  - Drawing object ✅
   - filtergc function filter options ✅
-  - giltergc table filter options ✅
+  - filtergc table filter options ✅
 - Update documentation with changed for hookmetamethod, named "pixe***** yap" in old docs commit
 - Write example pages in contributing section:
   - an entire bogus library example

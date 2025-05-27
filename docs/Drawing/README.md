@@ -185,3 +185,20 @@ print(circle.__OBJECT_EXISTS) -- Output: true
 circle:Destroy()
 print(circle.__OBJECT_EXISTS) -- Output: false
 ```
+
+---
+
+### Type signature for `#!luau Drawing`
+
+```luau title="" linenums="1"
+type Drawing = {
+    Visible: boolean?,
+    ZIndex: number?,
+    Transparency: number?,
+    Color: Color3?,
+    __OBJECT_EXISTS: boolean?,
+    Destroy: (self: Drawing) -> (),
+}
+```
+
+`#!luau Drawing.new` returns a base `#!luau Drawing` object extended with type-specific fields.
