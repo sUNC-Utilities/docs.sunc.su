@@ -100,5 +100,16 @@ local retrieved = filtergc("function", {
 }, true)
 
 print(retrieved == dummy_function) -- Output: true
+```
 
+### Type signature for `FunctionFilterOptions`
+
+```luau title="" linenums="1"
+type FunctionFilterOptions = {
+    Name: string?,
+    IgnoreExecutor: boolean?,
+    Hash: string?,
+    Constants: { string }?,
+    Upvalues: { any }?
+}
 ```

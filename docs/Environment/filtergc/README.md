@@ -2,15 +2,14 @@
 
 `#!luau filtergc` allows you to retrieve specific garbage-collected values from Luau's memory, using fine-tuned filters.
 
-This function is most often used to find game-defined functions or internal tables by matching constants, keys, metatables, and more. It behaves similarly to [`#!luau getgc`](../getgc.md), but offers more control over what gets returned.
+This function is most often used to find game-defined functions or internal tables by matching constants, keys, metatables, and more. It behaves similarly to [`#!luau getgc`](../getgc.md), but offers simplicity, efficiency, and more control over what gets returned.
 
 ```luau
-function filtergc(
-    filterType: "function" | "table",
-    filterOptions: FunctionFilterOptions | TableFilterOptions,
-    returnOne: boolean
-):
-    (...any) -> (...any) | { [any]: any } | { (...any) -> (...any) | { [any]: any } }
+type ReturnType = (...any) -> (...any) | { [any]: any }
+
+declare filtergc: 
+    ((filter_type: "function", filterOptions: FunctionFilterOptions, returnOne: boolean?) -> ReturnType | { ReturnType }) & 
+    ((filter_type: "table", filterOptions: TableFilterOptions, returnOne: boolean?) -> { [any]: any } | { { [any]: any } })
 ```
 
 ---
