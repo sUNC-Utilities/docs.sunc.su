@@ -122,7 +122,7 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 | `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).  |
 | `#!luau Filled`   | `#!luau boolean` | Whether the triangle is filled.     |
 
-# Examples
+## Examples
 
 ### Using the `Destroy` method
 
