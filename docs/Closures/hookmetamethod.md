@@ -29,7 +29,7 @@ local original; original = hookmetamethod(game, "__index", function(...)
     return original(...)
 end)
 
-local _ = game.PlaceId -- Output: "PlaceId"
+local _ = game.PlaceId -- Output: PlaceId of the game you are in
 
 hookmetamethod(game, "__index", original) -- Restores game's __index
 ```
