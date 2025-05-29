@@ -63,3 +63,14 @@ local retrieved = filtergc("table", {
 
 print(retrieved == dummy_table) -- Output: true
 ```
+
+### Type signature for `TableFilterOptions`
+
+```luau title="" linenums="1"
+type TableFilterOptions = {
+    Keys: { [any]: any }?,
+    Values: { [any]: any }?,
+    KeyValuePairs: { [any]: any }?,
+    Metatable: { [any]: any }?,
+}
+```

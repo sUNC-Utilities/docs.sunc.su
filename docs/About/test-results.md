@@ -8,7 +8,7 @@ sUNC is known for its strict tests. Ever since it was made, it was built to expo
 
 As of **sUNC V2**, all tests must be conducted in the official sUNC testing game. This game may be found in our [Discord server](https://discord.gg/FNNfTUpFYv).
 
-We chose to do so, because by having a dedicated server, we're able to provide you with the new sUNC Rubis test results. Which allow us to display the real results of the test, not just printed in the Roblox console.
+We chose to do so, because by having a dedicated server, we're able to provide you with the new sUNC Rubis test results. This allows us to provide you with verified and reproducible results, instead of people sending meaningless screenshots of their console output.
 
 ---
 
@@ -16,7 +16,7 @@ We chose to do so, because by having a dedicated server, we're able to provide y
 
 Once your test is complete, sUNC will generate a short redirect link via `r.sunc.su` like this:
 
-![An `r.sunc.su` redirect link generated](./assets/test-results/melon.nu.png)
+![An `r.sunc.su` redirect link generated](./assets/test-results/r.sunc.su.png)
 
 This generated link redirects to **Numelon Rubiš**:
 
