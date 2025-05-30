@@ -3,7 +3,14 @@
 `#!luau getgc` returns a list of **non-dead garbage-collectable values**. These include functions, userdatas, and optionally tables.
 
 ```luau
-function getgc(includeTables: boolean?): { { any } | (...any) -> (...any) | userdata }
+export type AnyFunction = (...any) -> (...any)
+export type AnyTable = { [any]: any }
+-- since userdata is not an actual luau type, we will be defining it for clarity sake; as getgc should also return them.
+export type userdata = { [any]: any }
+
+declare getgc:
+    ((includeTables: true) -> { { AnyTable } | AnyFunction | userdata }) &
+    ((includeTables: false?) -> { AnyFunction })
 ```
 
 ## Parameters

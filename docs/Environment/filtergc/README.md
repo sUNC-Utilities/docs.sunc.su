@@ -5,13 +5,14 @@
 This function is most often used to find game-defined functions or internal tables by matching constants, keys, metatables, and more. It behaves similarly to [`#!luau getgc`](../getgc.md), but offers simplicity, efficiency, and more control over what gets returned.
 
 ```luau
-type ReturnType = (...any) -> (...any) | { [any]: any }
+export type AnyFunction = (...any) -> (...any)
+export type AnyTable = { [any]: any }
 
 declare filtergc: 
-    ((filterType: "function", filterOptions: FunctionFilterOptions, returnOne: true) -> ReturnType) &
-    ((filterType: "function", filterOptions: FunctionFilterOptions, returnOne: false?) -> { ReturnType }) &
-    ((filterType: "table", filterOptions: TableFilterOptions, returnOne: true) -> { [any]: any }) &
-    ((filterType: "table", filterOptions: TableFilterOptions, returnOne: false?) -> { { [any]: any } })
+    (( filterType: "function", filterOptions: FunctionFilterOptions, returnOne: true) -> AnyFunction? ) &
+    ((( filterType: "function", filterOptions: FunctionFilterOptions, returnOne: false?) -> ( AnyFunction | { AnyFunction } ) )) &
+    (( filterType: "table", filterOptions: TableFilterOptions, returnOne: true) -> { AnyTable? } ) &
+    (( filterType: "table", filterOptions: TableFilterOptions, returnOne: false? ) -> { AnyTable })
 ```
 
 ---
