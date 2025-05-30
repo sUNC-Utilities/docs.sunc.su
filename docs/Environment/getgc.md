@@ -6,7 +6,7 @@
 export type AnyFunction = (...any) -> (...any)
 export type AnyTable = { [any]: any }
 -- since userdata is not an actual luau type, we will be defining it for clarity sake; as getgc should also return them.
-export type userdata = { [any]: any }
+export type userdata = typeof(newproxy())
 
 declare getgc:
     ((includeTables: true) -> { { AnyTable } | AnyFunction | userdata }) &
