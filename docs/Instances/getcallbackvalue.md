@@ -5,7 +5,7 @@
 Normally, these properties are **write-only**, meaning you can assign a function to them but cannot read them back. This function bypasses that limitation and exposes the function directly.
 
 ```luau
-function getcallbackvalue(object: Instance, property: string): (...any) -> (...any) | nil
+function getcallbackvalue(object: Instance, property: string): any | nil
 ```
 
 ## Parameters
