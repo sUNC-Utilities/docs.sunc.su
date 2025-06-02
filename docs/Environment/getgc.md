@@ -5,13 +5,15 @@
 ```luau
 export type AnyFunction = (...any) -> (...any)
 export type AnyTable = { [any]: any }
--- since userdata is not an actual luau type, we will be defining it for clarity sake; as getgc should also return them.
-export type userdata = { [any]: any }
+
+export type userdata = typeof(newproxy()) -- (1)
 
 declare getgc:
     ((includeTables: true) -> { { AnyTable } | AnyFunction | userdata }) &
     ((includeTables: false?) -> { AnyFunction })
 ```
+
+1. Note that `#!luau userdata` is not an official Luau type, but we define it here for clarity - because `#!luau getgc` can return them as part of its results.
 
 ## Parameters
 
@@ -21,7 +23,9 @@ declare getgc:
 
 ---
 
-## Example 1
+## Examples
+
+### Example 1
 
 ```luau title="Function-only GC scan" linenums="1"
 local dummy_table = {}
@@ -37,9 +41,7 @@ for _, value in pairs(getgc()) do
 end
 ```
 
----
-
-## Example 2
+### Example 2
 
 ```luau title="Full GC scan including tables" linenums="1"
 local dummy_table = {}
