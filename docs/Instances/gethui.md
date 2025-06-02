@@ -3,7 +3,7 @@
 `#!luau gethui` returns a **hidden [`#!luau Instance`](https://create.roblox.com/docs/reference/engine/classes/Instance)** container used for safely storing UI elements. This container is mainly designed to **avoid detections**.
 
 ```luau
-function gethui(): LayerCollector | Folder
+function gethui(): BasePlayerGui | Folder
 ```
 
 ## Parameters
