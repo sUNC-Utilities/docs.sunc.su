@@ -9,7 +9,7 @@
 `#!luau hookfunction` allows you to hook a function with another wanted function, returning the original unhooked function.
 
 ```luau
-function hookfunction<A1..., R1...>(functionToHook: (A1...) -> R1..., hook: (A1...) -> R1...): (A1...) -> R1...
+function hookfunction<A1..., R1..., A2..., R2...>(functionToHook: (A1...) -> R1..., hook: (A2...) -> R2...): (A1...) -> R1...
 ```
 
 ## Parameters
