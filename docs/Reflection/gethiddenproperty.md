@@ -27,5 +27,6 @@ function gethiddenproperty(instance: Instance, property_name: string): (any, boo
 local part = Instance.new("Part")
 
 print(gethiddenproperty(part, "Name"))       -- Output: Part, false
-print(gethiddenproperty(part, "DataCost"))   -- Output: 20, true
+print(gethiddenproperty(part, "DataCost"))   -- Output: 20, false
+print(gethiddenproperty(part, "NetworkOwnerV3"))   -- Output: -1, true
 ```
