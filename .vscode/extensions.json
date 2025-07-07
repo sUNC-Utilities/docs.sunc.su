@@ -1,7 +1,0 @@
-{
-  "recommendations": [
-    "redhat.vscode-yaml",
-    "DavidAnson.vscode-markdownlint",
-    "JohnnyMorganz.luau-lsp"
-  ]
-}
