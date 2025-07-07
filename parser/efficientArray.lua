@@ -7,8 +7,12 @@ Richy-Z@GitHub, https://richy.lol
 return function(arr)
     local constructed = {}
 
-    for i, v in pairs(arr) do
-        constructed[v] = true
+    for i = 1, #arr do
+        constructed[arr[i]] = true
+    end
+
+    local contains = function(_, k)
+        return constructed[k] == true
     end
 
     return setmetatable(constructed, {
@@ -16,11 +20,9 @@ return function(arr)
             error("Addition of new items is not permitted")
         end,
 
-        __index = function(tebel, key)
+        __index = function(_, key)
             if key == "contains" then
-                return function(_, k)
-                    return constructed[k] or false
-                end
+                return contains
             end
         end
     })
