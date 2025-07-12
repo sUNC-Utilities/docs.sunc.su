@@ -1,8 +1,8 @@
 # `getgenv`
 
-!!! warning "getgenv polluting"
+!!! warning "Pollution of getgenv results"
 
-    Modifications to a thread's global environment should not affect `#!luau getgenv`.
+    Modifications to a thread's global environment should not affect the results returned by `#!luau getgenv`.
 
 `#!luau getgenv` returns the **executor's global environment table**, which is shared across all executor-made threads.
 
@@ -22,7 +22,7 @@ function getgenv(): { any }
 
 ## Example
 
-```luau title="getgenv shouldn't be affected by the global table/getfenv" linenums="1"
+```luau title="getgenv should not be affected by the global table/getfenv" linenums="1"
 getgenv().dummy_val = "value"
 getfenv().dummy_val_2 = 1
 
@@ -31,5 +31,4 @@ print(dummy_val, getgenv().dummy_val_2) -- Output: value, 1
 getgenv().dummy_val = "value2"
 dummy_val = nil
 print(dummy_val) -- Output: value2
-
 ```
