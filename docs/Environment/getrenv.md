@@ -21,8 +21,8 @@ function getrenv(): { any }
 
 ```luau title="Overriding Roblox environment functions" linenums="1"
 getrenv().warn = "Hello!"
-print(type(warn)) -- Output: string
+print(type(warn)) -- Output: function
 
 getrenv().game = nil
-print(game) -- Output: nil
+print(game) -- Output: Ugc
 ```
