@@ -1,5 +1,9 @@
 # `getrunningscripts`
 
+!!! info "Notes on `#!luau getrunningscripts`"
+
+    This function should return all the scripts mentioned below, regardless of whether their [`#!luau script` global variable](https://create.roblox.com/docs/reference/engine/globals/RobloxGlobals#script) is set to `#!luau nil` or not.
+
 `#!luau getrunningscripts` returns a list of **all running scripts** in the caller's global state. This includes [`#!luau Script`](https://create.roblox.com/docs/reference/engine/classes/Script), [`#!luau LocalScript`](https://create.roblox.com/docs/reference/engine/classes/LocalScript), and [`#!luau ModuleScript`](https://create.roblox.com/docs/reference/engine/classes/ModuleScript) instances - excluding [`#!luau CoreScripts`](https://robloxapi.github.io/ref/class/CoreScript.html) by default.
 
 ```luau
