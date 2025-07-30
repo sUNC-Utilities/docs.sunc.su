@@ -1,7 +1,10 @@
+local insert = table.insert
+local concat = table.concat
+
 return function(markdown)
     local lines = {}
     for line in markdown:gmatch("[^\r\n]+") do
-        table.insert(lines, line)
+        insert(lines, line)
     end
 
     local constructed = {}
@@ -47,9 +50,9 @@ return function(markdown)
             if line:match("^%-%-%-$") or line:match("^## ") then
                 break
             end
-            table.insert(constructed, line)
+            insert(constructed, line)
         end
     end
 
-    return table.concat(constructed, "\n")
+    return concat(constructed, "\n")
 end

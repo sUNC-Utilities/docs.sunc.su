@@ -40,6 +40,7 @@ firetouchinterest(player_head, dummy_part, true) -- Simulate touch
 task.wait(0.5)
 firetouchinterest(player_head, dummy_part, false) -- Simulate un-touch
 ```
+
 ### Example 2
 
 ```luau title="Simulating a Touched event using '0/1'" linenums="1"
