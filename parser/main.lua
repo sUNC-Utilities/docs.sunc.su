@@ -48,10 +48,17 @@ end
 
 --[[
 functions to be cautious of (due to unique doc format) when parsing:
+
+request
+filtergc
+getgc
+
+Signals/Connection
 WebSocket library
-Connection object under Signals lib
-request() function
-filtergc()
+
+remove things like annotations, e.g. "-- (1)" or maybe even parse them?!
+
+Drawing lib functions except dont count readme
 
 uhh more i forgor
 ]]
