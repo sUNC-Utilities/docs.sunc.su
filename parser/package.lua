@@ -9,7 +9,11 @@ return {
     homepage = "https://github.com/sUNC-Utilities/docs.sunc.su/tree/main/parser",
     dependencies = {
         "luvit/fs",
-        "luvit/json"
+        "luvit/json",
+
+        "luvit/coro-http",
+        "luvit/secure-socket",
+        "Richy-Z/string-extensions"
     },
     files = {
         "!*"

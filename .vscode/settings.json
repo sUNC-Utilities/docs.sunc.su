@@ -16,5 +16,6 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  }
+  },
+  "Lua.diagnostics.globals": ["p"]
 }
