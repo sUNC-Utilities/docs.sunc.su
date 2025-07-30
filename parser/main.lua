@@ -114,7 +114,7 @@ fs.mkdirpSync("../docs/api")
 
 local bot_json = json.encode(bot, { indent = true })
 fs.writeFileSync("../docs/built-info/bot.json", bot_json) -- old
-fs.writeFileSync("../docs/api/full.json", bot_json)
+fs.writeFileSync("../docs/api/jumbo.json", bot_json)
 
 local viewer = {}
 
