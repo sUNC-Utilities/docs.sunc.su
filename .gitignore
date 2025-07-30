@@ -6,7 +6,10 @@ venv
 
 # Luvit dependencies
 parser/deps
-docs/built-info/*
+
+# metadata api
+docs/built-info
+docs/api
 
 # macOS hidden files
 **._*
