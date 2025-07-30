@@ -8,7 +8,7 @@ sUNC is known for its strict tests. Ever since it was made, it was built to expo
 
 As of **sUNC V2**, all tests must be conducted in the official sUNC testing game. This game may be found in our [Discord server](https://discord.gg/FNNfTUpFYv).
 
-We chose to do so, because by having a dedicated server, we're able to provide you with the new sUNC Rubis test results. This allows us to provide you with verified and reproducible results, instead of people sending meaningless screenshots of their console output.
+We chose to do so, because by having a dedicated server, we're able to provide you with the new online test results via Rubiš. This allows us to provide you with verified and reproducible results, instead of people sending meaningless screenshots of their console output.
 
 ---
 
