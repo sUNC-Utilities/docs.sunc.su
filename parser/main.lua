@@ -1,4 +1,4 @@
-local fs = require("coro-fs")
+local fs = require("fs")
 local json = require("json")
 
 local exclusions = require("exclusions")
@@ -7,17 +7,17 @@ local extractIndex = require("indexExtractor")
 local extractDoc = require("docExtractor")
 
 local tree = {}
-for item in fs.scandir("../docs") do
-    if item.type == "directory" and not exclusions:contains(item.name) then
+for name, t in fs.scandirSync("../docs") do
+    if t == "directory" and not exclusions:contains(name) then
         local library = {}
 
-        for func in fs.scandir("../docs/" .. item.name) do
-            if func.type ~= "directory" then
-                library[func.name:gsub(".md", "")] = fs.readFile(("../docs/%s/%s"):format(item.name, func.name))
+        for funcName, fType in fs.scandirSync("../docs/" .. name) do
+            if fType ~= "directory" then
+                library[funcName:gsub(".md", "")] = fs.readFileSync(("../docs/%s/%s"):format(name, funcName))
             end
         end
 
-        tree[item.name] = library
+        tree[name] = library
     end
 end
 
@@ -49,9 +49,11 @@ end
 --[[
 functions to be cautious of (due to unique doc format) when parsing:
 
-request
+-- messy solutions
+request -- done: added compatibility in doc extractor
+getgc -- done: same above
+
 filtergc
-getgc
 
 Signals/Connection
 WebSocket library
@@ -81,8 +83,6 @@ for libname, library in pairs(tree) do
 
             a.description = normaliseUrls(normaliseSnippets(a.description), libname)
 
-            --a.description = normaliseSnippets(extractIndex(doc))
-
             for param, desc in pairs(a.parameters) do
                 a.parameters[param] = normaliseUrls(normaliseSnippets(desc), libname)
             end
@@ -94,10 +94,10 @@ for libname, library in pairs(tree) do
     end
 end
 
-fs.mkdirp("../docs/built-info")
+fs.mkdirpSync("../docs/built-info")
 
 local bot_json = json.encode(bot, { indent = true })
-fs.writeFile("../docs/built-info/bot.json", bot_json)
+fs.writeFileSync("../docs/built-info/bot.json", bot_json)
 
 local viewer = {}
 
@@ -112,4 +112,4 @@ end
 viewer[""] = nil
 
 local viewer_json = json.encode(viewer, { indent = true })
-fs.writeFile("../docs/built-info/viewer.json", viewer_json)
+fs.writeFileSync("../docs/built-info/viewer.json", viewer_json)

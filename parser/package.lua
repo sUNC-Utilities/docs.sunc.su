@@ -8,8 +8,8 @@ return {
     author = { name = "Richard Ziupsnys", email = "hello@richy.lol" },
     homepage = "https://github.com/sUNC-Utilities/docs.sunc.su/tree/main/parser",
     dependencies = {
-        "luvit/json",
-        "creationix/coro-fs"
+        "luvit/fs",
+        "luvit/json"
     },
     files = {
         "!*"
