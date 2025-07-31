@@ -1,6 +1,6 @@
 # `getconnections`
 
-!!! warning "A `Connection` in the context of `RBXScriptSignal` refers to **a subscription between an `RBXScriptSignal` (an event) and a function that is set to be executed when that signal fires**, and not the connections (friends) of a Player"
+!!! warning "A `Connection`, in the context of `RBXScriptSignal`, refers to **a subscription between the signal (event) and the function to execute when it fires** - not the social 'connections' of a user."
 
 !!! warning "Your game may crash if C connections are not properly supported."
 
