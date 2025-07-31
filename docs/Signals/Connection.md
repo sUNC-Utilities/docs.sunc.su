@@ -10,13 +10,13 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 ## Fields
 
-| Field               | Type        | Description                                                                 |
-|---------------------|-------------|-----------------------------------------------------------------------------|
-| `#!luau Enabled`       | `boolean`               | Whether the connection is currently active and will respond to events.     |
-| `#!luau ForeignState`  | `boolean`               | `#!luau true` if the connection was made from a foreign Luau state (e.g. CoreScript). |
-| `#!luau LuaConnection` | `boolean`               | `#!luau true` if the connection was created from Luau, not C or foreign code.        |
-| `#!luau Function`      | `(...any) -> (...any)?` | The bound function, or `#!luau nil` if foreign or non-Luau contexts.                        |
-| `#!luau Thread`        | `thread?`               | The thread that created the connection, or `#!luau nil` in foreign or non-Luau contexts.       |
+| Field                  | Type                    | Description                                                                              |
+| ---------------------- | ----------------------- | ---------------------------------------------------------------------------------------- |
+| `#!luau Enabled`       | `boolean`               | Whether the connection is currently active and will respond to events.                   |
+| `#!luau ForeignState`  | `boolean`               | `#!luau true` if the connection was made from a foreign Luau state (e.g. CoreScript).    |
+| `#!luau LuaConnection` | `boolean`               | `#!luau true` if the connection was created from Luau, not C.                            |
+| `#!luau Function`      | `(...any) -> (...any)?` | The bound function, or `#!luau nil` if foreign or non-Luau contexts.                     |
+| `#!luau Thread`        | `thread?`               | The thread that created the connection, or `#!luau nil` in foreign or non-Luau contexts. |
 
 !!! info "Foreign and C-state behavior"
 
@@ -26,10 +26,10 @@ A `#!luau Connection` object represents an active link to a signal's callback. T
 
 ## Methods
 
-| Method Signature                           | Description                                                     |
-|--------------------------------------------|-----------------------------------------------------------------|
-| `#!luau Connection:Fire(...: any): ()`       | Fires the connected function with given arguments. |
-| `#!luau Connection:Defer(...: any): ()`      | Defers execution using [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer).     |
-| `#!luau Connection:Disconnect(): ()`         | Disconnects the connection from the signal.                    |
-| `#!luau Connection:Disable(): ()`            | Prevents the connection from receiving events.                 |
-| `#!luau Connection:Enable(): ()`             | Re-enables a previously disabled connection.                   |
+| Method Signature                        | Description                                                                                                         |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `#!luau Connection:Fire(...: any): ()`  | Fires the connected function with given arguments.                                                                  |
+| `#!luau Connection:Defer(...: any): ()` | Defers execution using [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer). |
+| `#!luau Connection:Disconnect(): ()`    | Disconnects the connection from the signal.                                                                         |
+| `#!luau Connection:Disable(): ()`       | Prevents the connection from receiving events.                                                                      |
+| `#!luau Connection:Enable(): ()`        | Re-enables a previously disabled connection.                                                                        |
