@@ -4,6 +4,8 @@
 
 `#!luau getconnections` retrieves a list of [`Connection`](./Connection.md) objects currently attached to a given [`RBXScriptSignal`](https://create.roblox.com/docs/reference/engine/datatypes/RBXScriptSignal).
 
+!!! warning "A `Connection` in the context of `RBXScriptSignal` refers to **a subscription between an `RBXScriptSignal` (an event) and a function that is set to be executed when that signal fires**, and not the connections (friends) of a Player"
+
 ```luau
 function getconnections(signal: RBXScriptSignal): {Connection}
 ```
