@@ -31,7 +31,8 @@ return function(markdown)
             insideAdmonition = true
             goto continue
         elseif insideAdmonition then
-            if line:match("^%s*$") or not line:match("^%s") then
+            -- fixed: non-indented non-blank line should end the admonition
+            if not line:match("^%s") and line:match("%S") then
                 insideAdmonition = false
             else
                 goto continue
