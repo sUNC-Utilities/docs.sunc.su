@@ -113,7 +113,6 @@ fs.mkdirpSync("../docs/built-info") -- old directory, now deprecated
 fs.mkdirpSync("../docs/api")
 
 local bot_json = json.encode(bot, { indent = true })
-fs.writeFileSync("../docs/built-info/bot.json", bot_json) -- old
 fs.writeFileSync("../docs/api/jumbo.json", bot_json)
 
 local viewer = {}
@@ -129,6 +128,7 @@ end
 viewer[""] = nil
 
 local viewer_json = json.encode(viewer, { indent = true })
+-- TODO: get the built-info directory ready for DEPRECATION
 fs.writeFileSync("../docs/built-info/viewer.json", viewer_json) -- old
 fs.writeFileSync("../docs/api/mini.json", viewer_json)
 
