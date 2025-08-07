@@ -10,7 +10,7 @@ parser/deps
 # metadata api
 docs/built-info
 
-docs/api/*.json
+docs/api/
 
 # macOS hidden files
 **._*
