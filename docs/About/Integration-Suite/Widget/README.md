@@ -17,7 +17,7 @@ This widget is ideal for developers who want to display sUNC results on status w
 You can embed the widget using a standard `#!html <iframe>` and control it using the `postMessage` API.
 
 ```html title="Embedding the sUNC widget"
-<iframe id="sunc-widget" src="https://sunc.rubis.app/widget.html" allowfullscreen></iframe>
+<iframe id="sunc-widget" src="https://sunc.rubis.app/widget/" allowfullscreen></iframe>
 ```
 
 ```html title="Sending a message to load a scrap (test result)"
