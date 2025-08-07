@@ -10,9 +10,10 @@ document.addEventListener("mouseout", function (e) {
 
         if (tContent === "Filtergc") {
             element.textContent = "filtergc";
-        } else if (tContent === "Api") {
-            element.textContent = "Metadata API";
         }
+        // else if (tContent === "Api") {
+        //     element.textContent = "Metadata API";
+        // }
     })
     if (link && !link.contains(e.relatedTarget)) {
         link.blur();
