@@ -28,7 +28,7 @@ h1 {
 iframe {
   width: 100%;
   max-width: 960px;
-  height: 600px;
+  height: 610px; /* this is the recommended minimum height */
   border: none;
   border-radius: 10px;
   box-shadow: 0 0 0 1px #2a2a40, 0 4px 20px rgba(0, 0, 0, 0.5);

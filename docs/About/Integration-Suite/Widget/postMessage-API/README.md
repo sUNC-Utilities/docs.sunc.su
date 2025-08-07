@@ -17,12 +17,17 @@ type SuncWidgetMessage =
       dark?: string;
       light?: string;
       lighter?: string;
+
       sunc?: string;
       suncLighter?: string;
+
       grey?: string;
       lightText?: string;
+
       success?: string;
       failure?: string;
+      
+      useDarkLogo?: boolean;
     };
   };
 

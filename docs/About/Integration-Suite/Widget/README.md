@@ -26,6 +26,8 @@ You may view this example preview [here](./example/) or look at the [source code
 
 You can embed the widget using a standard `#!html <iframe>` and control it using the [`postMessage` API](./postMessage-API/README.md).
 
+**The *recommended* minimum height for this widget is `#!css 610px`.**
+
 ```html title="Embedding the sUNC widget"
 <iframe id="sunc-widget" src="https://sunc.rubis.app/widget/" allowfullscreen></iframe>
 ```
