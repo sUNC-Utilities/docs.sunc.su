@@ -14,7 +14,7 @@
 
     <h1>sUNC Widget Example</h1>
 
-    <iframe id="sunc-widget" src="http://127.0.0.1:3002/widget/" allowfullscreen></iframe>
+    <iframe id="sunc-widget" src="https://sunc.rubis.app/widget/" allowfullscreen></iframe>
 
     <div class="button-row">
         <button onclick="setTheme()">Use custom theme, Creamy Pink</button>
@@ -36,7 +36,7 @@
                     scrapId: "WEweppeG2InphuKF",
                     key: "n8zp808cs4lrQGa75Qfidvgt1xq5vy0H"
                 }
-            }, "http://127.0.0.1:3002");
+            }, "https://sunc.rubis.app");
         }
 
         function loadScrap2() {
@@ -47,7 +47,7 @@
                     scrapId: "WnzsF1da9RSdn0E2",
                     key: "DnGSbWzKGM1OQm80fvprp9J3M97siksb"
                 }
-            }, "http://127.0.0.1:3002");
+            }, "https://sunc.rubis.app");
         }
 
         function setTheme() {
@@ -70,7 +70,7 @@
 
                     useDarkLogo: true
                 }
-            }, "http://127.0.0.1:3002");
+            }, "https://sunc.rubis.app");
         }
 
         function setTheme2() {
@@ -91,14 +91,14 @@
                     success: "#4caf50",
                     failure: "#ff4b5c"
                 }
-            }, "http://127.0.0.1:3002");
+            }, "https://sunc.rubis.app");
         }
 
         function setThemeDefault() {
             iframe.contentWindow.postMessage({
                 type: "sunc-widget:setTheme",
                 payload: {} // this works because the widget falls back to default colours if some fields are not provided
-            }, "http://127.0.0.1:3002");
+            }, "https://sunc.rubis.app");
         }
 
     </script>
