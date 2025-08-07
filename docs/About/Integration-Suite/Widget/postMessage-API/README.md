@@ -1,7 +1,7 @@
 # `postMessage`
 
 !!! info "Notes on `#!ts postMessage`"
-    This function **only applies to websites embedding the sUNC Widget** via `<iframe>`. It allows you to dynamically interact with the widget by sending messages from your host page.
+    This function **only applies to websites embedding the sUNC Widget** via an `#!html <iframe>`. It allows you to dynamically interact with the widget by sending messages from your host page.
 
 `#!ts postMessage` sends a typed message to a sUNC Widget iframe, allowing you to control its behaviour.
 

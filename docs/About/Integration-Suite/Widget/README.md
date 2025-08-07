@@ -12,6 +12,16 @@ This widget is ideal for developers who want to display sUNC results on status w
 - Change the widget theme to match your website using a custom colour scheme.
 - Dynamically control the widget through JavaScript using the [`#!ts postMessage` API](./postMessage-API/).
 
+---
+
+## Example
+
+![sUNC Widget Example](./assets/widget.gif)
+
+You may view this example preview [here](./example/) or look at the [source code](https://github.com/sUNC-Utilities/docs.sunc.su/edit/main/docs/About/Integration-Suite/Widget/example).
+
+---
+
 ## Usage
 
 You can embed the widget using a standard `#!html <iframe>` and control it using the `postMessage` API.

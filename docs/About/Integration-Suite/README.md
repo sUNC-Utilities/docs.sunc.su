@@ -12,6 +12,6 @@ This suite is especially useful for web developers who work on status websites, 
 
 With the sUNC Integration Suite, you can:
 
-- **Embed** rich test result viewers into your site using the [**widget system**](./Widget)
+- **Embed** rich test result viewers into your site using the [**widget system**](./Widget/)
 - **Fetch** live, structured function metadata using the [**sUNC Metadata API**](./Metadata-API/)
-- **Query** test result data from our upcoming Results API
+<!-- - **Query** test result data from our upcoming Results API -->
