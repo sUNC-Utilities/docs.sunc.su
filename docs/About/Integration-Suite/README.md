@@ -20,4 +20,4 @@ With the sUNC Integration Suite, you can:
 
 ## Support
 
-If you require some assistance or would like some new features in any part of the sUNC Integration Suite, e.g. the widget system, please do not hesitate to contact `@iirzd` in the [sUNC Discord server](https://discord.gg/FNNfTUpFYv).
+If you require some assistance or would like some new features in any part of the sUNC Integration Suite, e.g. the widget system, please do not hesitate to contact [`@iirzd`](https://richy.lol) in the [sUNC Discord server](https://discord.gg/FNNfTUpFYv).
