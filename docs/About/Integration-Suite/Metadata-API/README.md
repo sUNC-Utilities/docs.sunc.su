@@ -4,7 +4,7 @@ The **sUNC Metadata API (SMA)** provides machine-friendly JSON datasets containi
 
 This API is designed for integration into apps, extensions, custom documentation browsers, or anywhere you want access to sUNC data programmatically. For example, we use the mini version in our test results viewer and the jumbo version for our Discord bot, sunc-chan.
 
-You can access it [here](https://docs.sunc.su/api).
+**You can access it [here](https://docs.sunc.su/api).**
 
 ---
 

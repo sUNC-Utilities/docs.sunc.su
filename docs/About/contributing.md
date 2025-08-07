@@ -1,4 +1,4 @@
-# How to contribute
+# Contribution Guide
 
 Welcome to the sUNC documentation project! We worked tirelessly to standardise and make the documentation beautiful and readable for everyone.
 
@@ -117,16 +117,15 @@ Every function page **must** include at least one example.
 
 Each example should use the following format:
 
-```md
+````md
 ## Example
 
-` ` `luau title="Short but descriptive title for your code" linenums="1"
+```luau title="Short but descriptive title for your code" linenums="1"
 -- an example is here
 print("Hello world!")
 print("This is some example code")
-` ` `
-
 ```
+````
 
 - Examples must use `luau` syntax highlighting.
 - Line numbers **must** be enabled using `linenums="1"`.
