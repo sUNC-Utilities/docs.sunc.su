@@ -1,6 +1,6 @@
 # The `Connection` object
 
-!!! info "Notes on the `object`"
+!!! info "Notes on the `#!luau Connection` object"
 
     The retrieved connection object will only have the listed methods and fields, since it's a custom object
 
