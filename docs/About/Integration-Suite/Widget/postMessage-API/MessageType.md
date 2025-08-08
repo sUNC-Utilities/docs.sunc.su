@@ -58,18 +58,18 @@ type ThemePayload = {
 
 ### Parameters
 
-| Parameter          | Type          | Description                                                                                                                                                 | Default         |
-| ------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| `#!ts dark`        | `#!ts string` | Primary background colour for the entire widget.                                                                                                                     | `#!css #12121c` |
-| `#!ts light`       | `#!ts string` | The secondary colour used for function cards and the summary on the right.                                                                                  | `#!css #1b1b2a` |
-| `#!ts lighter`     | `#!ts string` | Colour used for the information bar at the top.                                                                                                               | `#!css #1c1b28` |
-| `#!ts sunc`        | `#!ts string` | Brand accent colour to be used by the info text, circle stroke and passed amount.                                                                                  | `#!css #b7a0f6` |
-| `#!ts suncLighter` | `#!ts string` | Used for hover effects, like the Numelon link at the bottom.                                                                                                  | `#!css #d1b9ff` |
-| `#!ts grey`        | `#!ts string` | Used for muted UI elements like search input icons, placeholder text, and metadata titles in the summary area.                                                  | `#!css #aaaaaa` |
+| Parameter          | Type          | Description                                                                                                                                                | Default         |
+| ------------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `#!ts dark`        | `#!ts string` | Primary background colour for the entire widget.                                                                                                           | `#!css #12121c` |
+| `#!ts light`       | `#!ts string` | The secondary colour used for function cards and the summary on the right.                                                                                 | `#!css #1b1b2a` |
+| `#!ts lighter`     | `#!ts string` | Colour used for the information bar at the top.                                                                                                            | `#!css #1c1b28` |
+| `#!ts sunc`        | `#!ts string` | Brand accent colour to be used by the info text, circle stroke and passed amount.                                                                          | `#!css #b7a0f6` |
+| `#!ts suncLighter` | `#!ts string` | Used for hover effects, like the Numelon link at the bottom.                                                                                               | `#!css #d1b9ff` |
+| `#!ts grey`        | `#!ts string` | Used for muted UI elements like search input icons, placeholder text, and metadata titles in the summary area.                                             | `#!css #aaaaaa` |
 | `#!ts lightText`   | `#!ts string` | Main readable text colour - used in the widget "Test Result" title, percentage label inside ring, and metadata values in the summary area and button text. | `#!css #e0e0e0` |
-| `#!ts success`     | `#!ts string` | Colour used to indicate passed tests.                                                                                              | `#!css #22c55e` |
-| `#!ts failure`     | `#!ts string` | Colour used for general failures, notably in the list of functions but also for widget errors and the "x tests failed" text.                                | `#!css #ef4444` |
-| `#!ts useDarkLogo` | `#!ts string` | Whether to use a light-friendly (dark) version of the sUNC logo. Set to `#!ts false` if you are using a light theme.                                                                               | `#!ts true`     |
+| `#!ts success`     | `#!ts string` | Colour used to indicate passed tests.                                                                                                                      | `#!css #22c55e` |
+| `#!ts failure`     | `#!ts string` | Colour used for general failures, notably in the list of functions but also for widget errors and the "x tests failed" text.                               | `#!css #ef4444` |
+| `#!ts useDarkLogo` | `#!ts string` | Whether to use a light-friendly (dark) version of the sUNC logo. Set to `#!ts false` if you are using a light theme.                                       | `#!ts true`     |
 
 ### Clarification on colour names
 
