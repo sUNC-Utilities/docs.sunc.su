@@ -40,7 +40,7 @@ You do not need an API key or authentication to use this API.
 ## Example Usage
 
 ```js title="Fetching the mini version to print clonefunction's description"
-const res = await fetch("<https://docs.sunc.su/api/mini.json>");
+const res = await fetch("https://docs.sunc.su/api/mini.json");
 const metadata = await res.json();
 
 console.log(metadata["clonefunction"]);
