@@ -1,7 +1,10 @@
 {
   "recommendations": [
     "redhat.vscode-yaml",
+
+    "JohnnyMorganz.luau-lsp",
+
     "DavidAnson.vscode-markdownlint",
-    "JohnnyMorganz.luau-lsp"
+    "yzhang.markdown-all-in-one"
   ]
 }
