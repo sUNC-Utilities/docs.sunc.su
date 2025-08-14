@@ -18,7 +18,9 @@ function getconnections(signal: RBXScriptSignal): {Connection}
 
 ---
 
-## Example
+## Examples
+
+### Example 1
 
 ```luau title="Inspecting and invoking a Luau connection" linenums="1"
 local folder = Instance.new("Folder")
@@ -32,9 +34,7 @@ connection:Fire() -- Same as above, Output: Triggered
 print(typeof(connection.Thread)) -- Output: thread
 ```
 
----
-
-## Example 2
+### Example 2
 
 ```luau title="Accessing a foreign/C connection" linenums="1"
 local cconnection = getconnections(game.Players.LocalPlayer.Idled)[1]
