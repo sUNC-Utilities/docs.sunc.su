@@ -17,8 +17,10 @@ function gethui(): BasePlayerGui | Folder
 ## Example
 
 ```luau title="Creating undetectable UI in gethui" linenums="1"
+local hui = gethui() :: (BasePlayerGui | Folder)
+
 local gui = Instance.new("ScreenGui")
-gui.Parent = gethui()
+gui.Parent = hui
 gui.Name = "GUI"
 
 local label = Instance.new("TextLabel")
@@ -26,5 +28,5 @@ label.Size = UDim2.fromOffset(200, 50)
 label.Text = "Hello from gethui!"
 label.Parent = gui
 
-print(gethui():FindFirstChild("GUI")) -- Output: GUI
+print(hui:FindFirstChild("GUI")) -- Output: GUI
 ```
