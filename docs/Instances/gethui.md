@@ -26,5 +26,5 @@ label.Size = UDim2.fromOffset(200, 50)
 label.Text = "Hello from gethui!"
 label.Parent = gui
 
-print(gethui():FindFirstChild(gui)) -- Output: GUI
+print(gethui():FindFirstChild("GUI")) -- Output: GUI
 ```
