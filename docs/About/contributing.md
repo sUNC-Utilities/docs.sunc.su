@@ -4,7 +4,7 @@ Welcome to the sUNC documentation project! We worked tirelessly to standardise a
 
 This guide outlines the official standards for contributing to the sUNC documentation, including how libraries and functions should be structured and written.
 
-Consistency makes our documentation readable, searchable, and enjoyable to explore.
+Consistency makes the documentation readable, searchable, and enjoyable to explore.
 
 ---
 
@@ -17,7 +17,7 @@ Each library **must** be placed in a folder named after the library itself. Insi
 - Introduce the purpose of the library
 - Summarise what you **can** and **cannot** do with it
 
-Index pages *do not* need to follow this strict format, but they should ***aim*** for clarity and helpfulness.
+Index pages *do not* need to follow this strict format, but they should ***aim*** to do so, for clarity and helpfulness.
 
 ---
 
@@ -33,6 +33,40 @@ All documentation pages (including function pages and index pages) **must**:
     ```
 
     As you can see, the example above uses a code snippet with `luau` syntax highlighting enabled, whilst also being a hyperlink to the Roblox API documentation for [`#!luau task.defer`](https://create.roblox.com/docs/reference/engine/libraries/task#defer).
+
+All markdown documents must be formatted using David Anson's ["markdownlint"](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) extension, available for free in the Visual Studio marketplace.
+
+This extension alone is not sufficient enough, which is why we use Yu Zhang's ["markdown all in one"](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extension too, but only specifically for formatting tables. This makes tables look nice and readable in the source markdown files of the documentation.
+
+The repository for this documentation already includes a `.vscode/extensions.json` file, so the extensions should automatically download for you once you consent.
+
+When formatting tables, open the Command Palette with `Ctrl + Shift + P` (Windows) or `⌘ + Shift + P` (macOS), select "Format Document With...", and select "Markdown All In One" like so:
+
+![Formatting a markdown document using the Markdown All In One extension in Visual Studio Code](./assets/markdown-formatting.gif)
+
+### Language choices
+
+#### Using British English
+
+It is generally well known around the sUNC community that the documentation and most things that have a lot of text are written using British English. This usually means some words Americans spell with a "z" will instead use an "s". If you are unsure, please check the Oxford or Cambridge dictionaries.
+
+#### The "Oxford Comma"
+
+Please use the [Oxford Comma](https://en.wikipedia.org/wiki/Serial_comma) when writing lists.  
+This means that in a list of three or more items, a comma is placed before the final "and" or "or".  
+For example: *"apples, oranges, and bananas"* rather than *"apples, oranges and bananas"*.  
+
+The Oxford Comma avoids ambiguity and makes lists clearer. It also mirrors natural pauses in daily speech, which makes the text easier to read aloud and less confusing to follow.
+
+#### Short-form contractions
+
+Please avoid contractions like "isn't" and "it's". Instead, use "is not" and "it is" respectively. These are just examples, but the same rules apply for all contractions. Because this documentation is formal and technical rather than conversational, contractions should be avoided.
+
+#### Articles before a word
+
+An article is something that goes before a word, like `a` and `an`. This is a polite reminder to ***not*** just put an `an` in front of things that have a vowel *literally*, but rather whether the word has a vowel **sound** when pronounced out loud. Non-native English speakers tend to get this rule wrong sometimes.
+
+If unsure about pronunciation, assume that pronunciation is done with a British RP accent - the best sources to listen to are the Oxford and Cambridge dictionaries again where the pronunciation is perfect.
 
 ---
 

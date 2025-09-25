@@ -12,11 +12,11 @@ function fireclickdetector(detector: ClickDetector, distance: number?, event: st
 
 ## Parameters
 
-| Parameter        | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| `#!luau detector`  | The [`#!luau ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector) to trigger.|
-| `#!luau distance?` | Distance from which the click is simulated. Defaults to infinite.|
-| `#!luau event?`    | The event to trigger.|
+| Parameter          | Description                                                                                                     |
+| ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `#!luau detector`  | The [`#!luau ClickDetector`](https://create.roblox.com/docs/reference/engine/classes/ClickDetector) to trigger. |
+| `#!luau distance?` | Distance from which the click is simulated. Defaults to infinite.                                               |
+| `#!luau event?`    | The event to trigger.                                                                                           |
 
 ---
 

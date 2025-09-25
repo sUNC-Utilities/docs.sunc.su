@@ -69,7 +69,6 @@ button.onclick = () => {
 }
 ```
 
-
 You should **ensure that the `#!html <iframe>` exists only once** - whether this is dynamically created or *already present* in your HTML - and keep it hidden by default (e.g., with Tailwind's `#!css hidden` class or `#!css display: none` in CSS). Then simply show, hide, or update it as needed:
 
 ```js title="Creating one persistent widget with the name of 'sunc-widget'"

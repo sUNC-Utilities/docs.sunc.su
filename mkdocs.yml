@@ -38,23 +38,21 @@ theme:
 
   features:
     - navigation.instant
-    # - navigation.instant.prefetch # experimental, prefetches content on link hover. might be unnecessary data usage
     - navigation.instant.progress
-    #- navigation.instant.preview # please check this functionality
     - navigation.tracking
     # - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
+    #- navigation.expand
     - navigation.path
     - navigation.indexes # allows you to provide an index file for each section
     - navigation.top
     - navigation.footer
-    # - navigation.prune
 
     - toc.follow
 
     - search.suggest
+    - search.share
     #- search.highlight
 
     - content.action.edit
