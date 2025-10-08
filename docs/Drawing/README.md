@@ -34,7 +34,7 @@ All drawing object types inherit the following fields:
 |--------------------|-----------|-----------------------------------------------------------------------------|
 | `#!luau Visible`     | `#!luau boolean` | Whether the object is rendered. Defaults to `#!luau false`.                        |
 | `#!luau ZIndex`      | `#!luau number`  | Render order; higher values appear on top.                                  |
-| `#!luau Transparency`| `#!luau number`  | Translucency, where `1` is fully transparent and `0` is fully visible. |
+| `#!luau Transparency`| `#!luau number`  | Translucency, where `0` is fully transparent and `1` is fully visible. |
 | `#!luau Color`       | `#!luau Color3`  | The color of the drawing.                                                   |
 | `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object exists.                |
 
