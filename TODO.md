@@ -25,7 +25,7 @@ This to-do list is split up into sections with tasks assigned to documentation m
 - Create a new group, similar to the new base64 group (from crypt), documenting the lz4compress and the lz4decompress functions
 - Potentially note that debug.getinfo is useless as we have better debug.info (just put this note in debug.getinfo, if you still want to implement getinfo then visit this link etc, but otherwise theyre somewhat similar)
   - "dont really care much about this function, but i think we should add it, since we did add setscriptable"
-- create documentation for `decompile` under reflection group, and also every other function mentioned [here](https://github.com/sUNC-Utilities/docs.sunc.su/issues/162)
+- create documentation for `decompile` under SCRIPTS (not reflection!) group, and also every other function mentioned [here](https://github.com/sUNC-Utilities/docs.sunc.su/issues/162)
   - <https://synapsexdocs.github.io/custom-lua-functions/reflection-functions/#decompile>
   - cross off items from same github issue
 - create documentation for `getnamecallmethod` under metatable group
