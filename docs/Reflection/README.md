@@ -10,7 +10,7 @@ With the Reflection library, you can:
 
 - **Read** hidden instance properties using [`#!luau gethiddenproperty`](./gethiddenproperty.md)
 - **Write** to hidden instance properties with [`#!luau sethiddenproperty`](./sethiddenproperty.md)
-- **Toggle** scriptability of properties using [`#!luau setscriptable`](./setscriptable.md)
+- **Toggle and check** scriptability of properties using [`#!luau setscriptable`](./setscriptable.md) and [`#!luau isscriptable`](./isscriptable.md).
 - **Elevate** thread permissions with [`#!luau setthreadidentity`](./setthreadidentity.md)
 - **Query** the current thread's permission level with [`#!luau getthreadidentity`](./getthreadidentity.md)
 

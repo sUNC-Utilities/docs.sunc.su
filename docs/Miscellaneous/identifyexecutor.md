@@ -15,8 +15,8 @@ function identifyexecutor(): (string, string)
 
 ## Parameters
 
-| Parameter | Description        |
-|-----------|--------------------|
+| Parameter | Description                        |
+| --------- | ---------------------------------- |
 | *(none)*  | This function takes no parameters. |
 
 ---

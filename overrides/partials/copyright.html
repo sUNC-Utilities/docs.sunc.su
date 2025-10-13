@@ -101,11 +101,7 @@
 </style>
 
 <script>
-    const currentYear = new Date().getFullYear();
-    const yearSpan = document.getElementById("nml-copyright-year");
-    if (yearSpan && currentYear > 2025) {
-        yearSpan.textContent = currentYear;
-    }
+    document.getElementById("nml-copyright-year").textContent = new Date().getFullYear();
 
     const alien = document.getElementById("dancing-alien");
     alien.addEventListener("click", () => {

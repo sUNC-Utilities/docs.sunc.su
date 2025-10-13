@@ -8,12 +8,12 @@ Each key in the filter table specifies a condition the table must meet in order 
 
 ## Available Options
 
-| Key                 | Type               | Description                                                                                       | Default       |
-|----------------------|--------------------|---------------------------------------------------------------------------------------------------|---------------|
-| `#!luau Keys`          | `#!luau { any }?`     | If provided, also includes tables that contain **all** the specified keys.                         | `#!luau nil`  |
-| `#!luau Values`        | `#!luau { any }?`     | If provided, only includes tables that contain **all** the specified values.                       | `#!luau nil`  |
-| `#!luau KeyValuePairs` | `#!luau { [any]: any }?` | If provided, only includes tables that contain **all** key-value pairs in this table.          | `#!luau nil`  |
-| `#!luau Metatable`     | `#!luau table?`        | If provided, only includes tables whose metatable matches the given one.                          | `#!luau nil`  |
+| Key                    | Type                     | Description                                                                           | Default      |
+| ---------------------- | ------------------------ | ------------------------------------------------------------------------------------- | ------------ |
+| `#!luau Keys`          | `#!luau { any }?`        | If provided, also includes tables that contain **all** the specified keys.            | `#!luau nil` |
+| `#!luau Values`        | `#!luau { any }?`        | If provided, only includes tables that contain **all** the specified values.          | `#!luau nil` |
+| `#!luau KeyValuePairs` | `#!luau { [any]: any }?` | If provided, only includes tables that contain **all** key-value pairs in this table. | `#!luau nil` |
+| `#!luau Metatable`     | `#!luau table?`          | If provided, only includes tables whose metatable matches the given one.              | `#!luau nil` |
 
 ---
 

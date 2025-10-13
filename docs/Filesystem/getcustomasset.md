@@ -20,7 +20,7 @@ function getcustomasset(path: string): string
 
 ```luau title="Using getcustomasset to load and play a sound in-game" linenums="1"
 local encoded = game:HttpGet("https://gitlab.com/sens3/nebunu/-/raw/main/encodedBytecode.txt")
-writefile("ExampleSound.mp3", crypt.base64decode(encoded))
+writefile("ExampleSound.mp3", base64decode(encoded))
 
 local asset_id = getcustomasset("ExampleSound.mp3")
 
