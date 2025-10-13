@@ -30,11 +30,11 @@ function Drawing.new(type: string): Drawing
 
 !!! info "Note about the behaviour of the `#!luau Transparency` property"
 
-    Some implementations by executors of the Drawing library have mistakenly treated the `#!luau Transparency` property as **opacity** rather than actual **transparency**. This confusion originates from the original UNC documentation, which incorrectly defined *transparency* as *"the opacity of the drawing"* (quite literally wrong, the opposite!).
+    Some implementations of the Drawing library by executors have mistakenly treated the `#!luau Transparency` property as **opacity** rather than actual **transparency**. This confusion originates from the original UNC documentation, which incorrectly defined *transparency* as *"the opacity of the drawing"* (quite literally wrong, the opposite!).
 
     ![Definition of the word "Transparency"](./assets/transparency.png)
 
-    In sUNC, we follow the correct interpretation and actual meaning of the word. `#!luau Transparency` represents true transparency, where `#!luau 0` means fully opaque and `#!luau 1` means fully **transparent** (see-through). This also aligns with how Roblox handles their transparency property on Part instances.
+    In sUNC, we follow the correct meaning of the word. `#!luau Transparency` represents true transparency, where `#!luau 0` means fully opaque and `#!luau 1` means fully **transparent** (see-through). This also aligns with how Roblox handles their transparency property on some instances (e.g. Part, Frame, etc).
 
 All drawing object types inherit the following fields:
 
