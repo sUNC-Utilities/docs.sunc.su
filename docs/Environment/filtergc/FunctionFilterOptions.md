@@ -8,13 +8,13 @@ Each key in the filter table specifies a criterion that must be matched by the f
 
 ## Available options
 
-| Key                 | Type             | Description                                                                                          | Default |
-|----------------------|------------------|------------------------------------------------------------------------------------------------------|---------|
-| `#!luau Name`          | `#!luau string?`    | If provided, filters out functions which don't match this name.                                       | `#!luau nil`   |
-| `#!luau IgnoreExecutor`| `#!luau boolean?`  | If `true`, filters out functions that were created inside the executor.                              | `#!luau true`  |
-| `#!luau Hash`          | `#!luau string?`    | Filters by the hash of the function. See [`#!luau getfunctionhash`](../../Closures/getfunctionhash.md). | `#!luau nil`   |
-| `#!luau Constants`     | `#!luau { any }?`   | Also includes functions that contain the matching constants in the provided list.                           | `#!luau nil`   |
-| `#!luau Upvalues`      | `#!luau { any }?`   | Also includes functions that contain the matching upvalues in the provided list.                                  | `#!luau nil`   |
+| Key                     | Type              | Description                                                                                             | Default       |
+| ----------------------- | ----------------- | ------------------------------------------------------------------------------------------------------- | ------------- |
+| `#!luau Name`           | `#!luau string?`  | If provided, filters out functions which don't match this name.                                         | `#!luau nil`  |
+| `#!luau IgnoreExecutor` | `#!luau boolean?` | If `true`, filters out functions that were created inside the executor.                                 | `#!luau true` |
+| `#!luau Hash`           | `#!luau string?`  | Filters by the hash of the function. See [`#!luau getfunctionhash`](../../Closures/getfunctionhash.md). | `#!luau nil`  |
+| `#!luau Constants`      | `#!luau { any }?` | Also includes functions that contain the matching constants in the provided list.                       | `#!luau nil`  |
+| `#!luau Upvalues`       | `#!luau { any }?` | Also includes functions that contain the matching upvalues in the provided list.                        | `#!luau nil`  |
 
 ---
 

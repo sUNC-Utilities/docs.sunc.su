@@ -19,11 +19,11 @@ declare filtergc:
 
 ## Parameters
 
-| Parameter         | Description                                                                 |
-|------------------|-----------------------------------------------------------------------------|
-| `#!luau filterType`   | The type of value to search for.         |
-| `#!luau filterOptions` | A set of rules used to match functions or tables. [See below.](#filter-option-types)               |
-| `#!luau returnOne?`   | If `#!luau true`, returns the first match, instead of a table of matches.         |
+| Parameter              | Description                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| `#!luau filterType`    | The type of value to search for.                                                     |
+| `#!luau filterOptions` | A set of rules used to match functions or tables. [See below.](#filter-option-types) |
+| `#!luau returnOne?`    | If `#!luau true`, returns the first match, instead of a table of matches.            |
 
 ---
 

@@ -18,7 +18,7 @@ Whether you're an executor developer, a curious tester, or a contributor helping
 
 - [What is sUNC?](./About/what-is-sunc.md)
 - [How sUNC Test Results Work](./About/test-results.md)
-- [How to Contribute](./About/contributing.md)
+- [How to contribute](./About/contributing.md)
 
 ## 📜 The script
 

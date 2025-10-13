@@ -20,30 +20,38 @@ function Drawing.new(type: string): Drawing
 
 ## Parameters
 
-| Parameter     | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
+| Parameter     | Description                                                                                                                                 |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `#!luau type` | The type of drawing to create. Must be one of: [`Line`, `Text`, `Image`, `Circle`, `Square`, `Quad`, or `Triangle`](#shape-specific-types). |
 
 ---
 
 ## Shared properties
 
+!!! info "Note about the behaviour of the `#!luau Transparency` property"
+
+    Some implementations by executors of the Drawing library have mistakenly treated the `#!luau Transparency` property as **opacity** rather than actual **transparency**. This confusion originates from the original UNC documentation, which incorrectly defined *transparency* as *"the opacity of the drawing"* (quite literally wrong, the opposite!).
+
+    ![Definition of the word "Transparency"](./assets/transparency.png)
+
+    In sUNC, we follow the correct interpretation and actual meaning of the word. `#!luau Transparency` represents true transparency, where `#!luau 0` means fully opaque and `#!luau 1` means fully **transparent** (see-through). This also aligns with how Roblox handles their transparency property on Part instances.
+
 All drawing object types inherit the following fields:
 
-| Property           | Type      | Description                                                                 |
-|--------------------|-----------|-----------------------------------------------------------------------------|
-| `#!luau Visible`     | `#!luau boolean` | Whether the object is rendered. Defaults to `#!luau false`.                        |
-| `#!luau ZIndex`      | `#!luau number`  | Render order; higher values appear on top.                                  |
-| `#!luau Transparency`| `#!luau number`  | Translucency, where `1` is fully transparent and `0` is fully visible. |
-| `#!luau Color`       | `#!luau Color3`  | The color of the drawing.                                                   |
-| `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object exists.                |
+| Property                 | Type             | Description                                                            |
+| ------------------------ | ---------------- | ---------------------------------------------------------------------- |
+| `#!luau Visible`         | `#!luau boolean` | Whether the object is rendered. Defaults to `#!luau false`.            |
+| `#!luau ZIndex`          | `#!luau number`  | Render order; higher values appear on top.                             |
+| `#!luau Transparency`    | `#!luau number`  | Translucency, where `1` is fully transparent and `0` is fully visible. |
+| `#!luau Color`           | `#!luau Color3`  | The color of the drawing.                                              |
+| `#!luau __OBJECT_EXISTS` | `#!luau boolean` | Whether the drawing object exists.                                     |
 
 ---
 
 ## Methods
 
-| Method Signature                        | Description                           |
-|----------------------------------------|---------------------------------------|
+| Method Signature   | Description                                |
+| ------------------ | ------------------------------------------ |
 | `#!luau Destroy()` | Permanently removes the drawing from view. |
 
 ---
@@ -54,73 +62,73 @@ Each subtype of `Drawing` exposes unique fields that define their visual represe
 
 ### Line
 
-| Property       | Type     | Description                      |
-|----------------|----------|----------------------------------|
-| `#!luau From`    | `#!luau Vector2`| Start position of the line.       |
-| `#!luau To`      | `#!luau Vector2`| End position of the line.         |
-| `#!luau Thickness`| `#!luau number` | Width of the line.                |
+| Property           | Type             | Description                 |
+| ------------------ | ---------------- | --------------------------- |
+| `#!luau From`      | `#!luau Vector2` | Start position of the line. |
+| `#!luau To`        | `#!luau Vector2` | End position of the line.   |
+| `#!luau Thickness` | `#!luau number`  | Width of the line.          |
 
 ### Text
 
-| Property         | Type           | Description                                   |
-|------------------|----------------|-----------------------------------------------|
-| `#!luau Text`      | `#!luau string`       | The text content to render.                   |
-| `#!luau TextBounds`| `#!luau Vector2` 🔒   | Computed text size (read-only).               |
-| `#!luau Font`      | `#!luau Drawing.Font` | Font to use.   |
-| `#!luau Size`      | `#!luau number`       | Size of the text.                             |
-| `#!luau Position`  | `#!luau Vector2`      | Top-left corner of the text.                  |
-| `#!luau Center`    | `#!luau boolean`      | Horizontally center the text.                |
-| `#!luau Outline`   | `#!luau boolean`      | Whether to draw an outline.                  |
-| `#!luau OutlineColor`| `#!luau Color3`     | Outline color.                               |
+| Property              | Type                  | Description                     |
+| --------------------- | --------------------- | ------------------------------- |
+| `#!luau Text`         | `#!luau string`       | The text content to render.     |
+| `#!luau TextBounds`   | `#!luau Vector2` 🔒    | Computed text size (read-only). |
+| `#!luau Font`         | `#!luau Drawing.Font` | Font to use.                    |
+| `#!luau Size`         | `#!luau number`       | Size of the text.               |
+| `#!luau Position`     | `#!luau Vector2`      | Top-left corner of the text.    |
+| `#!luau Center`       | `#!luau boolean`      | Horizontally center the text.   |
+| `#!luau Outline`      | `#!luau boolean`      | Whether to draw an outline.     |
+| `#!luau OutlineColor` | `#!luau Color3`       | Outline color.                  |
 
 ### Image
 
-| Property     | Type     | Description                                         |
-|--------------|----------|-----------------------------------------------------|
-| `#!luau Data`   | `#!luau string`  | Raw image byte string (e.g. from [`#!luau readfile`](../Filesystem/readfile.md)).       |
-| `#!luau Size`   | `#!luau Vector2`| Size of the rendered image.                         |
-| `#!luau Position`| `#!luau Vector2`| Top-left corner of the image.                       |
-| `#!luau Rounding`| `#!luau number` | Amount of corner rounding (optional aesthetic).     |
+| Property          | Type             | Description                                                                       |
+| ----------------- | ---------------- | --------------------------------------------------------------------------------- |
+| `#!luau Data`     | `#!luau string`  | Raw image byte string (e.g. from [`#!luau readfile`](../Filesystem/readfile.md)). |
+| `#!luau Size`     | `#!luau Vector2` | Size of the rendered image.                                                       |
+| `#!luau Position` | `#!luau Vector2` | Top-left corner of the image.                                                     |
+| `#!luau Rounding` | `#!luau number`  | Amount of corner rounding (optional aesthetic).                                   |
 
 ### Circle
 
-| Property       | Type      | Description                                           |
-|----------------|-----------|-------------------------------------------------------|
-| `#!luau NumSides` | `#!luau number`  | Number of sides used to approximate the circle.       |
-| `#!luau Radius`   | `#!luau number`  | Radius of the circle.                                |
-| `#!luau Position` | `#!luau Vector2` | Center point of the circle.                          |
-| `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).                   |
-| `#!luau Filled`   | `#!luau boolean` | Whether the circle is filled.                        |
+| Property           | Type             | Description                                     |
+| ------------------ | ---------------- | ----------------------------------------------- |
+| `#!luau NumSides`  | `#!luau number`  | Number of sides used to approximate the circle. |
+| `#!luau Radius`    | `#!luau number`  | Radius of the circle.                           |
+| `#!luau Position`  | `#!luau Vector2` | Center point of the circle.                     |
+| `#!luau Thickness` | `#!luau number`  | Outline thickness (if not filled).              |
+| `#!luau Filled`    | `#!luau boolean` | Whether the circle is filled.                   |
 
 ### Square
 
-| Property       | Type      | Description                                           |
-|----------------|-----------|-------------------------------------------------------|
-| `#!luau Size`     | `#!luau Vector2` | Size of the rectangle.                               |
-| `#!luau Position` | `#!luau Vector2` | Top-left corner.                                     |
-| `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).                   |
-| `#!luau Filled`   | `#!luau boolean` | Whether the square is filled.                        |
+| Property           | Type             | Description                        |
+| ------------------ | ---------------- | ---------------------------------- |
+| `#!luau Size`      | `#!luau Vector2` | Size of the rectangle.             |
+| `#!luau Position`  | `#!luau Vector2` | Top-left corner.                   |
+| `#!luau Thickness` | `#!luau number`  | Outline thickness (if not filled). |
+| `#!luau Filled`    | `#!luau boolean` | Whether the square is filled.      |
 
 ### Quad
 
-| Property       | Type      | Description                        |
-|----------------|-----------|------------------------------------|
-| `#!luau PointA`   | `#!luau Vector2` | First point.                        |
-| `#!luau PointB`   | `#!luau Vector2` | Second point.                       |
-| `#!luau PointC`   | `#!luau Vector2` | Third point.                        |
-| `#!luau PointD`   | `#!luau Vector2` | Fourth point.                       |
-| `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).  |
-| `#!luau Filled`   | `#!luau boolean` | Whether the quad is filled.         |
+| Property           | Type             | Description                        |
+| ------------------ | ---------------- | ---------------------------------- |
+| `#!luau PointA`    | `#!luau Vector2` | First point.                       |
+| `#!luau PointB`    | `#!luau Vector2` | Second point.                      |
+| `#!luau PointC`    | `#!luau Vector2` | Third point.                       |
+| `#!luau PointD`    | `#!luau Vector2` | Fourth point.                      |
+| `#!luau Thickness` | `#!luau number`  | Outline thickness (if not filled). |
+| `#!luau Filled`    | `#!luau boolean` | Whether the quad is filled.        |
 
 ### Triangle
 
-| Property       | Type      | Description                        |
-|----------------|-----------|------------------------------------|
-| `#!luau PointA`   | `#!luau Vector2` | First point.                        |
-| `#!luau PointB`   | `#!luau Vector2` | Second point.                       |
-| `#!luau PointC`   | `#!luau Vector2` | Third point.                        |
-| `#!luau Thickness`| `#!luau number`  | Outline thickness (if not filled).  |
-| `#!luau Filled`   | `#!luau boolean` | Whether the triangle is filled.     |
+| Property           | Type             | Description                        |
+| ------------------ | ---------------- | ---------------------------------- |
+| `#!luau PointA`    | `#!luau Vector2` | First point.                       |
+| `#!luau PointB`    | `#!luau Vector2` | Second point.                      |
+| `#!luau PointC`    | `#!luau Vector2` | Third point.                       |
+| `#!luau Thickness` | `#!luau number`  | Outline thickness (if not filled). |
+| `#!luau Filled`    | `#!luau boolean` | Whether the triangle is filled.    |
 
 ## Examples
 
@@ -137,7 +145,7 @@ circle.Color = Color3.fromRGB(255, 0, 0)
 circle.Filled = true
 circle.NumSides = 150
 circle.Position = Position
-circle.Transparency = 1
+circle.Transparency = 0
 circle.Visible = true
 
 print(circle.__OBJECT_EXISTS) -- Output: true
@@ -178,7 +186,7 @@ circle.Color = Color3.fromRGB(255, 0, 0)
 circle.Filled = true
 circle.NumSides = 150
 circle.Position = Position
-circle.Transparency = 1
+circle.Transparency = 0
 circle.Visible = true
 
 print(circle.__OBJECT_EXISTS) -- Output: true

@@ -15,3 +15,19 @@ This to-do list is split up into sections with tasks assigned to documentation m
   - Drawing object
 - search for code snippets and ensure they have relevant, appropriate links
 - search for "TODO" messages to fix todo items
+
+## Latest to-do list for Richy
+
+- Make a document somewhere under the About section explaining why we dont test some functions from the original UNC, eg "Where is the cache library?"
+  - where are mouse funcs or isrbxactive etc?
+- Potentially note that debug.getinfo is useless as we have better debug.info (just put this note in debug.getinfo, if you still want to implement getinfo then visit this link etc, but otherwise theyre somewhat similar)
+  - "dont really care much about this function, but i think we should add it, since we did add setscriptable"
+- create documentation for `decompile` under SCRIPTS (not reflection!) group, and also every other function mentioned [here](https://github.com/sUNC-Utilities/docs.sunc.su/issues/162)
+  - <https://synapsexdocs.github.io/custom-lua-functions/reflection-functions/#decompile>
+  - cross off items from same github issue
+- cache library, even though it may seem redundant in the meantime (it will be removed in the future from the next version of sUNC)
+  - <https://synapsexdocs.github.io/libraries/syn/>
+  - <https://github.com/unified-naming-convention/NamingStandard/blob/305c31e4f469c056812c9f412c9a4d78293021bc/api/cache.md?plain=1>
+- `debug.getinfo`
+  - <https://github.com/unified-naming-convention/NamingStandard/blob/305c31e4f469c056812c9f412c9a4d78293021bc/api/debug.md?plain=1#L70-L112>
+  - <https://synapsexdocs.github.io/libraries/debug/#get-info>
