@@ -1,6 +1,6 @@
-# Codec
+# Encoding
 
-The **Codec** library provides functions for common binary transformation operations such as Base64 and LZ4 - the **encoding**, **decoding**, **compression**, and **decompression** of data.
+The **Encoding** library provides functions for common binary transformation operations such as Base64 and LZ4 - the **encoding**, **decoding**, **compression**, and **decompression** of data.
 
 This library replaces the old `crypt` library, which has now been fully deprecated.
 
@@ -16,7 +16,7 @@ This is due to multiple reasons, but mainly because having cryptography function
 
 ## What can you do?
 
-With the Codec library, you can:
+With the Encoding library, you can:
 
 - **Encode and decode** binary or text data into Base64 using [`#!luau base64encode`](./base64encode.md) and [`#!luau base64decode`](./base64decode.md)
 - **Compress and decompress** data efficiently using the LZ4 algorithm with [`#!luau lz4compress`](./lz4compress.md) and [`#!luau lz4decompress`](./lz4decompress.md)
