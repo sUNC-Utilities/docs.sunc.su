@@ -11,6 +11,12 @@ plugins:
       type: timeago
       fallback_to_build_date: true
       enabled: true
+  - git-committers:
+      enabled: true
+      repository: sUNC-Utilities/docs.sunc.su
+      branch: main
+      exclude_committers:
+        - web-flow
 
 markdown_extensions:
   - pymdownx.highlight:
