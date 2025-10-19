@@ -12,6 +12,9 @@ docs/built-info
 
 docs/api/
 
+# Local caching
+.cache/
+
 # macOS hidden files
 **._*
 **.DS_*
