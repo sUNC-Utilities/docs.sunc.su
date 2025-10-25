@@ -6,25 +6,63 @@ labels: New function, Standard Changes
 assignees: Richy-Z, senS24th
 
 ---
+# Function Suggestion
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+<!-- Thank you for suggesting a new function for the sUNC standard.  
+Please fill out **all** sections below as thoroughly as possible.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+--- -->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## 1. Existing functionality check
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+<!-- Have you considered whether the functionality you are requesting can already be achieved within Luau using existing functions? -->
 
-- have you considered whether the functionality you are requesting can already be done from within lua with the existing MULTITUDE of functions?
-- if yes, but still believe it should be separate, then please explain why there should be a separate function (eg due to complexities in using multiple different existing functions for something that theoretically should be simple and accessible)
+- [ ] Yes, I have checked existing functions.
+- [ ] No, I have not checked existing functions.
 
-- hence or otherwise, at the bare minimum, what would you expect from a function which seeks to resolve the aforementioned complexities (if any) above?
+<!-- 
+If **yes**, please explain why any current methods are inefficient or unsatisfactory.  
 
-hence:
-- name of function
-- what should this function do
-- please provide (an) example use case(s) where this function may be useful, listing not just only your specific use case but any other use cases where you might think it may also be applicable for other people
+For instance, is the desired functionality currently **too complex**, **inefficient**, or **inaccessible** due to requiring multiple unrelated functions?
+
+If **no**, please alternatively check the [sUNC Documentation](https://docs.sunc.su) for potentially related functions to see if you can achieve your goal, instead of posting a new issue. -->
+
+> **Explanation:**
+>
+> _(Write here)_
+
+---
+
+## 2. Rationale
+
+At the bare minimum, what would you expect from a function that aims to resolve the complexities you described above?
+
+> **Expected outcome or behaviour:**
+>
+> _(Write here)_
+
+---
+
+## 3. Function proposal
+
+### Function name
+
+<!-- `function_name` -->
+
+### Summary
+
+<!-- A short summary of what the function should do. -->
+
+### Detailed description and explanation
+
+<!-- Explain the function's purpose, expected behaviour, and any internal information if relevant and known. -->
+
+---
+
+## 4. Example use cases
+
+<!-- Please provide one or more example scenarios where this function could be useful.  
+Include not only your **specific use case**, but also any other situations where the function may benefit other users. -->
+
+1. 
+2. 
