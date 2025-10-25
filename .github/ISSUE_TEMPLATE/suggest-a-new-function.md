@@ -1,5 +1,5 @@
 ---
-name: Suggest a new function
+name: ✨ Suggest a new function
 about: Select this to suggest the addition of a new function to the sUNC standard
 title: ''
 labels: New function, Standard Changes
@@ -64,5 +64,5 @@ At the bare minimum, what would you expect from a function that aims to resolve 
 <!-- Please provide one or more example scenarios where this function could be useful.  
 Include not only your **specific use case**, but also any other situations where the function may benefit other users. -->
 
-1. 
-2. 
+1. Something
+2. Something
