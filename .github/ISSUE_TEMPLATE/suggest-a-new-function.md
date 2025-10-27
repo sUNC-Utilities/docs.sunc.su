@@ -29,17 +29,17 @@ If **no**, please alternatively check the [sUNC Documentation](https://docs.sunc
 
 > **Explanation:**
 >
-> _(Write here)_
+> Write here!
 
 ---
 
 ## 2. Rationale
 
-At the bare minimum, what would you expect from a function that aims to resolve the complexities you described above?
+<!-- At the bare minimum, what would you expect from a function that aims to resolve the complexities you described above? -->
 
 > **Expected outcome or behaviour:**
 >
-> _(Write here)_
+> Write here!
 
 ---
 
