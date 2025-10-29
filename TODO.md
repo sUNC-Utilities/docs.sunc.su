@@ -32,3 +32,8 @@ This to-do list is split up into sections with tasks assigned to documentation m
   - <https://github.com/unified-naming-convention/NamingStandard/blob/305c31e4f469c056812c9f412c9a4d78293021bc/api/debug.md?plain=1#L70-L112>
   - <https://synapsexdocs.github.io/libraries/debug/#get-info>
 - Modify the documentation parser to ignore HTML comments in markdown (so that comments / todo notes dont have to be moved to the very bottom of a markdown file)
+- Document how the Rubiš API can be used (currently) to retrieve information about sUNC test results
+  - note differences about public and private scraps
+  - most test results are private
+  - unfortunately we do not provide a way for the public to know whether a scrap posted on rubis is officially from sUNC, although by popular request we may add an endpoint to give in-depth sunc information (including verified results)
+    - note that rubis results will be deprecated in the future (at least via the regular rubis api) and they will be migrated to the rubis partners api
