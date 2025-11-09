@@ -3,7 +3,7 @@ site_url: https://docs.sunc.su
 
 repo_name: sUNC-Utilities/docs.sunc.su
 repo_url: https://github.com/sUNC-Utilities/docs.sunc.su
-edit_uri: edit/main/docs
+edit_uri: https://github.com/sUNC-Utilities/docs.sunc.su/edit/main/docs
 
 plugins:
   - search
