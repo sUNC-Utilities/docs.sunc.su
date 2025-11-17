@@ -42,12 +42,14 @@ Signals that allow you handle events that occur during the WebSocket's lifetime,
 
 ---
 
+<!-- TODO: change the websocket echo servers to numelon -->
+
 ## Examples
 
 ### Using the `#!luau OnMessage` event, and `#!luau Send` method
 
 ```luau title="Responding to incoming messages" linenums="1"
-local ws = WebSocket.connect("wss://echo.websocket.events")
+local ws = WebSocket.connect("wss://ws.postman-echo.com/raw")
 ws.OnMessage:Connect(function(message)
     print(message)
 end)
@@ -59,7 +61,7 @@ ws:Send("Hello") -- Output: Hello
 ### Using the `#!luau OnClose` event, and `#!luau Close` method
 
 ```luau title="Receive a closing message and catch it via OnClose" linenums="1"
-local ws = WebSocket.connect("wss://echo.websocket.events")
+local ws = WebSocket.connect("wss://ws.postman-echo.com/raw")
 ws.OnClose:Connect(function()
     print("Closed")
 end)
