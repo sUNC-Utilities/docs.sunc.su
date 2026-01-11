@@ -19,5 +19,5 @@ function lz4decompress(data: string): string
 ```luau title="Decompressing an LZ4 encoded string back to regular data" linenums="1"
 local text = "Hello, world! Hello, world!"
 local compressed = lz4compress(text)
-print(lz4decompress(compressed, #text)) -- "Hello, world! Hello, world!"
+print(lz4decompress(compressed)) -- "Hello, world! Hello, world!"
 ```
