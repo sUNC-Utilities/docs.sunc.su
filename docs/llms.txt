@@ -1,0 +1,158 @@
+# sUNC Documentation
+
+> sUNC (senS' Unified Naming Convention) is a testing standard for Roblox executor environments. It ensures executor functions actually work as intended, not just exist or are spoofed. This documentation covers the complete API for Luau functions available in executor environments.
+
+The documentation is written in Luau (Roblox's Lua dialect) and follows strict testing standards. Each function is tested for proper implementation, not just presence. Test results are cryptographically signed for verification.
+
+## About
+
+- [What is sUNC](https://docs.sunc.su/About/what-is-sunc): Overview of sUNC and how it differs from UNC
+- [Test Results](https://docs.sunc.su/About/test-results): How sUNC's strict testing and verification works
+- [Contributing](https://docs.sunc.su/About/contributing): Official standards for contributing to sUNC documentation
+
+## Integration Suite
+
+- [Integration Suite](https://docs.sunc.su/About/Integration-Suite): External-facing tools and APIs for embedding sUNC
+- [Metadata API](https://docs.sunc.su/About/Integration-Suite/Metadata-API): JSON API providing machine-friendly metadata for all functions
+- [Widget](https://docs.sunc.su/About/Integration-Suite/Widget): Embeddable iframe widget for displaying test results
+- [postMessage API](https://docs.sunc.su/About/Integration-Suite/Widget/postMessage-API): Send typed messages to interact with the widget iframe
+- [Message Types](https://docs.sunc.su/About/Integration-Suite/Widget/postMessage-API/MessageType): Widget API message types for loading results and themes
+
+## Closures
+
+- [checkcaller](https://docs.sunc.su/Closures/checkcaller): Returns whether the current function was invoked from the executor's thread
+- [clonefunction](https://docs.sunc.su/Closures/clonefunction): Creates a new function with the exact same behavior as the passed function
+- [getfunctionhash](https://docs.sunc.su/Closures/getfunctionhash): Returns the SHA384 hash of a function's instructions and constants
+- [hookfunction](https://docs.sunc.su/Closures/hookfunction): Hooks a function with another, returning the original unhooked function
+- [hookmetamethod](https://docs.sunc.su/Closures/hookmetamethod): Hooks a specified metamethod on any Luau object with a metatable
+- [iscclosure](https://docs.sunc.su/Closures/iscclosure): Checks whether a given function is a C closure
+- [isexecutorclosure](https://docs.sunc.su/Closures/isexecutorclosure): Checks whether a given function is a closure of the executor
+- [islclosure](https://docs.sunc.su/Closures/islclosure): Checks whether a given function is a Luau closure
+- [newcclosure](https://docs.sunc.su/Closures/newcclosure): Takes any Luau function and wraps it into a C closure
+- [restorefunction](https://docs.sunc.su/Closures/restorefunction): Restores a hooked function back to the original, even if hooked multiple times
+
+## Debug
+
+- [debug.getconstant](https://docs.sunc.su/Debug/getconstant): Returns the constant at the specified index from a Luau function
+- [debug.getconstants](https://docs.sunc.su/Debug/getconstants): Returns all constants used within a Luau function's bytecode
+- [debug.getproto](https://docs.sunc.su/Debug/getproto): Returns a specific function prototype from a Luau function by index
+- [debug.getprotos](https://docs.sunc.su/Debug/getprotos): Returns all function prototypes defined within the specified function
+- [debug.getstack](https://docs.sunc.su/Debug/getstack): Retrieves values from the stack at the specified call level
+- [debug.getupvalue](https://docs.sunc.su/Debug/getupvalue): Returns the upvalue at the specified index from a function's closure
+- [debug.getupvalues](https://docs.sunc.su/Debug/getupvalues): Returns a list of upvalues captured by a Luau function
+- [debug.setconstant](https://docs.sunc.su/Debug/setconstant): Modifies a constant at the specified index in a function's bytecode
+- [debug.setstack](https://docs.sunc.su/Debug/setstack): Replaces a value in a specified stack frame
+- [debug.setupvalue](https://docs.sunc.su/Debug/setupvalue): Replaces an upvalue at the specified index with a new value
+
+## Drawing
+
+- [Drawing](https://docs.sunc.su/Drawing): Represents a renderable 2D object with shape-specific properties
+- [cleardrawcache](https://docs.sunc.su/Drawing/cleardrawcache): Removes all active drawing objects created with Drawing.new
+- [getrenderproperty](https://docs.sunc.su/Drawing/getrenderproperty): Retrieves the value of a property from a Drawing object
+- [isrenderobj](https://docs.sunc.su/Drawing/isrenderobj): Checks whether a given value is a valid Drawing object
+- [setrenderproperty](https://docs.sunc.su/Drawing/setrenderproperty): Assigns a value to a property of a Drawing object
+
+## Encoding
+
+- [base64decode](https://docs.sunc.su/Encoding/base64decode): Decodes a Base64-encoded string back into its original form
+- [base64encode](https://docs.sunc.su/Encoding/base64encode): Encodes a string with Base64 encoding
+- [lz4compress](https://docs.sunc.su/Encoding/lz4compress): Compresses a string with the LZ4 compression algorithm
+- [lz4decompress](https://docs.sunc.su/Encoding/lz4decompress): Decompresses a string encoded using LZ4 compression
+
+## Environment
+
+- [getgenv](https://docs.sunc.su/Environment/getgenv): Returns the executor's global environment table, shared across all threads
+- [getrenv](https://docs.sunc.su/Environment/getrenv): Returns the Roblox global environment used by the entire game
+- [getgc](https://docs.sunc.su/Environment/getgc): Returns a list of non-dead garbage-collectable values
+- [getreg](https://docs.sunc.su/Environment/getreg): Returns the Luau registry table used internally for references
+- [filtergc](https://docs.sunc.su/Environment/filtergc): Retrieves specific garbage-collected values using fine-tuned filters
+- [FunctionFilterOptions](https://docs.sunc.su/Environment/filtergc/FunctionFilterOptions): Function filters for refining filtergc results
+- [TableFilterOptions](https://docs.sunc.su/Environment/filtergc/TableFilterOptions): Table filters for refining filtergc results
+
+## Filesystem
+
+- [writefile](https://docs.sunc.su/Filesystem/writefile): Writes data to a file at the specified path, overwriting if it exists
+- [readfile](https://docs.sunc.su/Filesystem/readfile): Retrieves the contents of a file and returns it as a string
+- [appendfile](https://docs.sunc.su/Filesystem/appendfile): Appends string content to the end of a file
+- [delfile](https://docs.sunc.su/Filesystem/delfile): Deletes the file at the specified path if it exists
+- [delfolder](https://docs.sunc.su/Filesystem/delfolder): Deletes the folder at the specified path if it exists
+- [getcustomasset](https://docs.sunc.su/Filesystem/getcustomasset): Returns a content ID for loading assets in Roblox APIs
+- [isfile](https://docs.sunc.su/Filesystem/isfile): Checks whether a given path exists and refers to a file
+- [isfolder](https://docs.sunc.su/Filesystem/isfolder): Checks whether a given path exists and refers to a folder
+- [listfiles](https://docs.sunc.su/Filesystem/listfiles): Returns an array of all files and folders within a directory
+- [loadfile](https://docs.sunc.su/Filesystem/loadfile): Compiles Luau source code from a file and returns the function chunk
+- [makefolder](https://docs.sunc.su/Filesystem/makefolder): Creates a folder at the specified path if one does not exist
+
+## Instances
+
+- [cloneref](https://docs.sunc.su/Instances/cloneref): Creates a safe reference to protected instances
+- [compareinstances](https://docs.sunc.su/Instances/compareinstances): Checks if two Instances are equal
+- [fireclickdetector](https://docs.sunc.su/Instances/fireclickdetector): Triggers a ClickDetector event
+- [fireproximityprompt](https://docs.sunc.su/Instances/fireproximityprompt): Instantly triggers a ProximityPrompt, bypassing HoldDuration
+- [firetouchinterest](https://docs.sunc.su/Instances/firetouchinterest): Simulates a physical touch event between two BasePart objects
+- [getcallbackvalue](https://docs.sunc.su/Instances/getcallbackvalue): Retrieves the assigned callback property on an Instance
+- [gethui](https://docs.sunc.su/Instances/gethui): Returns a hidden Instance container for safely storing UI elements
+- [getinstances](https://docs.sunc.su/Instances/getinstances): Retrieves every Instance from the registry
+- [getnilinstances](https://docs.sunc.su/Instances/getnilinstances): Returns a list of Instance objects that are currently unparented
+
+## Metatable
+
+- [getnamecallmethod](https://docs.sunc.su/Metatable/getnamecallmethod): Returns the name of the method that invoked __namecall
+- [getrawmetatable](https://docs.sunc.su/Metatable/getrawmetatable): Returns the raw metatable, bypassing __metatable protection
+- [isreadonly](https://docs.sunc.su/Metatable/isreadonly): Checks whether a table is currently set as readonly
+- [setrawmetatable](https://docs.sunc.su/Metatable/setrawmetatable): Forcibly sets the metatable, bypassing __metatable protection
+- [setreadonly](https://docs.sunc.su/Metatable/setreadonly): Sets whether a table is readonly or writable
+
+## Miscellaneous
+
+- [identifyexecutor](https://docs.sunc.su/Miscellaneous/identifyexecutor): Returns the name and version of the currently running executor
+- [request](https://docs.sunc.su/Miscellaneous/request): Sends HTTP requests and returns structured response with headers, body, and status
+
+## Reflection
+
+- [gethiddenproperty](https://docs.sunc.su/Reflection/gethiddenproperty): Retrieves the value of a hidden or non-scriptable property
+- [getthreadidentity](https://docs.sunc.su/Reflection/getthreadidentity): Retrieves the thread identity of the running Luau thread
+- [isscriptable](https://docs.sunc.su/Reflection/isscriptable): Returns whether a property of an Instance is scriptable
+- [sethiddenproperty](https://docs.sunc.su/Reflection/sethiddenproperty): Assigns a value to a hidden or non-scriptable property
+- [setscriptable](https://docs.sunc.su/Reflection/setscriptable): Toggles the scriptability of a hidden property on an Instance
+- [setthreadidentity](https://docs.sunc.su/Reflection/setthreadidentity): Sets the current Luau thread identity and capabilities
+
+## Scripts
+
+- [getcallingscript](https://docs.sunc.su/Scripts/getcallingscript): Returns the Script that triggered the current code execution
+- [getloadedmodules](https://docs.sunc.su/Scripts/getloadedmodules): Returns a list of all ModuleScript instances that have been loaded
+- [getrunningscripts](https://docs.sunc.su/Scripts/getrunningscripts): Returns a list of all currently running scripts
+- [getscriptbytecode](https://docs.sunc.su/Scripts/getscriptbytecode): Retrieves the bytecode of a LocalScript, ModuleScript, or Script
+- [getscriptclosure](https://docs.sunc.su/Scripts/getscriptclosure): Creates a Luau function closure from compiled bytecode of a script
+- [getscripthash](https://docs.sunc.su/Scripts/getscripthash): Returns a SHA-384 hash of the raw bytecode for a given script
+- [getscripts](https://docs.sunc.su/Scripts/getscripts): Returns a list of all Script, LocalScript, and ModuleScript instances
+- [getsenv](https://docs.sunc.su/Scripts/getsenv): Returns the global environment table of a given script
+- [loadstring](https://docs.sunc.su/Scripts/loadstring): Compiles a string of Luau code and returns it as a runnable function
+
+## Signals
+
+- [Connection](https://docs.sunc.su/Signals/Connection): Custom connection object representing an active link to a signal's callback
+- [firesignal](https://docs.sunc.su/Signals/firesignal): Invokes all Luau connections connected to a given RBXScriptSignal
+- [getconnections](https://docs.sunc.su/Signals/getconnections): Retrieves a list of Connection objects attached to a signal
+- [replicatesignal](https://docs.sunc.su/Signals/replicatesignal): Replicates a signal to the server with provided arguments
+
+## WebSocket
+
+- [WebSocket](https://docs.sunc.su/WebSocket): Lightweight interface for WebSocket connections to send and receive messages
+
+## Optional
+
+These are supporting resources that can be skipped for shorter context:
+
+- [Home](https://docs.sunc.su): Main landing page with navigation to all documentation
+- [Closures Library](https://docs.sunc.su/Closures): Overview of the Closures library
+- [Debug Library](https://docs.sunc.su/Debug): Overview of the Debug library
+- [Encoding Library](https://docs.sunc.su/Encoding): Overview of the Encoding library
+- [Environment Library](https://docs.sunc.su/Environment): Overview of the Environment library
+- [Filesystem Library](https://docs.sunc.su/Filesystem): Overview of the Filesystem library
+- [Instances Library](https://docs.sunc.su/Instances): Overview of the Instances library
+- [Metatable Library](https://docs.sunc.su/Metatable): Overview of the Metatable library
+- [Miscellaneous Library](https://docs.sunc.su/Miscellaneous): Overview of the Miscellaneous library
+- [Reflection Library](https://docs.sunc.su/Reflection): Overview of the Reflection library
+- [Scripts Library](https://docs.sunc.su/Scripts): Overview of the Scripts library
+- [Signals Library](https://docs.sunc.su/Signals): Overview of the Signals library

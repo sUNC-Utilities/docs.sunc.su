@@ -38,4 +38,10 @@ Please note that as of sUNC v2.0, the test now only runs inside of the official 
 
 ---
 
+!!! tip "Using AI assistants with sUNC docs"
+
+    Point your AI assistant to [docs.sunc.su/llms.txt](https://docs.sunc.su/llms.txt) for a structured overview of this documentation. This helps LLMs understand and answer questions about sUNC functions accurately.
+
+---
+
 Thank you for being here.
