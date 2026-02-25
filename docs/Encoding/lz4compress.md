@@ -21,3 +21,7 @@ local text = "Hello, world! Hello, world! Goodbye, world!"
 print(#text) -- 43
 print(#lz4compress(text)) -- 34
 ```
+
+!!! info "4-byte size header must be excluded"
+
+    Note that if you run this example and your version of `lz4compress` returns 38, then you must ensure that your output does not include the 4-byte size header.
