@@ -22,6 +22,8 @@ print(#text) -- 43
 print(#lz4compress(text)) -- 34
 ```
 
-!!! info "4-byte size header must be excluded"
+!!! info "Original size header must be excluded"
 
-    Note that if you run this example and your version of `lz4compress` returns 38, then you must ensure that your output does not include the 4-byte size header.
+    Note that if you run this example and your version of `lz4compress` returns 38, then it means that a 4-byte original size header is being prepended to your output.
+
+    You must ensure that your output is free of any "original size" headers.
