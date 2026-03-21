@@ -4,11 +4,11 @@
 
     Compiles the given string, and returns it runnable in a function. The environment must become unsafe after this function is called due to it allowing the modification of globals uncontrollably (see [`#!luau setfenv`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#setfenv)/[`#!luau getfenv`](https://create.roblox.com/docs/reference/engine/globals/LuaGlobals#getfenv) documentation).
 
-!!! info "Should error when compilation fails"
+!!! info "Does not error"
 
-    This function should return `#!luau nil` and an error message if the provided code fails to compile.
+    Previous ambiguous wording for this function made it seem like calling `#!luau loadstring` itself with invalid code would actually error, but in fact it does not. Instead, as stated below, it returns `#!luau nil` and a `#!luau string` (which happens to be an error message).
 
-`#!luau loadstring` compiles a string of Luau code and returns it as a runnable function. If the code has errors, `#!luau nil` is returned and an error message is output.
+`#!luau loadstring` compiles a string of Luau code and returns it as a runnable function. If the code has errors, two things are returned: `#!luau nil` and a `#!luau string`, which is the error message.
 
 ```luau
 function loadstring<A...>(source: string, chunkname: string?): (((A...) -> any) | nil, string?)
