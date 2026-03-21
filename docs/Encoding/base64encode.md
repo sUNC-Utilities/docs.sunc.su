@@ -1,9 +1,9 @@
-# `crypt.base64encode`
+# `base64encode`
 
-`#!luau crypt.base64encode` encodes a string with [Base64](https://en.wikipedia.org/wiki/Base64) encoding.
+`#!luau base64encode` encodes a string with [Base64](https://en.wikipedia.org/wiki/Base64) encoding.
 
 ```luau
-function crypt.base64encode(data: string): string
+function base64encode(data: string): string
 ```
 
 ## Parameters
@@ -17,7 +17,7 @@ function crypt.base64encode(data: string): string
 ## Example
 
 ```luau title="Encoding a string with Base64" linenums="1"
-print(crypt.base64encode("DummyString\0\2")) -- Output: RHVtbXlTdHJpbmcAAg==
+print(base64encode("DummyString\0\2")) -- Output: RHVtbXlTdHJpbmcAAg==
 ```
 
 <!-- TODO: crypt prefix will be removed entirely in future version of sunc -->

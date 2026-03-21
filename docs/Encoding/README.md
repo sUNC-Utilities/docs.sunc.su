@@ -12,13 +12,15 @@ sUNC has not tested the `crypt` library in a very long time now. In fact, the la
 
 This is due to multiple reasons, but mainly because having cryptography functions available in an executor's environment is not safe because other scripts can easily redefine them to hijack potentially sensitive information. For anyone who requires cryptography, we advise you to just inline/"bring your own" cryptography functions in your code and use it from there.
 
+With regards to Base64 functions, they are no longer in the `crypt` library and are just regular functions instead. **sUNC will now warn you if a `crypt` table exists.**
+
 ---
 
 ## What can you do?
 
 With the Encoding library, you can:
 
-- **Encode and decode** binary or text data into Base64 using [`#!luau crypt.base64encode`](./base64encode.md) and [`#!luau crypt.base64decode`](./base64decode.md)
+- **Encode and decode** binary or text data into Base64 using [`#!luau base64encode`](./base64encode.md) and [`#!luau base64decode`](./base64decode.md)
 - **Compress and decompress** data efficiently using the LZ4 algorithm with [`#!luau lz4compress`](./lz4compress.md) and [`#!luau lz4decompress`](./lz4decompress.md)
 
 ---

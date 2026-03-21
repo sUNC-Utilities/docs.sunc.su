@@ -52,7 +52,7 @@ function request(options: RequestOptions): Response
 
 ### Automatically added Headers
 
-Executors will attach this unique header automatically:
+Executors will attach these unique headers automatically:
 
 <!-- recommendation: standardise headers to be X-User-Identifier and X-Fingerprint -->
 <!-- the 'X' prefix is standard for custom HTTP headers, as defined in RFC822 (https://datatracker.ietf.org/doc/html/rfc822) -->
