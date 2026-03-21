@@ -18,7 +18,7 @@ This is due to multiple reasons, but mainly because having cryptography function
 
 With the Encoding library, you can:
 
-- **Encode and decode** binary or text data into Base64 using [`#!luau base64encode`](./base64encode.md) and [`#!luau base64decode`](./base64decode.md)
+- **Encode and decode** binary or text data into Base64 using [`#!luau crypt.base64encode`](./base64encode.md) and [`#!luau crypt.base64decode`](./base64decode.md)
 - **Compress and decompress** data efficiently using the LZ4 algorithm with [`#!luau lz4compress`](./lz4compress.md) and [`#!luau lz4decompress`](./lz4decompress.md)
 
 ---
