@@ -2,7 +2,7 @@
 
 `#!luau loadfile` compiles the Luau source code from a file and returns the resulting function (chunk). This chunk runs in the global environment.
 
-If the file contains syntax errors, an actual Luau error is thrown - this is **unlike** [`#!luau loadstring`](../Scripts/loadstring.md).
+If the file contains syntax errors, an actual Luau error is thrown - this is **unlike** [`#!luau loadstring`](../Closures/loadstring.md).
 
 ```luau
 function loadfile<A...>(path: string): ((A...) -> any | nil, string?)

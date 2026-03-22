@@ -15,4 +15,3 @@ With the Scripts library, you can:
 - **Enumerate script instances** using [`#!luau getscripts`](./getscripts.md) and [`#!luau getrunningscripts`](./getrunningscripts.md)
 - **List loaded modules** via [`#!luau getloadedmodules`](./getloadedmodules.md)
 - **Determine the current script** executing via [`#!luau getcallingscript`](./getcallingscript.md)
-- **Compile and run code at runtime** using [`#!luau loadstring`](./loadstring.md)
