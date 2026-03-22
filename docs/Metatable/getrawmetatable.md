@@ -27,5 +27,5 @@ print(mt.__index(game, "Workspace")) -- Output: Workspace
 ### Example 2
 
 ```luau title="Obtaining nil when object has no metatable set" linenums="1"
-print(getrawmetatable(newproxy(false)))
+print(getrawmetatable(newproxy(false))) -- Output: nil
 ```
