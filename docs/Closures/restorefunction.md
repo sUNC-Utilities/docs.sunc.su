@@ -37,7 +37,7 @@ dummy_func() -- Output: I am not hooked!
 
 ### Example 2
 
-```luau title="Restoring a unhooked function" linenums="1"
+```luau title="Restoring a function that was never hooked" linenums="1"
 function dummy_func()
     print("I am not hooked!")
 end
