@@ -1,6 +1,6 @@
 # `isexecutorclosure`
 
-`#!luau isexecutorclosure` checks whether a given function is a closure of the executor. This also includes closures retrieved using [`#!luau getscriptclosure`](../Scripts/getloadedmodules.md) or [`#!luau loadstring`](./loadstring.md)
+`#!luau isexecutorclosure` checks whether a given function is a closure of the executor. This also includes closures retrieved using [`#!luau getscriptclosure`](../Scripts/getloadedmodules.md) or [`#!luau loadstring`](./loadstring.md).
 
 ```luau
 function isexecutorclosure(func: (...any) -> (...any)): boolean
