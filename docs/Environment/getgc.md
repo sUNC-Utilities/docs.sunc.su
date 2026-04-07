@@ -9,8 +9,8 @@ export type AnyTable = { [any]: any }
 export type userdata = typeof(newproxy()) -- (1)
 
 declare getgc:
-    ((includeTables: true) -> { { AnyTable } | AnyFunction | userdata }) &
-    ((includeTables: false?) -> { AnyFunction })
+    ((includeTables: true) -> { AnyTable | AnyFunction | userdata }) &
+    ((includeTables: false?) -> { AnyFunction | userdata })
 ```
 
 1. Note that `#!luau userdata` is not an official Luau type, but we define it here for clarity - because `#!luau getgc` can return them as part of its results.
