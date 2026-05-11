@@ -33,7 +33,7 @@ for _, module in pairs(getloadedmodules()) do
     if module == loaded then
         -- The first modulescript was found because it was required in line 4
         print("Found loaded module!")
-    elseif module == notLoaded then
+    elseif module == not_loaded then
         -- The second modulescript should NOT be found because it was never required
         print("This should never appear.")
     end
