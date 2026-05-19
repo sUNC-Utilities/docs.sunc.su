@@ -1,6 +1,6 @@
 # Widget
 
-The sUNC Embeddable Widget (SEW) allows you to embed sUNC test results as interactive widgets into other webpages via an `#!html <iframe>`. The widget is reusable and highly customiseable using it's [`#!ts postMessage` API](./postMessage-API/README.md).
+The sUNC Embeddable Widget (SEW) allows you to embed sUNC test results as interactive widgets into other webpages via an `#!html <iframe>`. The widget is reusable and highly customiseable using its [`#!ts postMessage` API](./postMessage-API/README.md).
 
 This widget is ideal for developers who want to display sUNC results on status websites, show their score off on an executor website, or to use it in forums.
 
