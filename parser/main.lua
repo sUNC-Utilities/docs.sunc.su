@@ -11,12 +11,12 @@ local function printf(str, ...)
 end
 
 local tree = {}
-for name, t in fs.scandirSync("../docs") do
-    if t == "directory" and not exclusions:contains(name) then
+for libName, t in fs.scandirSync("../docs") do
+    if t == "directory" and not exclusions:contains(libName) then
         local library = {}
 
-        for funcName, fType in fs.scandirSync("../docs/" .. name) do
-            local formatted = ("../docs/%s/%s"):format(name, funcName)
+        for funcName, fType in fs.scandirSync("../docs/" .. libName) do
+            local formatted = ("../docs/%s/%s"):format(libName, funcName)
             if fType ~= "directory" then
                 library[funcName:gsub(".md", "")] = fs.readFileSync(formatted)
             else
@@ -24,7 +24,7 @@ for name, t in fs.scandirSync("../docs") do
                 if not exists then
                     printf(
                         "assumed that directory %s inside of %s (%s/%s) was a function doc with a README.md, but none was found: %s",
-                        funcName, name, name, funcName, err)
+                        funcName, libName, libName, funcName, err)
                 else
                     -- filtergc is the only func which uses an entire directory so we are safe (for now),
                     -- until another big function comes around and requires its own directory
@@ -33,7 +33,7 @@ for name, t in fs.scandirSync("../docs") do
             end
         end
 
-        tree[name] = library
+        tree[libName] = library
     end
 end
 
@@ -80,15 +80,15 @@ Drawing lib functions except dont count readme
 uhh more i forgor
 ]]
 
-local bot = {}
+local jumbo = {}
 for libname, library in pairs(tree) do
-    bot[libname] = {}
+    jumbo[libname] = {}
 
     for func, doc in pairs(library) do
         if func == "README" then
             local description = extractIndex(doc)
-            bot[libname]._description = normaliseUrls(normaliseSnippets(description), libname)
-            bot[libname]._link = "https://docs.sunc.su/" .. libname
+            jumbo[libname]._description = normaliseUrls(normaliseSnippets(description), libname)
+            jumbo[libname]._link = "https://docs.sunc.su/" .. libname
         elseif func == "WebSocket" then
             -- do nothing, we will parse this separately later
         elseif libname == "Signals" and func == "Connection" then
@@ -104,33 +104,32 @@ for libname, library in pairs(tree) do
 
             a.link = string.format("https://docs.sunc.su/%s/%s", libname, func)
 
-            bot[libname][func] = a
+            jumbo[libname][a.title] = a
         end
     end
 end
 
-fs.mkdirpSync("../docs/built-info") -- old directory, now deprecated
+
 fs.mkdirpSync("../docs/api")
 
-local bot_json = json.encode(bot, { indent = true })
-fs.writeFileSync("../docs/api/jumbo.json", bot_json)
+local jumbo_json = json.encode(jumbo, { indent = true })
+fs.writeFileSync("../docs/api/jumbo.json", jumbo_json)
 
-local viewer = {}
+local mini = {}
 
-for _, lib in pairs(bot) do
+for _, lib in pairs(jumbo) do
     for k, func in pairs(lib) do
         if k ~= "_description" and k ~= "_link" then
-            viewer[func.title or ""] = clean(func.description or "")
+            mini[func.title or ""] = clean(func.description or "")
         end
     end
 end
 
-viewer[""] = nil
+mini[""] = nil
 
-local viewer_json = json.encode(viewer, { indent = true })
--- TODO: get the built-info directory ready for DEPRECATION
-fs.writeFileSync("../docs/built-info/viewer.json", viewer_json) -- old
-fs.writeFileSync("../docs/api/mini.json", viewer_json)
+local mini_json = json.encode(mini, { indent = true })
+
+fs.writeFileSync("../docs/api/mini.json", mini_json)
 
 
 
