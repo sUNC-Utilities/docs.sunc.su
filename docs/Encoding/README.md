@@ -10,7 +10,7 @@ This library replaces the old `crypt` library, which has now been fully deprecat
 
 sUNC has not tested the `crypt` library in a very long time now. In fact, the last remaining functions that we *did* test, Base64, did not deserve to be in the `crypt` category.
 
-This is due to multiple reasons, but mainly because having cryptography functions available in an executor's environment is not safe because other scripts can easily redefine them to hijack potentially sensitive information. For anyone who requires cryptography, we advise you to just inline/"bring your own" cryptography functions in your code and use it from there.
+This is due to multiple reasons, but mainly because having cryptography functions available in an executor's environment is not safe. Other scripts may easily redefine them to hijack potentially sensitive information. For anyone who requires cryptography, we advise you to just inline/"bring your own" cryptography functions in your code and use it from there.
 
 With regards to Base64 functions, they are no longer in the `crypt` library and are just regular functions instead. **sUNC will now warn you if a `crypt` table exists.**
 
