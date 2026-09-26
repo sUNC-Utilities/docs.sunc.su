@@ -4,6 +4,10 @@
 
 This is one of the primary ways to persist string data within the executor's file sandbox.
 
+!!! warning "Blocked file extensions"
+
+    `#!luau writefile` must reject paths whose extension is listed in the [Filesystem security restrictions](./README.md#security-restrictions).
+
 ```luau
 function writefile(path: string, data: string): ()
 ```
