@@ -6,6 +6,20 @@ This library is especially useful when storing persistent data, managing resourc
 
 ---
 
+## Security restrictions
+
+Implementations must reject attempts to create or modify files with the following extensions:
+
+```text
+.exe, .com, .scr, .pif, .cpl, .msc, .bat, .cmd, .ps1, .psd1, .vbs, .vbe,
+.js, .jse, .wsf, .wsh, .hta, .scf, .lnk, .zip, .rar, .7z, .cab, .iso, .img,
+.xml, .msi, .msp, .reg, .inf, .url
+```
+
+This restriction applies to [`#!luau writefile`](./writefile.md) and [`#!luau appendfile`](./appendfile.md).
+
+---
+
 ## What can you do?
 
 With the Filesystem library, you can:

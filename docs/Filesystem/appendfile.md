@@ -4,6 +4,10 @@
 
 This is useful for logging, accumulating data over time, or extending file contents without overwriting them.
 
+!!! warning "Blocked file extensions"
+
+    `#!luau appendfile` must reject paths whose extension is listed in the [Filesystem security restrictions](./README.md#security-restrictions).
+
 ```luau
 function appendfile(path: string, contents: string): ()
 ```
